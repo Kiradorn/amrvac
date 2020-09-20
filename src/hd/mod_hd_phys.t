@@ -252,6 +252,8 @@ contains
        tracer(itr) = var_set_fluxvar("trc", "trp", itr, need_bc=.false.)
     end do
 
+    nwgc=nwflux
+
     ! initialize thermal conduction module
     if (hd_thermal_conduction) then
       if (.not. hd_energy) &

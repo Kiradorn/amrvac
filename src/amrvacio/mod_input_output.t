@@ -987,20 +987,30 @@ contains
     ! Copy boundary conditions to typeboundary, which is used internally
     {
     if (any(typeboundary_min^D /= undefined)) then
-      typeboundary(1:nwfluxbc, 2*^D-1) = typeboundary_min^D(1:nwfluxbc)
+      if(stagger_grid.and.ndim==ndir) then
+        typeboundary(1:nwfluxbc-ndim, 2*^D-1) = typeboundary_min^D(1:nwfluxbc-ndim)
+        typeboundary(nwflux-ndim+1:nwflux,2*^D-1) = typeboundary_min^D(nwfluxbc-ndim+1:nwfluxbc)
+      else  
+        typeboundary(1:nwfluxbc, 2*^D-1) = typeboundary_min^D(1:nwfluxbc)
+      end if
     end if
 
     if (any(typeboundary_max^D /= undefined)) then
-      typeboundary(1:nwfluxbc, 2*^D) = typeboundary_max^D(1:nwfluxbc)
+      if(stagger_grid.and.ndim==ndir) then
+        typeboundary(1:nwfluxbc-ndim, 2*^D) = typeboundary_max^D(1:nwfluxbc-ndim)
+        typeboundary(nwflux-ndim+1:nwflux,2*^D) = typeboundary_max^D(nwfluxbc-ndim+1:nwfluxbc)
+      else  
+        typeboundary(1:nwfluxbc, 2*^D) = typeboundary_max^D(1:nwfluxbc)
+      end if
     end if
     }
 
-    ! psi, tracers take the same boundary type as the first variable
-    if (nwfluxbc<nwflux) then
-      do iw = nwfluxbc+1, nwflux
-        typeboundary(iw,:) = typeboundary(1, :)
-      end do
-    end if
+    ! psi, tracers, eaux take the same boundary type as the first variable
+    do iB=1,ndim*2
+      where(typeboundary(:,iB)==undefined)
+        typeboundary(:,iB)=typeboundary(1,iB)
+      end where
+    end do
 
     if (any(typeboundary == undefined)) then
       call mpistop("Not all boundary conditions have been defined")

@@ -165,9 +165,11 @@ contains
     use mod_global_parameters
     use mod_physics
     use mod_particles, only: particles_init
+    use mod_ghostcells_update
     {^NOONED
     use mod_multigrid_coupling
     }
+    use mod_ghostcells_update, only: iwstart
 
     integer :: itr, idir
 
@@ -213,6 +215,9 @@ contains
       call mpistop('Unknown divB fix')
     end select
 
+    ! determine number of stagger variables
+    if(stagger_grid) nws=ndim
+
     ! set velocity field as flux variables
     allocate(mom(ndir))
     mom(:) = var_set_momentum(ndir)
@@ -227,8 +232,14 @@ contains
       psi_ = -1
     end if
 
-    ! determine number of stagger variables
-    if(stagger_grid) nws=ndim
+    !if(stagger_grid.and.ndim==ndir) then
+    !  nwgc=0
+    !else
+    nwgc=ndir
+    !end if
+
+    !iwstart=mag(1)
+    iwstart=1
 
     nvector      = 2 ! No. vector vars
     allocate(iw_vector(nvector))
@@ -537,11 +548,26 @@ contains
   !> Add global source terms to update frictional velocity on complete domain
   subroutine mf_velocity_update(qdt, qt, active)
     use mod_global_parameters
+    use mod_ghostcells_update
     double precision, intent(in) :: qdt    !< Current time step
     double precision, intent(in) :: qt     !< Current time
     logical, intent(inout)       :: active !< Output if the source is active
 
     integer :: iigrid,igrid
+    logical :: stagger_flag
+    logical :: firstmf=.true.
+
+    if(firstmf) then
+      ! point bc mpi datatype to partial type for velocity field
+      type_send_srl=>type_send_srl_p1
+      type_recv_srl=>type_recv_srl_p1
+      type_send_r=>type_send_r_p1
+      type_recv_r=>type_recv_r_p1
+      type_send_p=>type_send_p_p1
+      type_recv_p=>type_recv_p_p1
+      call create_bc_mpi_datatype(mom(1),ndir)
+      firstmf=.false.
+    end if
 
     !$OMP PARALLEL DO PRIVATE(igrid)
     do iigrid=1,igridstail_active; igrid=igrids_active(iigrid);
@@ -550,7 +576,25 @@ contains
     end do
     !$OMP END PARALLEL DO
 
-    active=.true.
+    ! only update mf velocity in ghost cells
+    stagger_flag=stagger_grid
+    type_send_srl=>type_send_srl_p1
+    type_recv_srl=>type_recv_srl_p1
+    type_send_r=>type_send_r_p1
+    type_recv_r=>type_recv_r_p1
+    type_send_p=>type_send_p_p1
+    type_recv_p=>type_recv_p_p1
+    call getbc(qt,0.d0,ps,mom(1),ndir,.true.)
+    type_send_srl=>type_send_srl_f
+    type_recv_srl=>type_recv_srl_f
+    type_send_r=>type_send_r_f
+    type_recv_r=>type_recv_r_f
+    type_send_p=>type_send_p_f
+    type_recv_p=>type_recv_p_f
+    stagger_grid=stagger_flag
+
+    ! do not call getbc again after adding this split source 
+    active=.false.
 
   end subroutine mf_velocity_update
 

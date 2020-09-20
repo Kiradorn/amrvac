@@ -367,6 +367,9 @@ contains
       call mpistop('Unknown divB fix')
     end select
 
+    ! determine number of stagger variables
+    if(stagger_grid) nws=ndim
+
     select case (mhd_boris_method)
     case ("none")
       mhd_boris_type = boris_none
@@ -396,7 +399,9 @@ contains
     end if
 
     allocate(mag(ndir))
-    mag(:) = var_set_bfield(ndir)
+    if(.not. (stagger_grid.and.ndim==ndir)) then
+      mag(:) = var_set_bfield(ndir)
+    end if
 
     if (mhd_glm) then
       psi_ = var_set_fluxvar('psi', 'psi', need_bc=.false.)
@@ -420,8 +425,12 @@ contains
       tracer(itr) = var_set_fluxvar("trc", "trp", itr, need_bc=.false.)
     end do
 
-    ! determine number of stagger variables
-    if(stagger_grid) nws=ndim
+    if(stagger_grid.and.ndim==ndir) then
+      mag(:) = var_set_bfield(ndir)
+      nwgc=nwflux-ndim
+    else
+      nwgc=nwflux
+    end if
 
     nvector      = 2 ! No. vector vars
     allocate(iw_vector(nvector))

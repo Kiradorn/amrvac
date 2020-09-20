@@ -11,6 +11,9 @@ module mod_ghostcells_update
   logical, public :: bcphys=.true.
   integer :: ixM^L, ixCoG^L, ixCoM^L
 
+  ! the number of the first w variable to exchange ghost cells
+  integer, public :: iwstart=1
+
   ! The number of interleaving sending buffers for ghost cells
   integer, parameter :: npwbuf=2
 
@@ -766,7 +769,7 @@ contains
     if(bcphys.and.associated(phys_boundary_adjust)) call phys_boundary_adjust()
     
     if (nwaux>0) call fix_auxiliary
-    
+
     time_bc=time_bc+(MPI_WTIME()-time_bcin)
     
     contains
@@ -1023,7 +1026,6 @@ contains
 
       end subroutine bc_send_restrict
 
-
       !> fill siblings ghost cells with received data
       subroutine bc_fill_srl
         double precision :: tmp(ixGs^T)
@@ -1097,6 +1099,8 @@ contains
           end if
         end if
 
+        if(ndim==ndir) call phys_face_to_center(ixR_srl_^L(iib^D,i^D),psb(igrid))
+
       end subroutine bc_fill_srl
 
       subroutine indices_for_syncing(idir,i^D,ixR^L,ixS^L,ixRsync^L,ixSsync^L)
@@ -1154,6 +1158,7 @@ contains
                  ibuf_recv_r=ibuf_next
                end do
              end if
+             if(ndim==ndir) call phys_face_to_center(ixR_r_^L(iib^D,inc^D),psb(igrid))
           {end do\}
         
         else !! There is a pole
@@ -1186,9 +1191,11 @@ contains
                  ibuf_recv_r=ibuf_next
                end do
              end if
+             if(ndim==ndir) call phys_face_to_center(ixR_r_^L(iib^D,inc^D),psb(igrid))
           {end do\}
         
         end if
+
 
       end subroutine bc_fill_r
 
@@ -1316,10 +1323,9 @@ contains
         ineighbor=neighbor(1,i^D,igrid)
         ipe_neighbor=neighbor(2,i^D,igrid)
         ipole=neighbor_pole(i^D,igrid)
+        inc^D=ic^D+i^D;
 
         if (ipole==0) then   !! There is no pole 
-          inc^D=ic^D+i^D;
-          ixR^L=ixR_p_^L(iib^D,inc^D);
           if(ipe_neighbor==mype) then !! Same processor
             n_inc^D=-2*i^D+ic^D;
             do idir=1,ndim
@@ -1338,7 +1344,6 @@ contains
           end if
 
         else !! There is a pole
-          inc^D=ic^D+i^D;
           select case (ipole)
           {case (^D)
              n_inc^D=2*i^D+(3-ic^D)^D%n_inc^DD=-2*i^DD+ic^DD;\}
@@ -1361,8 +1366,9 @@ contains
               ibuf_recv_p=ibuf_next
             end do
           end if
-
         end if
+
+        if(ndim==ndir) call phys_face_to_center(ixR_p_^L(iib^D,inc^D),psc(igrid))
 
       end subroutine bc_fill_p
 

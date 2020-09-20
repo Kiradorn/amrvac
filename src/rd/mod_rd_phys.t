@@ -102,6 +102,8 @@ contains
     u_ = var_set_fluxvar("u", "u")
     v_ = var_set_fluxvar("v", "v")
 
+    nwgc=nwflux
+
     ! Disable flux conservation near AMR boundaries, since we have no fluxes
     fix_conserve_global = .false.
 

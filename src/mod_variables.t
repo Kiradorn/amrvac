@@ -13,6 +13,9 @@ module mod_variables
   !> Number of auxiliary variables
   integer           :: nwaux = 0
 
+  !> Number of variables which need to be updated in ghost cells
+  integer           :: nwgc = 0
+
   !> Number of extra variables
   integer           :: nwextra = 0
 
