@@ -91,7 +91,7 @@ integer, intent(in) :: qunit
 integer             :: Morton_no,igrid,ix^D,ig^D,level
 integer, pointer    :: ig_to_igrid(:^D&,:)
 logical             :: fileopen,writeblk(max_blocks)
-character(len=80)   :: filename
+character(len=std_len)   :: filename
 integer             :: filenr,ncells^D,ncellx^D,jg^D,jig^D
 
 character(len=name_len) :: wnamei(1:nw+nwauxio),xandwnamei(1:ndim+nw+nwauxio)
@@ -285,7 +285,7 @@ integer, intent(in) :: qunit
 
 integer             :: itag,Morton_no,igrid,ix^D,iw
 logical             :: fileopen
-character(len=80)   :: filename
+character(len=std_len)   :: filename
 integer             :: filenr
 
 character(len=name_len) :: wnamei(1:nw+nwauxio),xandwnamei(1:ndim+nw+nwauxio)
@@ -404,7 +404,7 @@ double precision, dimension(ixMlo^D-1:ixMhi^D,nw+nwauxio)   :: wC_TMP
 double precision, dimension(ixMlo^D:ixMhi^D,nw+nwauxio)     :: wCC_TMP
 double precision, dimension(0:nw+nwauxio)                   :: normconv
 logical :: fileopen,first
-character(len=80) :: filename
+character(len=std_len) :: filename
 integer  :: filenr
 
 !!! possible length conflict
@@ -682,7 +682,7 @@ integer::               igrid,iigrid,level,igonlevel,icel,ixC^L,ixCC^L,iw
 integer::               NumGridsOnLevel(1:nlevelshi)
 integer :: nx^D,nxC^D,nodesonlevel,elemsonlevel,nc,np,VTK_type,ix^D
 
-character(len=80)::  filename
+character(len=std_len):: filename
 integer          :: filenr
 
 character(len=name_len) :: wnamei(1:nw+nwauxio),xandwnamei(1:ndim+nw+nwauxio)
@@ -862,7 +862,7 @@ integer*8 :: offset
 integer::  k,iw
 integer::  length,lengthcc,length_coords,length_conn,length_offsets
 character::  buf
-character(len=80)::  filename
+character(len=std_len):: filename
 character(len=name_len) :: wnamei(1:nw+nwauxio),xandwnamei(1:ndim+nw+nwauxio)
 character(len=1024) :: outfilehead
 
@@ -1276,7 +1276,7 @@ integer*8 :: offset
 integer::  k,iw
 integer::  length,lengthcc,length_coords,length_conn,length_offsets
 character::  buf
-character(len=80)::  filename
+character(len=std_len):: filename
 character(len=name_len) :: wnamei(1:nw+nwauxio),xandwnamei(1:ndim+nw+nwauxio)
 character(len=1024) :: outfilehead
 
@@ -1723,7 +1723,7 @@ integer::               igrid,iigrid,level,ixC^L,ixCC^L
 integer::               NumGridsOnLevel(1:nlevelshi)
 integer :: nx^D
 
-character(len=80)::  filename
+character(len=std_len):: filename
 integer ::           filenr
 
 integer, allocatable :: intstatus(:,:)
@@ -1993,7 +1993,7 @@ integer::               igrid,iigrid,level,ixC^L,ixCC^L
 integer::               NumGridsOnLevel(1:nlevelshi)
 integer :: nx^D,nxC^D,nodesonlevel,elemsonlevel,nc,np,ix^D
 
-character(len=80)::  filename
+character(len=std_len):: filename
 integer ::           filenr
 
 integer, allocatable :: intstatus(:,:)
@@ -2330,7 +2330,7 @@ integer, intent(in) :: qunit
 
 character(len=name_len)   :: wnamei(1:nw+nwauxio),xandwnamei(1:ndim+nw+nwauxio),outtype
 character(len=1024) :: outfilehead
-character(len=80)   :: filename,pfilename
+character(len=std_len)   :: filename,pfilename
 integer             :: filenr,iw,ipe,iscalars
 logical             :: fileopen
 
@@ -2438,7 +2438,7 @@ integer :: itag,Morton_no,ipe,levmin_recv,levmax_recv,igrid_recv,level_recv
 integer :: ixrvC^L,ixrvCC^L
 integer :: ind_send(2*^ND),ind_recv(2*^ND),siz_ind,igonlevel_recv
 integer :: NumGridsOnLevel_mype(1:nlevelshi,0:npe-1)
-character(len=80) :: filename
+character(len=std_len) :: filename
 integer ::           filenr
 character(len=1024) :: tecplothead
 
@@ -3205,7 +3205,7 @@ integer::               NumGridsOnLevel(1:nlevelshi)
 integer :: nx1,nx2,nx3,nxC1,nxC2,nxC3,nodesonlevel,elemsonlevel,nc,np,&
    VTK_type,ix1,ix2,ix3
 double precision :: normconv(0:nw+nwauxio)
-character(len=80)::  filename
+character(len=std_len):: filename
 character(len=name_len) :: wnamei(1:nw+nwauxio),xandwnamei(1:3+nw+nwauxio)
 character(len=1024) :: outfilehead
 integer*8 :: offset
@@ -3530,7 +3530,7 @@ integer::               NumGridsOnLevel(1:nlevelshi)
 integer :: nx1,nx2,nx3,nxC1,nxC2,nxC3,nodesonlevel,elemsonlevel,nc,np,&
    VTK_type,ix1,ix2,ix3
 double precision :: normconv(0:nw+nwauxio)
-character(len=80)::  filename
+character(len=std_len):: filename
 character(len=name_len) :: wnamei(1:nw+nwauxio),xandwnamei(1:3+nw+nwauxio)
 character(len=1024) :: outfilehead
 integer*8 :: offset
