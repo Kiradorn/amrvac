@@ -33,6 +33,7 @@ contains
 
     if (.not.crash) then
       do iw=1,nw
+       !dir$ ivdep
        {do ix^DB= ixO^LIM^DB\}
           if(w_flag(ix^D,iw)) then
             write(*,*) "Error: small value of ", trim(prim_wnames(iw)),wprim(ix^D,iw),&
@@ -51,7 +52,6 @@ contains
        {enddo^D&\}
       end do
     end if
-
   end subroutine small_values_error
 
   subroutine small_values_average(ixI^L, ixO^L, w, x, w_flag, windex)
@@ -109,7 +109,6 @@ contains
         end if
      {enddo^D&\}
     end do
-
   end subroutine small_values_average
 
 end module mod_small_values
