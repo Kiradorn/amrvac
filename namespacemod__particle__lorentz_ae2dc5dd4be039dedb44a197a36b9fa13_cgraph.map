@@ -1,7 +1,36 @@
 <map id="mod_particle_lorentz::lorentz_create_particles" name="mod_particle_lorentz::lorentz_create_particles">
-<area shape="rect" id="node1" title=" " alt="" coords="5,104,192,145"/>
-<area shape="rect" id="node2" href="$namespacemod__particle__base.html#a557c63a62cb1491a66af98fb29258dd5" title=" " alt="" coords="265,5,419,47"/>
-<area shape="rect" id="node3" href="$namespacemod__particle__base.html#a66f981478b56631fd2a804f359643ff9" title="Get Lorentz factor from velocity." alt="" coords="257,71,427,112"/>
-<area shape="rect" id="node4" href="$namespacemod__particle__lorentz.html#ab1897998904bc04b8bb8c9e0a91c6e31" title="Update payload subroutine." alt="" coords="249,136,435,177"/>
-<area shape="rect" id="node5" href="$namespacemod__particle__base.html#a8cb2c79dc331397db976421b8e78431e" title=" " alt="" coords="240,202,444,258"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,427,192,467"/>
+<area shape="rect" id="Node000002" href="$namespacemod__particle__base.html#ab86a6399bcf481404721bcb11ca92e8a" title=" " alt="" coords="265,5,419,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,426,107,356,129,257,146,203,170,150,200,99,238,55,251,45,255,49,242,59,205,103,175,152,151,205,134,258,112,357,104,427"/>
+<area shape="rect" id="Node000003" href="$namespacemod__particle__base.html#a72a44f312e4e01053ad928ec6fa522c2" title="This routine fills the particle grid variables with the default for mhd, i.e. only E and B." alt="" coords="265,69,419,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,426,112,366,137,284,155,240,177,196,205,155,238,119,252,109,255,114,242,123,209,159,182,199,160,242,142,286,117,368,105,427"/>
+<area shape="rect" id="Node000007" href="$namespacemod__particle__base.html#a557c63a62cb1491a66af98fb29258dd5" title=" " alt="" coords="265,133,419,173"/>
+<area shape="poly" id="edge3_Node000001_Node000007" title=" " alt="" coords="103,426,118,377,145,312,185,243,210,211,238,183,252,174,255,178,242,187,214,215,189,246,150,314,123,379,108,427"/>
+<area shape="rect" id="Node000010" href="$namespacemod__particle__base.html#a155095a480a44dd87013d92e65d9bd11" title="Fix particle position when crossing the 0,2pi boundary in noncartesian coordinates." alt="" coords="265,197,419,237"/>
+<area shape="poly" id="edge4_Node000001_Node000010" title=" " alt="" coords="107,425,127,389,156,343,194,296,238,254,259,241,262,246,242,258,198,299,161,346,132,392,112,428"/>
+<area shape="rect" id="Node000012" href="$namespacemod__particle__base.html#a7d9a58afea8627c45f86fb2657d9b8df" title=" " alt="" coords="492,312,645,352"/>
+<area shape="poly" id="edge5_Node000001_Node000012" title=" " alt="" coords="120,424,171,384,204,364,239,348,300,332,363,324,423,321,478,322,478,327,424,326,363,329,301,338,241,353,206,368,174,388,123,429"/>
+<area shape="rect" id="Node000013" href="$namespacemod__particle__base.html#a85a2d46a6cbe809098c52ea9beca540a" title=" " alt="" coords="693,312,847,352"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="112,425,163,368,199,338,239,315,297,293,347,279,394,272,438,271,530,280,646,297,691,306,691,311,645,303,529,286,438,276,394,277,349,284,298,298,241,320,202,342,167,372,116,428"/>
+<area shape="rect" id="Node000015" href="$namespacemod__particle__base.html#a39bc08ff3212378f905b861b84bcfc85" title=" " alt="" coords="265,363,419,403"/>
+<area shape="poly" id="edge7_Node000001_Node000015" title=" " alt="" coords="175,424,252,404,253,409,176,429"/>
+<area shape="rect" id="Node000016" href="$namespacemod__particle__base.html#a543c5dd3a4184ec64857fea2c6526279" title="Get Lorentz factor from relativistic momentum." alt="" coords="265,427,419,467"/>
+<area shape="poly" id="edge10_Node000001_Node000016" title=" " alt="" coords="192,444,251,444,251,449,192,449"/>
+<area shape="rect" id="Node000017" href="$namespacemod__particle__base.html#a66f981478b56631fd2a804f359643ff9" title="Get Lorentz factor from velocity." alt="" coords="257,491,427,531"/>
+<area shape="poly" id="edge11_Node000001_Node000017" title=" " alt="" coords="176,464,253,485,252,490,175,469"/>
+<area shape="rect" id="Node000018" href="$namespacemod__particle__base.html#a10fdd3836ff16c481594ceec5fd1e97e" title=" " alt="" coords="265,555,419,595"/>
+<area shape="poly" id="edge13_Node000001_Node000018" title=" " alt="" coords="126,465,177,503,241,540,257,547,255,552,239,545,175,507,123,469"/>
+<area shape="rect" id="Node000019" href="$namespacemod__particle__base.html#a094350df67cbde16abbe80c34667f1fd" title="Convert to noncartesian coordinates." alt="" coords="247,619,437,659"/>
+<area shape="poly" id="edge14_Node000001_Node000019" title=" " alt="" coords="115,465,165,534,201,572,242,604,251,610,249,615,238,609,197,576,161,537,110,469"/>
+<area shape="rect" id="Node000020" href="$namespacemod__particle__base.html#a97ad783df74c9688112b7c5ff085a21d" title="Convert position to Cartesian coordinates." alt="" coords="257,683,427,723"/>
+<area shape="poly" id="edge15_Node000001_Node000020" title=" " alt="" coords="109,466,127,508,155,563,193,620,216,646,242,669,249,674,246,678,238,673,212,650,189,623,150,565,122,510,105,468"/>
+<area shape="rect" id="Node000021" href="$namespacemod__particle__base.html#a705f221ec9ab699b106f6a84a3c92d88" title="Convert vector from Cartesian coordinates." alt="" coords="254,747,430,787"/>
+<area shape="poly" id="edge16_Node000001_Node000021" title=" " alt="" coords="107,466,120,519,146,591,164,629,186,667,212,702,242,733,247,737,244,741,238,737,208,706,182,670,160,632,141,593,115,521,101,467"/>
+<area shape="rect" id="Node000022" href="$namespacemod__particle__base.html#ac0a3275511fe0763985b90055d9138ca" title="Convert vector to Cartesian coordinates." alt="" coords="263,811,421,851"/>
+<area shape="poly" id="edge17_Node000001_Node000022" title=" " alt="" coords="105,466,115,530,138,619,156,667,179,714,207,758,242,797,252,805,249,809,238,801,203,761,174,717,151,669,133,620,110,531,99,467"/>
+<area shape="rect" id="Node000023" href="$namespacemod__particle__base.html#a8cb2c79dc331397db976421b8e78431e" title=" " alt="" coords="240,875,444,930"/>
+<area shape="poly" id="edge18_Node000001_Node000023" title=" " alt="" coords="104,467,111,540,133,645,150,702,174,759,204,813,242,861,246,865,242,868,238,864,200,816,169,761,145,704,127,646,106,540,98,467"/>
+<area shape="poly" id="edge6_Node000012_Node000013" title=" " alt="" coords="646,329,680,329,680,335,646,335"/>
+<area shape="poly" id="edge8_Node000015_Node000012" title=" " alt="" coords="419,363,478,349,479,355,420,368"/>
+<area shape="poly" id="edge9_Node000015_Node000013" title=" " alt="" coords="419,379,526,374,645,361,687,353,688,358,646,367,527,380,419,385"/>
 </map>

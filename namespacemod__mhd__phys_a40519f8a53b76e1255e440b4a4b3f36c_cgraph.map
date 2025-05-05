@@ -1,0 +1,29 @@
+<map id="mod_mhd_phys::mhd_get_csound2" name="mod_mhd_phys::mhd_get_csound2">
+<area shape="rect" id="Node000001" title="Calculate the square of the thermal sound speed csound2 within ixO^L. csound2=gamma*p/rho." alt="" coords="5,185,196,225"/>
+<area shape="rect" id="Node000002" href="$namespacemod__global__parameters.html#a1ba907b301287b1559121df9aeb35f03" title="Cross product of two vectors." alt="" coords="817,243,997,283"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,221,244,228,396,244,549,254,804,260,804,266,549,259,396,249,244,233,196,226"/>
+<area shape="rect" id="Node000003" href="$namespacemod__mhd__phys.html#ac7bf1b8d5fd9dac730901cb6319ced4d" title="Calculate idirmin and the idirmin:3 components of the common current array make sure that dxlevel(^D)..." alt="" coords="1055,114,1261,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,183,170,135,205,109,243,90,352,49,448,22,535,7,618,3,702,8,792,21,1007,63,1069,82,1123,105,1120,110,1067,87,1006,68,791,26,702,13,618,8,536,12,449,27,354,54,245,94,208,114,174,139,122,187"/>
+<area shape="rect" id="Node000014" href="$namespacemod__mhd__phys.html#af871b6be3fe6f0ca6cca59a59309c86c" title=" " alt="" coords="245,193,463,218"/>
+<area shape="poly" id="edge4_Node000001_Node000014" title=" " alt="" coords="196,203,231,203,231,208,196,208"/>
+<area shape="rect" id="Node000021" href="$namespacemod__mhd__phys.html#a7e7f9e0cfdae3f081d89b5a609011c5d" title="multiply res by the ambipolar coefficient The ambipolar coefficient is calculated as &#45;mhd_eta_ambi/rh..." alt="" coords="512,142,760,167"/>
+<area shape="poly" id="edge17_Node000001_Node000021" title=" " alt="" coords="148,183,194,167,244,155,308,146,374,142,499,142,499,148,374,148,309,152,244,160,195,172,150,188"/>
+<area shape="rect" id="Node000027" href="$namespacemod__mhd__phys.html#a7cefae9319d59d3d9182e9b35bad1e28" title="Compute 2 times total magnetic energy." alt="" coords="808,77,1007,117"/>
+<area shape="poly" id="edge16_Node000001_Node000027" title=" " alt="" coords="131,183,182,154,243,128,315,109,389,95,464,85,539,80,678,78,795,83,794,89,678,83,539,85,465,91,390,100,316,114,245,133,185,159,134,187"/>
+<area shape="rect" id="Node000041" href="$namespacemod__fix__conserve.html#accd8011113a5f7b3efeec90d42bd9dad" title=" " alt="" coords="244,345,464,370"/>
+<area shape="poly" id="edge18_Node000001_Node000041" title=" " alt="" coords="123,224,175,273,209,300,245,323,281,338,279,343,243,328,206,304,172,278,119,228"/>
+<area shape="rect" id="Node000042" href="$namespacemod__fix__conserve.html#a6ba16bd40994889786a4523e73309321" title=" " alt="" coords="248,394,460,419"/>
+<area shape="poly" id="edge19_Node000001_Node000042" title=" " alt="" coords="114,224,134,259,164,302,201,345,245,380,257,387,254,391,243,385,197,348,159,305,130,262,110,227"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="1117,116,1109,106,1113,96,1130,90,1158,87,1193,91,1203,96,1207,102,1203,105,1200,100,1192,96,1158,93,1131,95,1117,100,1114,105,1121,112"/>
+<area shape="poly" id="edge5_Node000014_Node000002" title=" " alt="" coords="460,215,512,221,804,251,803,256,512,227,459,221"/>
+<area shape="poly" id="edge6_Node000014_Node000003" title=" " alt="" coords="463,198,760,177,883,164,1006,147,1062,139,1063,144,1007,152,884,169,760,183,464,203"/>
+<area shape="poly" id="edge7_Node000014_Node000014" title=" " alt="" coords="313,194,304,184,309,174,326,168,354,166,390,170,400,175,404,180,399,183,396,179,388,175,354,171,327,173,312,178,309,184,317,191"/>
+<area shape="poly" id="edge8_Node000014_Node000021" title=" " alt="" coords="463,192,585,168,586,173,464,197"/>
+<area shape="poly" id="edge9_Node000021_Node000002" title=" " alt="" coords="670,165,844,235,842,240,668,170"/>
+<area shape="poly" id="edge10_Node000021_Node000003" title=" " alt="" coords="760,145,1041,130,1041,136,761,151"/>
+<area shape="poly" id="edge11_Node000021_Node000014" title=" " alt="" coords="516,170,405,192,404,187,515,165"/>
+<area shape="poly" id="edge12_Node000021_Node000027" title=" " alt="" coords="737,139,834,118,835,123,738,145"/>
+<area shape="poly" id="edge13_Node000027_Node000003" title=" " alt="" coords="1007,106,1041,110,1041,116,1006,112"/>
+<area shape="poly" id="edge14_Node000027_Node000014" title=" " alt="" coords="808,98,667,105,589,115,513,132,445,158,389,188,386,183,443,153,511,127,588,110,666,100,808,93"/>
+<area shape="poly" id="edge15_Node000027_Node000021" title=" " alt="" coords="809,112,683,141,681,136,807,107"/>
+</map>

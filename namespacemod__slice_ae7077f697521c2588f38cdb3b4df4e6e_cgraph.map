@@ -1,6 +1,8 @@
 <map id="mod_slice::select_slice" name="mod_slice::select_slice">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,177,83"/>
-<area shape="rect" id="node2" href="$namespacemod__slice.html#a29d6f9885b76722d9fd862805d94e030" title=" " alt="" coords="225,5,392,32"/>
-<area shape="rect" id="node3" href="$comm__lib_8t.html#a49b49ea9ffbbadfe688e332921c4cddd" title="Exit MPI&#45;AMRVAC with an error message." alt="" coords="440,56,515,83"/>
-<area shape="rect" id="node4" href="$mod__slice_8t.html#a2211b2e0213c502cd53d9993d30459b4" title=" " alt="" coords="252,107,365,133"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,43,177,68"/>
+<area shape="rect" id="Node000002" href="$namespacemod__slice.html#a29d6f9885b76722d9fd862805d94e030" title=" " alt="" coords="225,5,392,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,40,221,30,222,36,166,45"/>
+<area shape="rect" id="Node000003" href="$mod__slice_8t.html#a2211b2e0213c502cd53d9993d30459b4" title=" " alt="" coords="252,79,365,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,65,239,77,238,82,168,71"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="273,80,266,70,270,60,284,54,309,52,339,56,351,65,347,69,337,61,309,57,286,59,273,64,271,70,277,77"/>
 </map>

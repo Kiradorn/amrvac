@@ -1,0 +1,7 @@
+<map id="mod_afld::afld_get_fluxlimiter" name="mod_afld::afld_get_fluxlimiter">
+<area shape="rect" id="Node000001" title="Calculate fld flux limiter This subroutine calculates flux limiter lambda using the prescription stor..." alt="" coords="5,35,148,75"/>
+<area shape="rect" id="Node000002" href="$namespacemod__afld.html#ad8704dc4f298466b7f931aae68dcb380" title="Sets the opacity in the w&#45;array by calling mod_opal_opacity." alt="" coords="201,5,343,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,41,187,35,187,41,149,47"/>
+<area shape="rect" id="Node000008" href="$namespacemod__afld.html#ae5502c538f267716bede04d6640584f8" title="Calculate gradient of a scalar q within ixL in direction idir difference with gradient is gradq(ixO^S..." alt="" coords="196,70,348,95"/>
+<area shape="poly" id="edge2_Node000001_Node000008" title=" " alt="" coords="148,62,183,67,182,72,148,67"/>
+</map>

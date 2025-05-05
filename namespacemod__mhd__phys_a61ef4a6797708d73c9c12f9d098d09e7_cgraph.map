@@ -1,0 +1,17 @@
+<map id="mod_mhd_phys::mhd_get_v_idim" name="mod_mhd_phys::mhd_get_v_idim">
+<area shape="rect" id="Node000001" title="Calculate v component." alt="" coords="5,75,196,115"/>
+<area shape="poly" id="edge9_Node000001_Node000001" title=" " alt="" coords="56,75,54,65,61,56,77,50,101,48,128,51,143,58,141,63,127,56,101,53,78,55,64,60,59,66,62,73"/>
+<area shape="rect" id="Node000002" href="$namespacemod__geometry.html#a5e16962a2f11058e42599f6c5e21f207" title="Calculate gradient of a scalar q within ixL in direction idir." alt="" coords="996,49,1179,74"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,72,186,49,243,31,349,14,458,5,566,3,672,6,862,23,1006,44,1006,49,862,28,671,11,566,8,458,10,350,19,245,36,188,54,139,77"/>
+<area shape="rect" id="Node000003" href="$namespacemod__mhd__phys.html#a40519f8a53b76e1255e440b4a4b3f36c" title="Calculate the square of the thermal sound speed csound2 within ixO^L. csound2=gamma*p/rho." alt="" coords="244,45,435,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,80,230,76,231,81,197,85"/>
+<area shape="rect" id="Node000016" href="$namespacemod__mhd__phys.html#af871b6be3fe6f0ca6cca59a59309c86c" title=" " alt="" coords="729,86,948,111"/>
+<area shape="poly" id="edge8_Node000001_Node000016" title=" " alt="" coords="184,112,285,132,409,148,545,155,614,153,681,145,740,131,794,114,795,119,742,137,682,151,614,158,545,160,409,153,284,137,183,117"/>
+<area shape="rect" id="Node000028" href="$namespacemod__mhd__phys.html#a7cefae9319d59d3d9182e9b35bad1e28" title="Compute 2 times total magnetic energy." alt="" coords="483,96,681,136"/>
+<area shape="poly" id="edge10_Node000001_Node000028" title=" " alt="" coords="197,96,469,108,469,114,196,101"/>
+<area shape="poly" id="edge3_Node000003_Node000016" title=" " alt="" coords="435,67,682,81,716,84,715,89,681,87,435,72"/>
+<area shape="poly" id="edge6_Node000003_Node000028" title=" " alt="" coords="435,83,473,90,472,96,434,88"/>
+<area shape="poly" id="edge4_Node000016_Node000002" title=" " alt="" coords="923,83,989,73,989,79,924,89"/>
+<area shape="poly" id="edge5_Node000016_Node000016" title=" " alt="" coords="798,88,790,78,794,68,811,61,839,59,874,63,884,68,887,74,883,77,880,72,872,68,839,65,812,67,798,72,795,77,802,84"/>
+<area shape="poly" id="edge7_Node000028_Node000016" title=" " alt="" coords="681,107,716,104,716,110,682,112"/>
+</map>
