@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -85,6 +85,13 @@ $(function() {
 <li>fake_update()&#160;:&#160;<a class="el" href="namespacemod__constrained__transport.html#a9a71df3e4f53596b92c8e868cadbbdf5">mod_constrained_transport</a></li>
 <li>fd()&#160;:&#160;<a class="el" href="namespacemod__finite__difference.html#a1ac3532e429be25e0d9faf53fe2fdc98">mod_finite_difference</a></li>
 <li>fdmf()&#160;:&#160;<a class="el" href="namespacemod__magnetofriction.html#a10f6f443f865698b2d1d0f4211fb8418">mod_magnetofriction</a></li>
+<li>ffhd_activate()&#160;:&#160;<a class="el" href="namespacemod__ffhd.html#aa4caeb1f5303713ac7eac6bab072322a">mod_ffhd</a></li>
+<li>ffhd_e_to_ei()&#160;:&#160;<a class="el" href="namespacemod__ffhd__phys.html#afe11ff52a2c462a09c3378a75168098e">mod_ffhd_phys</a></li>
+<li>ffhd_ei_to_e()&#160;:&#160;<a class="el" href="namespacemod__ffhd__phys.html#ad3418da655c172d48c6fe1c71919ee4b">mod_ffhd_phys</a></li>
+<li>ffhd_get_csound2()&#160;:&#160;<a class="el" href="namespacemod__ffhd__phys.html#a862a2a1806189befd54c964bcec30b96">mod_ffhd_phys</a></li>
+<li>ffhd_get_rho()&#160;:&#160;<a class="el" href="namespacemod__ffhd__phys.html#a5a9d8c58337847af6590a9d592f94904">mod_ffhd_phys</a></li>
+<li>ffhd_get_v_idim()&#160;:&#160;<a class="el" href="namespacemod__ffhd__phys.html#aac7cfcdeca83e2e46c9d07a6e7f2bf6f">mod_ffhd_phys</a></li>
+<li>ffhd_phys_init()&#160;:&#160;<a class="el" href="namespacemod__ffhd__phys.html#a75d51189f43884f84c71e7ecbabe1e70">mod_ffhd_phys</a></li>
 <li>fields_from_mhd()&#160;:&#160;<a class="el" href="namespacemod__particle__base.html#a1b92855e3b68eb1bddda43087dce2f84">mod_particle_base</a></li>
 <li>fill_gridvars_default()&#160;:&#160;<a class="el" href="namespacemod__particle__base.html#a72a44f312e4e01053ad928ec6fa522c2">mod_particle_base</a></li>
 <li>fill_subnode()&#160;:&#160;<a class="el" href="namespacemod__slice.html#a2fe453ca6dc91583c77bc093c00db5cc">mod_slice</a></li>
@@ -112,12 +119,13 @@ $(function() {
 <li>fix_onelimiter1()&#160;:&#160;<a class="el" href="namespacemod__weno.html#a4879f4fc7f1091e5c65e3d452779786e">mod_weno</a></li>
 <li>fix_phi_crossing()&#160;:&#160;<a class="el" href="namespacemod__particle__base.html#a155095a480a44dd87013d92e65d9bd11">mod_particle_base</a></li>
 <li>fld_get_diffcoef_central()&#160;:&#160;<a class="el" href="namespacemod__fld.html#a7655ed0734cd3f508292a2549b19db7b">mod_fld</a></li>
-<li>fld_get_eddington()&#160;:&#160;<a class="el" href="namespacemod__fld.html#a71abff402729c739823178bcb3a9cbdf">mod_fld</a></li>
-<li>fld_get_fluxlimiter()&#160;:&#160;<a class="el" href="namespacemod__fld.html#ab55a2b18340d068b12bc4ba0f2e7853d">mod_fld</a></li>
+<li>fld_get_eddington()&#160;:&#160;<a class="el" href="namespacemod__fld.html#ae4b0473cde5cb134920cc7505650e13b">mod_fld</a></li>
+<li>fld_get_fluxlimiter()&#160;:&#160;<a class="el" href="namespacemod__fld.html#a84e9e6eb8603ea5f429c6fab5477f778">mod_fld</a></li>
 <li>fld_get_opacity()&#160;:&#160;<a class="el" href="namespacemod__fld.html#a078e9ee0bdeb4d94763a97c2f009d9fd">mod_fld</a></li>
-<li>fld_get_radflux()&#160;:&#160;<a class="el" href="namespacemod__fld.html#a6c1d79e600784b4b0fae1a93216c6327">mod_fld</a></li>
-<li>fld_get_radpress()&#160;:&#160;<a class="el" href="namespacemod__fld.html#a12f189bf6be13f9396dd126a9513dfda">mod_fld</a></li>
-<li>fld_init()&#160;:&#160;<a class="el" href="namespacemod__fld.html#a4a07989036a4a163c0cfb9b6952f7e53">mod_fld</a></li>
+<li>fld_get_radflux()&#160;:&#160;<a class="el" href="namespacemod__fld.html#ac54bad97f6a46e7c89cee5698a217f46">mod_fld</a></li>
+<li>fld_get_radpress()&#160;:&#160;<a class="el" href="namespacemod__fld.html#a61306bd3278dc4b63570d46d7a4b654c">mod_fld</a></li>
+<li>fld_implicit_update()&#160;:&#160;<a class="el" href="namespacemod__fld.html#af84fc6e1d9d991a23def9a1f3e304f80">mod_fld</a></li>
+<li>fld_init()&#160;:&#160;<a class="el" href="namespacemod__fld.html#a644bcbf423e600ca2e0019f55394ca3d">mod_fld</a></li>
 <li>fld_params_read()&#160;:&#160;<a class="el" href="namespacemod__fld.html#a2fab030adfe37e60459f2f6c8140f091">mod_fld</a></li>
 <li>fld_radforce_get_dt()&#160;:&#160;<a class="el" href="namespacemod__fld.html#ad6c22947bcd2e35eb73047df6d59ce9c">mod_fld</a></li>
 <li>fld_smooth_diffcoef()&#160;:&#160;<a class="el" href="namespacemod__fld.html#aca3f250fedcc3f1382b2d77a70b0313d">mod_fld</a></li>

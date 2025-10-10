@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -101,11 +101,12 @@ Introduction</h1>
 <li><a class="el" href="md_doc_2par.html#par_nonlinearlist">nonlinear list</a> (see also <code><a class="el" href="namespacemod__nonlinear__phys.html" title="Module containing the physics routines for scalar nonlinear equation.">mod_nonlinear_phys</a></code>)</li>
 <li><a class="el" href="md_doc_2par.html#par_hdlist">HD list</a> (see also <code><a class="el" href="namespacemod__hd__phys.html" title="Hydrodynamics physics module.">mod_hd_phys</a></code>)</li>
 <li><a class="el" href="md_doc_2par.html#par_mhdlist">MHD list</a> (see also <code><a class="el" href="namespacemod__mhd__phys.html" title="Magneto-hydrodynamics module.">mod_mhd_phys</a></code>)</li>
+<li><a class="el" href="md_doc_2par.html#par_ffhdlist">ffHD list</a> (see also <code><a class="el" href="namespacemod__ffhd__phys.html" title="Frozen-field hydrodynamics module.">mod_ffhd_phys</a></code>)</li>
 </ul>
 <p>Further namelist are used to control optional modules. Most of these lists are not documented here, but the parameters are described in the corresponding modules:</p>
 <ul>
 <li><code>rc_list</code> (radiative cooling, see <code><a class="el" href="namespacemod__radiative__cooling.html" title="module radiative cooling – add optically thin radiative cooling for HD and MHD">mod_radiative_cooling</a></code>)</li>
-<li><code>tc_list</code> (thermal conduction, see <code><a class="el" href="namespacemod__thermal__conduction.html" title="Thermal conduction for HD and MHD Adaptation of mod_thermal_conduction for the mod_supertimestepping ...">mod_thermal_conduction</a></code>)</li>
+<li><code>tc_list</code> (thermal conduction, see <code><a class="el" href="namespacemod__thermal__conduction.html" title="Thermal conduction for HD and MHD or RHD and RMHD or twofl (plasma-neutral) module Adaptation of mod_...">mod_thermal_conduction</a></code>)</li>
 <li><code>dust_list</code> (dust, see <code><a class="el" href="namespacemod__dust.html" title="Module for including dust species, which interact with the gas through a drag force.">mod_dust</a></code>)</li>
 <li><code>vc_list</code> (viscosity, see <code><a class="el" href="namespacemod__viscosity.html" title="The module add viscous source terms and check time step.">mod_viscosity</a></code>)</li>
 <li><code>grav_list</code> (gravity, see <code><a class="el" href="namespacemod__gravity.html" title="Module for including gravity in (magneto)hydrodynamics simulations.">mod_gravity</a></code>)</li>
@@ -512,6 +513,24 @@ HD list</h2>
   He_abundance= DOUBLE from 0 to 1
   SI_unit= F | T
 /
+</pre> <h2><a class="anchor" id="par_ffhdlist"></a>
+ffHD list</h2>
+<pre class="fragment">&amp;hd_list
+  ffhd_energy= T | F
+  ffhd_gamma= DOUBLE 
+  ffhd_adiab= DOUBLE
+  ffhd_thermal_conduction= F | T
+  ffhd_hyperbolic_thermal_conduction= F | T
+  ffhd_radiative_cooling= F | T
+  ffhd_gravity= F | T
+  ffhd_viscosity= F | T
+  He_abundance= DOUBLE from 0 to 1
+  SI_unit= F | T
+  ffhd_trac= F | T
+  ffhd_trac_type= INTEGER from 1 to 6
+  ffhd_trac_mask= bigdouble
+  ffhd_trac_finegrid= INTEGER
+/
 </pre> <h2><a class="anchor" id="par_mhdlist"></a>
 MHD list</h2>
 <pre class="fragment">&amp;mhd_list
@@ -535,12 +554,13 @@ MHD list</h2>
  mhd_internal_e= F | T
  mhd_hydrodynamic_e= F | T
  mhd_semirelativistic= F | T
- mhd_boris_simplification= F | T
  mhd_reduced_c = 6.d8
  mhd_trac= F | T
  mhd_trac_type= INTEGER from 1 to 6
  mhd_trac_mask= bigdouble
  mhd_trac_finegrid= INTEGER
+ mhd_hyperbolic_thermal_conduction= F | T
+ mhd_htc_sat = F | T
  typedivbfix= 'linde'|'ct'|'glm'|'powel'|'lindejanhunen'|'lindepowel'|'lindeglm'|'multigrid'|'none'
  type_ct='uct_contact'|'uct_hll'|'average'
  source_split_divb= F | T
@@ -575,9 +595,15 @@ The transition region adaptive conduction (TRAC) method</h3>
 <h3><a class="anchor" id="par_AIE"></a>
 Solve internal or hydrodynamic energy to avoid negative pressure</h3>
 <p>In extremely low beta plasma, internal energy or gas pressure easily goes to negative values when solving total energy equation, because numerical error of magnetic energy is comparable to the internal energy due to its extremely small fraction in the total energy. We have two methods to avoid this problem. In the first method, we solve internal energy equation instead of total energy equation by setting <code>mhd_internal_e=T</code>. This function is compatible with all finite volume and finite difference schemes we have, including HLL, HLLC, and HLLD, in which the Riemann flux of the internal energy is evaluted as the HLL flux in all intermediate states of the Riemann fan. In the second method, We solve hydrodynamic energy, i.e., internal and kinetic energy, instead of total energy with an additional source term of Lorentz force work, by setting <code>mhd_hydrodynamic_e=T</code>, which has better conservation than solving internal energy.</p>
+<h3><a class="anchor" id="par_HTC"></a>
+Hyperbolic thermal conduction</h3>
+<p>In classical plasma theory, Spitzer-type thermal conduction is parabolic in nature, which imposes a severe timestep restriction when solved explicitly. Even with acceleration techniques such as super time stepping (already implemented in AMRVAC) or multigrid solvers, the conduction step remains computationally more expensive than the MHD (hyperbolic) part, and is often the bottleneck in the overall performance.</p>
+<p>An improved approach is to treat the conduction as hyperbolic by introducing a finite signal propagation speed (comparable to the global maximum velocity). In this formulation, the conduction no longer constrains the MHD timestep. Estimates of conduction timescales show that this approximation is well justified in the solar corona, but less accurate in the chromosphere and photosphere. However, since thermal conduction is not the dominant energy transport mechanism in those lower layers, the approximation is still acceptable.</p>
+<p>The specific form of hyperbolic thermal conduction adopted in AMRVAC is described in Zhou et al. 2025, ApJ, 978, 72. In the current implementation, the conductivity coefficient is fixed and constant, and only the field-aligned component is included. Variable coefficients and cross-field conduction are not yet supported. To activate this option, set mhd_hyperbolic_thermal_conduction = T and initialize the heat flux q_ to be zero in mod_usr.t. The boundary condition for q_ is automatically set to be the same as the one of density rho. Also, when mhd_hyperbolic_thermal_conduction is enabled, the parabolic conduction option mhd_thermal_conduction is automatically set to F to be disabled.</p>
+<p>During energetic events such as solar flares, conduction becomes saturated and its efficiency decreases. For this regime, one can enable the saturated conduction option by setting mhd_htc_sat = T.</p>
 <h3><a class="anchor" id="par_semirelati"></a>
 Solve semirelativistic MHD to tackle extreme Alfven speed</h3>
-<p>The Alfven speed in nonrelativistic MHD, defined as B/sqrt(mu rho), can be extremely large, even unphysically larger than speed of light in strong magnetic field and low density regions. Semirelativistic MHD equations (Gombosi et al. 2002 JCP 177, 176) as the nonrelativistic hydrodynamic limit of the relativistic MHD equations solve the problem and have the same steady-state solution as nonrelativistic MHD. By artificially lowering the speed of light, one can reduce the wave speeds allowing larger time steps thus faster solution in explicit numerical schemes. Set 'mhd_semirelativistic=T' and 'mhd_reduced_c' equals to a value smaller than light speed with physical unit to solve semirelativistic MHD. If setting 'mhd_hydrodynamic_e=T' or 'mhd_internal_e=T', the approximate split semirelativistic MHD equations (Rempel 2017 ApJ 834, 10) are solved with hydrodynamic or internal energy instead of total energy. Boris simplification of semirelativistic MHD equations can be solved by setting 'mhd_boris_simplification=T' and 'mhd_semirelativistic=F' to get faster but less accurate solutions. 'mhd_boris_simplification=T' is working with all versions of MHD equations including 'mhd_internal_e=T' and 'mhd_hydrodynamic_e=T'. Since semirelativistic MHD waves are very complicated, only approximate fast magnetosonic wave speed is implemented to use HLL or tvdlf scheme, schemes (such as HLLC and HLLD) depending on more wave speeds are not yet fully compatible with semirelativistic MHD. Note that when using semirelativistic MHD, the definitions of momentum and total energy are different from MHD, so call 'mhd_to_primitive' to get velocity and gas pressure from momentum and total energy instead of using the classic relations.</p>
+<p>The Alfven speed in nonrelativistic MHD, defined as B/sqrt(mu rho), can be extremely large, even unphysically larger than speed of light in strong magnetic field and low density regions. Semirelativistic MHD equations (Gombosi et al. 2002 JCP 177, 176) as the nonrelativistic hydrodynamic limit of the relativistic MHD equations solve the problem and have the same steady-state solution as nonrelativistic MHD. By artificially lowering the speed of light, one can reduce the wave speeds allowing larger time steps thus faster solution in explicit numerical schemes. Set 'mhd_semirelativistic=T' and 'mhd_reduced_c' equals to a value smaller than light speed with physical unit to solve semirelativistic MHD. If setting 'mhd_hydrodynamic_e=T' or 'mhd_internal_e=T', the approximate split semirelativistic MHD equations (Rempel 2017 ApJ 834, 10) are solved with hydrodynamic or internal energy instead of total energy. Since semirelativistic MHD waves are very complicated, only approximate fast magnetosonic wave speed is implemented to use HLL or tvdlf scheme, schemes (such as HLLC and HLLD) depending on more wave speeds are not yet fully compatible with semirelativistic MHD. Note that when using semirelativistic MHD, the definitions of momentum and total energy are different from MHD, so call 'mhd_to_primitive' to get velocity and gas pressure from momentum and total energy instead of using the classic relations.</p>
 <h2><a class="anchor" id="par_emissionlist"></a>
 Synthetic EUV/SXR/whitelight emission</h2>
 <p>User can synthesize EUV images, EUV spectra, SXR images and whitelight images using 3D .dat files inside amrvac. These can be finished easily by adding some parameters into .par file. The images/spectra will be output to .vtu/.vti files when the convert_type in <a class="el" href="md_doc_2par.html#par_filelist">Filelist</a> is set to 'EIvtiCCmpi', 'ESvtiCCmpi', 'SIvtiCCmpi' ... Thehe size of a pixel is the same as that in relevant observation data (such as SDO and RHESSI). The point spread function (PSF, instrument effect) has been included for 'instrument' resolution.</p>

@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -136,7 +136,7 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a9da17e169bb86a39e89dd9bf0835b3f0" id="r_a9da17e169bb86a39e89dd9bf0835b3f0"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__magnetofriction.html#a9da17e169bb86a39e89dd9bf0835b3f0">addgeometrymf</a> (qdt, ixil, ixol, wct, w, x)</td></tr>
 <tr class="separator:a9da17e169bb86a39e89dd9bf0835b3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b065f58db4ef35aafd649b2facb98ac" id="r_a8b065f58db4ef35aafd649b2facb98ac"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__magnetofriction.html#a8b065f58db4ef35aafd649b2facb98ac">get_current</a> (w, ixil, ixol, idirmin, current)</td></tr>
-<tr class="memdesc:a8b065f58db4ef35aafd649b2facb98ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#af2f7436240818f02fc7b675a70cae4a3">dxlevel(^D)</a> is set correctly.  <br /></td></tr>
+<tr class="memdesc:a8b065f58db4ef35aafd649b2facb98ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#ac487446056522027f949f42ba64b2e11" title="store unstretched cell size of current level">dxlevel(^D)</a> is set correctly.  <br /></td></tr>
 <tr class="separator:a8b065f58db4ef35aafd649b2facb98ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc241ee694a818d52fbbbcfd9718b2ba" id="r_afc241ee694a818d52fbbbcfd9718b2ba"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__magnetofriction.html#afc241ee694a818d52fbbbcfd9718b2ba">get_divb</a> (w, ixil, ixol, divb)</td></tr>
 <tr class="memdesc:afc241ee694a818d52fbbbcfd9718b2ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate div B within ixO.  <br /></td></tr>
@@ -331,7 +331,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,165,168,205"/>
 <area shape="rect" href="namespacemod__fix__conserve.html#ad236c15eff28ba77007d6b30944c4960" title=" " alt="" coords="235,5,399,45"/>
 <area shape="poly" title=" " alt="" coords="101,163,148,110,180,80,215,55,226,49,229,53,217,60,183,85,152,113,105,167"/>
-<area shape="rect" href="namespacemod__ghostcells__update.html#abc70508ceb326fb28166d751e5de31fc" title="do update ghost cells of all blocks including physical boundaries" alt="" coords="229,69,405,109"/>
+<area shape="rect" href="namespacemod__ghostcells__update.html#a1b945d19ee179d85b1b4a719a8dfcad6" title="do update ghost cells of all blocks including physical boundaries" alt="" coords="229,69,405,109"/>
 <area shape="poly" title=" " alt="" coords="123,163,215,119,235,111,236,116,217,124,125,168"/>
 <area shape="rect" href="namespacemod__magnetofriction.html#aa80c1fdbbd16d0e4ebac788ac232f124" title=" " alt="" coords="236,133,399,173"/>
 <area shape="poly" title=" " alt="" coords="168,171,222,164,223,169,169,177"/>
@@ -603,7 +603,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title="Clean divergence of magnetic field by Janhunen&#39;s and Linde&#39;s source terms." alt="" coords="5,35,168,75"/>
 <area shape="rect" href="namespacemod__magnetofriction.html#afc241ee694a818d52fbbbcfd9718b2ba" title="Calculate div B within ixO." alt="" coords="226,5,389,45"/>
 <area shape="poly" title=" " alt="" coords="168,41,212,35,213,41,169,46"/>
-<area shape="rect" href="namespacemod__geometry.html#a5e16962a2f11058e42599f6c5e21f207" title="Calculate gradient of a scalar q within ixL in direction idir." alt="" coords="216,70,399,95"/>
+<area shape="rect" href="namespacemod__geometry.html#a9be440eb43ae039be6f1e52e5c841f69" title=" " alt="" coords="216,70,399,95"/>
 <area shape="poly" title=" " alt="" coords="169,62,203,67,202,72,168,68"/>
 </map>
 </div>
@@ -858,7 +858,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#af2f7436240818f02fc7b675a70cae4a3">dxlevel(^D)</a> is set correctly. </p>
+<p>Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#ac487446056522027f949f42ba64b2e11" title="store unstretched cell size of current level">dxlevel(^D)</a> is set correctly. </p>
 
 <p class="definition">Definition at line <a class="el" href="mod__magnetofriction_8t_source.html#l01397">1397</a> of file <a class="el" href="mod__magnetofriction_8t_source.html">mod_magnetofriction.t</a>.</p>
 <div class="dynheader">
@@ -933,7 +933,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespacemod__magnetofriction_afc241ee694a818d52fbbbcfd9718b2ba_cgraph.png" border="0" usemap="#anamespacemod__magnetofriction_afc241ee694a818d52fbbbcfd9718b2ba_cgraph" alt=""/></div>
 <map name="anamespacemod__magnetofriction_afc241ee694a818d52fbbbcfd9718b2ba_cgraph" id="anamespacemod__magnetofriction_afc241ee694a818d52fbbbcfd9718b2ba_cgraph">
 <area shape="rect" title="Calculate div B within ixO." alt="" coords="5,23,168,63"/>
-<area shape="rect" href="namespacemod__geometry.html#a39518671a1f2871551c3726c91f2ca21" title="Calculate divergence of a vector qvec within ixL." alt="" coords="219,5,409,31"/>
+<area shape="rect" href="namespacemod__geometry.html#a34777249130c0a609ca96597bb403b30" title=" " alt="" coords="219,5,409,31"/>
 <area shape="poly" title=" " alt="" coords="168,32,205,27,206,33,169,37"/>
 <area shape="rect" href="namespacemod__geometry.html#aa38fdb510ba28c2d2152f575d1ccf20f" title="Calculate divergence of a vector qvec within ixL using limited extrapolation to cell edges." alt="" coords="216,55,412,80"/>
 <area shape="poly" title=" " alt="" coords="169,49,203,53,202,58,168,55"/>
@@ -1287,7 +1287,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="95,247,112,214,139,175,173,136,215,106,280,80,349,68,418,64,480,66,480,72,418,69,350,73,282,86,217,110,176,140,143,178,117,217,100,249"/>
 <area shape="rect" href="namespacemod__ghostcells__update.html#a5a035ca86bfa7e52a61d1ba8f5d1389d" title=" " alt="" coords="233,120,424,160"/>
 <area shape="poly" title=" " alt="" coords="108,246,155,207,215,170,231,163,233,167,217,174,158,212,111,250"/>
-<area shape="rect" href="namespacemod__ghostcells__update.html#abc70508ceb326fb28166d751e5de31fc" title="do update ghost cells of all blocks including physical boundaries" alt="" coords="241,184,417,224"/>
+<area shape="rect" href="namespacemod__ghostcells__update.html#a1b945d19ee179d85b1b4a719a8dfcad6" title="do update ghost cells of all blocks including physical boundaries" alt="" coords="241,184,417,224"/>
 <area shape="poly" title=" " alt="" coords="162,245,239,225,240,230,164,251"/>
 <area shape="rect" href="namespacemod__magnetofriction.html#a1dacdad96eabfb8e026e4f7e764b98e1" title=" " alt="" coords="247,248,410,288"/>
 <area shape="poly" title=" " alt="" coords="168,265,233,265,233,271,168,271"/>

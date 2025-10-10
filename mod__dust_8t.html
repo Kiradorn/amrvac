@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -135,6 +135,15 @@ Functions/Subroutines</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a0e0e400aeb3c7f7fe0a828766a3f02cf" id="r_a0e0e400aeb3c7f7fe0a828766a3f02cf"><td class="memItemLeft" align="right" valign="top">double precision, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__dust.html#a0e0e400aeb3c7f7fe0a828766a3f02cf">mod_dust::dust_min_rho</a> = -1.0d0</td></tr>
+<tr class="memdesc:a0e0e400aeb3c7f7fe0a828766a3f02cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum dust density as used when dust_small_to_zero=T.  <br /></td></tr>
+<tr class="separator:a0e0e400aeb3c7f7fe0a828766a3f02cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ac2551062b9bacde6164a8b2e179120" id="r_a5ac2551062b9bacde6164a8b2e179120"><td class="memItemLeft" align="right" valign="top">double precision, dimension(:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__dust.html#a5ac2551062b9bacde6164a8b2e179120">mod_dust::dust_size</a></td></tr>
+<tr class="memdesc:a5ac2551062b9bacde6164a8b2e179120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of each dust species, dimensionless expression.  <br /></td></tr>
+<tr class="separator:a5ac2551062b9bacde6164a8b2e179120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9e82b7f4141ab314e95a1598f7ece7a" id="r_af9e82b7f4141ab314e95a1598f7ece7a"><td class="memItemLeft" align="right" valign="top">double precision, dimension(:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__dust.html#af9e82b7f4141ab314e95a1598f7ece7a">mod_dust::dust_density</a></td></tr>
+<tr class="memdesc:af9e82b7f4141ab314e95a1598f7ece7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal density of each dust species, dimensionless expression.  <br /></td></tr>
+<tr class="separator:af9e82b7f4141ab314e95a1598f7ece7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e84e809ba53fffe368aab3ae16ce5ac" id="r_a8e84e809ba53fffe368aab3ae16ce5ac"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__dust.html#a8e84e809ba53fffe368aab3ae16ce5ac">mod_dust::dust_n_species</a> = 0</td></tr>
 <tr class="memdesc:a8e84e809ba53fffe368aab3ae16ce5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of dust species.  <br /></td></tr>
 <tr class="separator:a8e84e809ba53fffe368aab3ae16ce5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,18 +153,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a7a080e96d8e9cf5d86eb430bbf82cb4e" id="r_a7a080e96d8e9cf5d86eb430bbf82cb4e"><td class="memItemLeft" align="right" valign="top">integer, dimension(:, :), allocatable, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__dust.html#a7a080e96d8e9cf5d86eb430bbf82cb4e">mod_dust::dust_mom</a></td></tr>
 <tr class="memdesc:a7a080e96d8e9cf5d86eb430bbf82cb4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the dust momentum densities.  <br /></td></tr>
 <tr class="separator:a7a080e96d8e9cf5d86eb430bbf82cb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ac2551062b9bacde6164a8b2e179120" id="r_a5ac2551062b9bacde6164a8b2e179120"><td class="memItemLeft" align="right" valign="top">double precision, dimension(:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__dust.html#a5ac2551062b9bacde6164a8b2e179120">mod_dust::dust_size</a></td></tr>
-<tr class="memdesc:a5ac2551062b9bacde6164a8b2e179120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of each dust species, dimensionless expression.  <br /></td></tr>
-<tr class="separator:a5ac2551062b9bacde6164a8b2e179120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9e82b7f4141ab314e95a1598f7ece7a" id="r_af9e82b7f4141ab314e95a1598f7ece7a"><td class="memItemLeft" align="right" valign="top">double precision, dimension(:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__dust.html#af9e82b7f4141ab314e95a1598f7ece7a">mod_dust::dust_density</a></td></tr>
-<tr class="memdesc:af9e82b7f4141ab314e95a1598f7ece7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal density of each dust species, dimensionless expression.  <br /></td></tr>
-<tr class="separator:af9e82b7f4141ab314e95a1598f7ece7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a804ba7ea402db06cbf2bb579eddfdf15" id="r_a804ba7ea402db06cbf2bb579eddfdf15"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__dust.html#a804ba7ea402db06cbf2bb579eddfdf15">mod_dust::dust_small_to_zero</a> = .false.</td></tr>
 <tr class="memdesc:a804ba7ea402db06cbf2bb579eddfdf15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set small dust densities to zero to avoid numerical problems.  <br /></td></tr>
 <tr class="separator:a804ba7ea402db06cbf2bb579eddfdf15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e0e400aeb3c7f7fe0a828766a3f02cf" id="r_a0e0e400aeb3c7f7fe0a828766a3f02cf"><td class="memItemLeft" align="right" valign="top">double precision, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__dust.html#a0e0e400aeb3c7f7fe0a828766a3f02cf">mod_dust::dust_min_rho</a> = -1.0d0</td></tr>
-<tr class="memdesc:a0e0e400aeb3c7f7fe0a828766a3f02cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum dust density as used when dust_small_to_zero=T.  <br /></td></tr>
-<tr class="separator:a0e0e400aeb3c7f7fe0a828766a3f02cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6186fc0a20cbb6768ca31e508ffc3f91" id="r_a6186fc0a20cbb6768ca31e508ffc3f91"><td class="memItemLeft" align="right" valign="top">character(len=std_len), public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__dust.html#a6186fc0a20cbb6768ca31e508ffc3f91">mod_dust::dust_method</a> = 'Kwok'</td></tr>
 <tr class="memdesc:a6186fc0a20cbb6768ca31e508ffc3f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">What type of dust drag force to use. Can be 'Kwok', 'sticking', 'linear', 'usr' or 'none'.  <br /></td></tr>
 <tr class="separator:a6186fc0a20cbb6768ca31e508ffc3f91"><td class="memSeparator" colspan="2">&#160;</td></tr>

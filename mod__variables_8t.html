@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -123,6 +123,8 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a3dd9a395683ebcd228b4e4ac89e0beaa" id="r_a3dd9a395683ebcd228b4e4ac89e0beaa"><td class="memItemLeft" align="right" valign="top">integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a3dd9a395683ebcd228b4e4ac89e0beaa">mod_variables::var_set_energy</a> ()</td></tr>
 <tr class="memdesc:a3dd9a395683ebcd228b4e4ac89e0beaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set energy variable.  <br /></td></tr>
 <tr class="separator:a3dd9a395683ebcd228b4e4ac89e0beaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01850f1667e46549e67e8ff4c01c11bd" id="r_a01850f1667e46549e67e8ff4c01c11bd"><td class="memItemLeft" align="right" valign="top">integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a01850f1667e46549e67e8ff4c01c11bd">mod_variables::var_set_q</a> ()</td></tr>
+<tr class="separator:a01850f1667e46549e67e8ff4c01c11bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dbddacd3db09fa1be672dece6f2e343" id="r_a9dbddacd3db09fa1be672dece6f2e343"><td class="memItemLeft" align="right" valign="top">integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a9dbddacd3db09fa1be672dece6f2e343">mod_variables::var_set_radiation_energy</a> ()</td></tr>
 <tr class="separator:a9dbddacd3db09fa1be672dece6f2e343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac367c759b5cd63f9375d0c2be9eff03c" id="r_ac367c759b5cd63f9375d0c2be9eff03c"><td class="memItemLeft" align="right" valign="top">integer function, dimension(ndir)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#ac367c759b5cd63f9375d0c2be9eff03c">mod_variables::var_set_bfield</a> (ndir)</td></tr>
@@ -166,12 +168,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a8c13cdaddf33454c9ad6eb8363afbd4d" id="r_a8c13cdaddf33454c9ad6eb8363afbd4d"><td class="memItemLeft" align="right" valign="top">integer, parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a8c13cdaddf33454c9ad6eb8363afbd4d">mod_variables::max_nw</a> = 50</td></tr>
 <tr class="memdesc:a8c13cdaddf33454c9ad6eb8363afbd4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of variables.  <br /></td></tr>
 <tr class="separator:a8c13cdaddf33454c9ad6eb8363afbd4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09b0a06d828a916c6ca43e7ad8fd4876" id="r_a09b0a06d828a916c6ca43e7ad8fd4876"><td class="memItemLeft" align="right" valign="top">character(len=<a class="el" href="namespacemod__basic__types.html#a18ae5615f4714c04bd96aeff5856cc3f">name_len</a>), dimension(<a class="el" href="namespacemod__variables.html#a8c13cdaddf33454c9ad6eb8363afbd4d">max_nw</a>)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a09b0a06d828a916c6ca43e7ad8fd4876">mod_variables::prim_wnames</a></td></tr>
-<tr class="memdesc:a09b0a06d828a916c6ca43e7ad8fd4876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive variable names.  <br /></td></tr>
-<tr class="separator:a09b0a06d828a916c6ca43e7ad8fd4876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d0458a7e733f2a22e59913dcbe257f2" id="r_a0d0458a7e733f2a22e59913dcbe257f2"><td class="memItemLeft" align="right" valign="top">character(len=<a class="el" href="namespacemod__basic__types.html#a18ae5615f4714c04bd96aeff5856cc3f">name_len</a>), dimension(<a class="el" href="namespacemod__variables.html#a8c13cdaddf33454c9ad6eb8363afbd4d">max_nw</a>)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a0d0458a7e733f2a22e59913dcbe257f2">mod_variables::cons_wnames</a></td></tr>
-<tr class="memdesc:a0d0458a7e733f2a22e59913dcbe257f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conservative variable names.  <br /></td></tr>
-<tr class="separator:a0d0458a7e733f2a22e59913dcbe257f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7b6a95e76bfae721db73596093c2340" id="r_aa7b6a95e76bfae721db73596093c2340"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#aa7b6a95e76bfae721db73596093c2340">mod_variables::iw_rho</a> = -1</td></tr>
 <tr class="memdesc:aa7b6a95e76bfae721db73596093c2340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the (gas) density.  <br /></td></tr>
 <tr class="separator:aa7b6a95e76bfae721db73596093c2340"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,12 +180,17 @@ Variables</h2></td></tr>
 <tr class="memitem:ab618464ebd5883bba46c082d2de72a68" id="r_ab618464ebd5883bba46c082d2de72a68"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#ab618464ebd5883bba46c082d2de72a68">mod_variables::iw_r_e</a> = -1</td></tr>
 <tr class="memdesc:ab618464ebd5883bba46c082d2de72a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the radiation energy density.  <br /></td></tr>
 <tr class="separator:ab618464ebd5883bba46c082d2de72a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc21b1128568ee026893cdc115fc7f0" id="r_accc21b1128568ee026893cdc115fc7f0"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#accc21b1128568ee026893cdc115fc7f0">mod_variables::iw_q</a> = -1</td></tr>
+<tr class="memdesc:accc21b1128568ee026893cdc115fc7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of heat flux.  <br /></td></tr>
+<tr class="separator:accc21b1128568ee026893cdc115fc7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a653576f4d89ed96d1d577cb5a6b239c2" id="r_a653576f4d89ed96d1d577cb5a6b239c2"><td class="memItemLeft" align="right" valign="top">integer, dimension(:), allocatable, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a653576f4d89ed96d1d577cb5a6b239c2">mod_variables::iw_mag</a></td></tr>
 <tr class="memdesc:a653576f4d89ed96d1d577cb5a6b239c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the magnetic field components.  <br /></td></tr>
 <tr class="separator:a653576f4d89ed96d1d577cb5a6b239c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a083b126e65f29634498948d96545e040" id="r_a083b126e65f29634498948d96545e040"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a083b126e65f29634498948d96545e040">mod_variables::iw_tcoff</a> = -1</td></tr>
 <tr class="memdesc:a083b126e65f29634498948d96545e040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the cutoff temperature for the TRAC method.  <br /></td></tr>
 <tr class="separator:a083b126e65f29634498948d96545e040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b112ed5c7309f40b4ec6953ad68439" id="r_a67b112ed5c7309f40b4ec6953ad68439"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a67b112ed5c7309f40b4ec6953ad68439">mod_variables::iw_tweight</a> = -1</td></tr>
+<tr class="separator:a67b112ed5c7309f40b4ec6953ad68439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48e1ec7a6c346bcf9ce781f97334b0ca" id="r_a48e1ec7a6c346bcf9ce781f97334b0ca"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a48e1ec7a6c346bcf9ce781f97334b0ca">mod_variables::number_species</a> = 1</td></tr>
 <tr class="memdesc:a48e1ec7a6c346bcf9ce781f97334b0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of species: each species has different characterictic speeds and should be used accordingly in <a class="el" href="namespacemod__finite__volume.html" title="Module with finite volume methods for fluxes.">mod_finite_volume</a> and <a class="el" href="namespacemod__finite__difference.html" title="Module with finite difference methods for fluxes.">mod_finite_difference</a>  <br /></td></tr>
 <tr class="separator:a48e1ec7a6c346bcf9ce781f97334b0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,6 +207,12 @@ Variables</h2></td></tr>
 <tr class="separator:a14702e0ceec9a0807cc7a347a4bbea5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc7dc2944d824d524068c56dad3b413e" id="r_abc7dc2944d824d524068c56dad3b413e"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#abc7dc2944d824d524068c56dad3b413e">mod_variables::iw_equi_p</a> = -1</td></tr>
 <tr class="separator:abc7dc2944d824d524068c56dad3b413e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09b0a06d828a916c6ca43e7ad8fd4876" id="r_a09b0a06d828a916c6ca43e7ad8fd4876"><td class="memItemLeft" align="right" valign="top">character(len=<a class="el" href="namespacemod__basic__types.html#a18ae5615f4714c04bd96aeff5856cc3f">name_len</a>), dimension(<a class="el" href="namespacemod__variables.html#a8c13cdaddf33454c9ad6eb8363afbd4d">max_nw</a>)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a09b0a06d828a916c6ca43e7ad8fd4876">mod_variables::prim_wnames</a></td></tr>
+<tr class="memdesc:a09b0a06d828a916c6ca43e7ad8fd4876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primitive variable names.  <br /></td></tr>
+<tr class="separator:a09b0a06d828a916c6ca43e7ad8fd4876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d0458a7e733f2a22e59913dcbe257f2" id="r_a0d0458a7e733f2a22e59913dcbe257f2"><td class="memItemLeft" align="right" valign="top">character(len=<a class="el" href="namespacemod__basic__types.html#a18ae5615f4714c04bd96aeff5856cc3f">name_len</a>), dimension(<a class="el" href="namespacemod__variables.html#a8c13cdaddf33454c9ad6eb8363afbd4d">max_nw</a>)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__variables.html#a0d0458a7e733f2a22e59913dcbe257f2">mod_variables::cons_wnames</a></td></tr>
+<tr class="memdesc:a0d0458a7e733f2a22e59913dcbe257f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conservative variable names.  <br /></td></tr>
+<tr class="separator:a0d0458a7e733f2a22e59913dcbe257f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

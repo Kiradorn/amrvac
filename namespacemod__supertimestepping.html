@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -185,7 +185,7 @@ Variables</h2></td></tr>
 
 <p>subroutine which added programatically a term to be calculated using STS Params: sts_getdt function calculates the explicit timestep for this term sts_set_sources subroutine sets the source term startVar, endVar, nflux indices of start, end, and number of the variables that need fix conservation startwbc, nwbc indices of start and number of the variables that need ghost cell exchange These terms implemented by an element of the derived type sts_term are put in a linked list </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00198">198</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00199">199</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 
 </div>
 </div>
@@ -201,7 +201,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00166">166</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00167">167</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 
 </div>
 </div>
@@ -233,7 +233,7 @@ Variables</h2></td></tr>
 
 <p>Set the hooks called before the first cycle and after the last cycle in the STS update This method should be called after add_sts_method. The hooks are added to the last term added with this subroutine Params: sts_before_first_cycle, sts_after_last_cycle subroutines which implement the hooks called before first cycle and after last cycle. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00251">251</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00252">252</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 
 </div>
 </div>
@@ -255,7 +255,7 @@ Variables</h2></td></tr>
 
 <p>This sets the explicit dt and calculates the number of cycles for each of the terms implemented with STS. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00345">345</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00346">346</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -270,7 +270,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="135,227,232,183,252,175,254,180,234,188,137,232"/>
 <area shape="rect" href="namespacemod__fix__conserve.html#a3e7ff76fcc6944ccea619a812869181f" title=" " alt="" coords="253,197,417,237"/>
 <area shape="poly" title=" " alt="" coords="185,235,239,227,240,233,186,240"/>
-<area shape="rect" href="namespacemod__ghostcells__update.html#abc70508ceb326fb28166d751e5de31fc" title="do update ghost cells of all blocks including physical boundaries" alt="" coords="247,261,423,301"/>
+<area shape="rect" href="namespacemod__ghostcells__update.html#a1b945d19ee179d85b1b4a719a8dfcad6" title="do update ghost cells of all blocks including physical boundaries" alt="" coords="247,261,423,301"/>
 <area shape="poly" title=" " alt="" coords="186,259,233,265,232,270,185,264"/>
 <area shape="rect" href="namespacemod__fix__conserve.html#a2e4c6023056bcf10b8c09fffde678679" title=" " alt="" coords="250,325,419,365"/>
 <area shape="poly" title=" " alt="" coords="137,267,234,311,254,318,252,323,232,316,135,272"/>
@@ -301,7 +301,7 @@ Here is the call graph for this function:</div>
 
 <p>Set the hook of error handling in the STS update. This method is called before updating the BC. This method should be called after add_sts_method. The hook is added to the last term added with this subroutine. Param: sts_error_handing the subroutine which handles the errors. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00276">276</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00277">277</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 
 </div>
 </div>
@@ -319,7 +319,17 @@ Here is the call graph for this function:</div>
 
 <p>Initialize sts module. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00145">145</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00146">146</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacemod__supertimestepping_ae300305fc391679ed668a2d0eb686b67_cgraph.png" border="0" usemap="#anamespacemod__supertimestepping_ae300305fc391679ed668a2d0eb686b67_cgraph" alt=""/></div>
+<map name="anamespacemod__supertimestepping_ae300305fc391679ed668a2d0eb686b67_cgraph" id="anamespacemod__supertimestepping_ae300305fc391679ed668a2d0eb686b67_cgraph">
+<area shape="rect" title="Initialize sts module." alt="" coords="5,5,185,45"/>
+<area shape="rect" href="namespacemod__comm__lib.html#a9b6f1a8fd13bc5670e3b426151c34048" title="Exit MPI&#45;AMRVAC with an error message." alt="" coords="233,13,416,38"/>
+<area shape="poly" title=" " alt="" coords="186,23,219,23,219,28,186,28"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -336,7 +346,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00136">136</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00137">137</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 
 </div>
 </div>
@@ -352,7 +362,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00040">40</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00044">44</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 
 </div>
 </div>
@@ -368,7 +378,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00038">38</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00042">42</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 
 </div>
 </div>
@@ -384,7 +394,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00037">37</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00041">41</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 
 </div>
 </div>
@@ -400,7 +410,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00039">39</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00043">43</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 
 </div>
 </div>
@@ -416,7 +426,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00139">139</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__supertimestepping_8t_source.html#l00140">140</a> of file <a class="el" href="mod__supertimestepping_8t_source.html">mod_supertimestepping.t</a>.</p>
 
 </div>
 </div>

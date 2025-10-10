@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -112,12 +112,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespacemod__oneblock.html#a65a3ed41b4498a115d852d93a7c3fed4">   19</a></span>  <span class="keyword">subroutine </span><a class="code hl_function" href="namespacemod__oneblock.html#a65a3ed41b4498a115d852d93a7c3fed4">read_oneblock</a>(filename)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">use </span><a class="code hl_namespace" href="namespacemod__global__parameters.html">mod_global_parameters</a></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span>             :: filename</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">character(len=1024)</span>                      :: outfilehead</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">integer</span>                                  :: nctot, ix^D, ixp^D</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">double precision</span>                         :: time</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">integer</span>                                  :: idim</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">integer</span>,<span class="keywordtype">dimension(^ND)</span>                   :: sendbuff</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordtype">double precision</span>                         :: time</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">integer</span>                                  :: nctot, ix^D, ixp^D</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">integer</span>                                  :: idim</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">integer</span>,<span class="keywordtype">dimension(^ND)</span>                   :: sendbuff</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span>             :: filename</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">character(len=1024)</span>                      :: outfilehead</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacemod__global__parameters.html#a605b2c8e7a386f644c7f8817421b6d67">mype</a> == 0) <span class="keyword">write</span>(*,*) <span class="stringliteral">&#39;mod_oneblock: reading &#39;</span>,nw,<span class="stringliteral">&#39; variables on unit:&#39;</span>, <a class="code hl_variable" href="namespacemod__oneblock.html#a269faa4411f29bf58b9fe10b30dc3d82">unit</a></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
@@ -172,15 +172,15 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(out)</span>                           :: out</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">! .. local ..</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordtype">double precision</span>, <span class="keywordtype">dimension(^ND)</span>                        :: xloc</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">integer</span>                                                 :: ic^D, ic1^D, ic2^D</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">double precision</span>                                        :: xd^D</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  {^iftwod</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">double precision</span>                                        :: c00, c10</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  {^ifthreed</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordtype">double precision</span>                                        :: c0, c1, c00, c10, c01, c11</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordtype">integer</span>                                                 :: ipivot^D, idir</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">double precision</span>                                        :: xd^D</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  {^iftwod</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordtype">double precision</span>                                        :: c00, c10</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  {^ifthreed</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">double precision</span>                                        :: c0, c1, c00, c10, c01, c11</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">integer</span>                                                 :: ipivot^D, idir</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordtype">integer</span>                                                 :: ic^D, ic1^D, ic2^D</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  xloc=x</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
@@ -296,7 +296,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="anamespacemod__comm__lib_html"><div class="ttname"><a href="namespacemod__comm__lib.html">mod_comm_lib</a></div><div class="ttdef"><b>Definition</b> <a href="mod__comm__lib_8t_source.html#l00001">mod_comm_lib.t:1</a></div></div>
 <div class="ttc" id="anamespacemod__comm__lib_html_a9b6f1a8fd13bc5670e3b426151c34048"><div class="ttname"><a href="namespacemod__comm__lib.html#a9b6f1a8fd13bc5670e3b426151c34048">mod_comm_lib::mpistop</a></div><div class="ttdeci">subroutine, public mpistop(message)</div><div class="ttdoc">Exit MPI-AMRVAC with an error message.</div><div class="ttdef"><b>Definition</b> <a href="mod__comm__lib_8t_source.html#l00207">mod_comm_lib.t:208</a></div></div>
 <div class="ttc" id="anamespacemod__global__parameters_html"><div class="ttname"><a href="namespacemod__global__parameters.html">mod_global_parameters</a></div><div class="ttdoc">This module contains definitions of global parameters and variables and some generic functions/subrou...</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00004">mod_global_parameters.t:4</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_a605b2c8e7a386f644c7f8817421b6d67"><div class="ttname"><a href="namespacemod__global__parameters.html#a605b2c8e7a386f644c7f8817421b6d67">mod_global_parameters::mype</a></div><div class="ttdeci">integer mype</div><div class="ttdoc">The rank of the current MPI task.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00022">mod_global_parameters.t:22</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_a605b2c8e7a386f644c7f8817421b6d67"><div class="ttname"><a href="namespacemod__global__parameters.html#a605b2c8e7a386f644c7f8817421b6d67">mod_global_parameters::mype</a></div><div class="ttdeci">integer mype</div><div class="ttdoc">The rank of the current MPI task.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00221">mod_global_parameters.t:221</a></div></div>
 <div class="ttc" id="anamespacemod__oneblock_html"><div class="ttname"><a href="namespacemod__oneblock.html">mod_oneblock</a></div><div class="ttdef"><b>Definition</b> <a href="mod__oneblock_8t_source.html#l00007">mod_oneblock.t:7</a></div></div>
 <div class="ttc" id="anamespacemod__oneblock_html_a269faa4411f29bf58b9fe10b30dc3d82"><div class="ttname"><a href="namespacemod__oneblock.html#a269faa4411f29bf58b9fe10b30dc3d82">mod_oneblock::unit</a></div><div class="ttdeci">integer unit</div><div class="ttdef"><b>Definition</b> <a href="mod__oneblock_8t_source.html#l00015">mod_oneblock.t:15</a></div></div>
 <div class="ttc" id="anamespacemod__oneblock_html_a37074f6c500f5dfde23b1cf5a4fb0f90"><div class="ttname"><a href="namespacemod__oneblock.html#a37074f6c500f5dfde23b1cf5a4fb0f90">mod_oneblock::d</a></div><div class="ttdeci">integer d</div><div class="ttdef"><b>Definition</b> <a href="mod__oneblock_8t_source.html#l00014">mod_oneblock.t:14</a></div></div>

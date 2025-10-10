@@ -1,13 +1,12 @@
 <map id="mod_slice::put_slice" name="mod_slice::put_slice">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,54,160,79"/>
-<area shape="rect" id="Node000002" href="$namespacemod__slice.html#af1779f67911ecd3bab21aafbc64f5523" title=" " alt="" coords="453,5,596,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,51,152,30,207,13,268,5,329,3,440,10,440,16,329,9,268,11,209,19,154,35,108,56"/>
-<area shape="rect" id="Node000003" href="$namespacemod__comm__lib.html#a9b6f1a8fd13bc5670e3b426151c34048" title="Exit MPI&#45;AMRVAC with an error message." alt="" coords="208,29,391,54"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,55,194,51,195,56,160,60"/>
-<area shape="rect" id="Node000004" href="$mod__slice_8t.html#ad9366c8b9a5321087966ad6804d65e77" title=" " alt="" coords="245,78,353,103"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,73,232,81,231,86,160,78"/>
-<area shape="rect" id="Node000008" href="$namespacemod__slice.html#ae7077f697521c2588f38cdb3b4df4e6e" title=" " alt="" coords="439,103,611,129"/>
-<area shape="poly" id="edge6_Node000001_Node000008" title=" " alt="" coords="109,77,155,97,209,113,264,121,320,125,425,123,425,128,320,130,263,126,207,119,153,102,107,82"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="346,75,390,63,444,47,445,52,391,68,347,81"/>
-<area shape="poly" id="edge5_Node000004_Node000008" title=" " alt="" coords="354,94,425,102,424,107,353,99"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,53,160,78"/>
+<area shape="rect" id="Node000002" href="$namespacemod__slice.html#af1779f67911ecd3bab21aafbc64f5523" title=" " alt="" coords="439,20,581,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,50,152,29,207,12,259,4,299,3,391,12,426,17,425,23,390,18,299,8,259,10,209,17,154,34,108,55"/>
+<area shape="rect" id="Node000003" href="$namespacemod__comm__lib.html#a9b6f1a8fd13bc5670e3b426151c34048" title="Exit MPI&#45;AMRVAC with an error message." alt="" coords="208,28,391,53"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,54,194,50,195,55,160,59"/>
+<area shape="rect" id="Node000004" href="$mod__slice_8t.html#ad9366c8b9a5321087966ad6804d65e77" title=" " alt="" coords="245,77,353,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,71,232,79,231,85,160,77"/>
+<area shape="rect" id="Node000008" href="$namespacemod__slice.html#ae7077f697521c2588f38cdb3b4df4e6e" title=" " alt="" coords="213,126,385,152"/>
+<area shape="poly" id="edge5_Node000001_Node000008" title=" " alt="" coords="116,76,209,111,237,120,236,125,207,116,114,81"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="353,74,425,57,426,63,354,80"/>
 </map>

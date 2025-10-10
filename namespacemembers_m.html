@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -81,6 +81,7 @@ $(function() {
 <div class="textblock">Here is a list of all module members with links to the module documentation for each member:</div>
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>m&#160;:&#160;<a class="el" href="namespacemod__hd__phys.html#a012dfa579bff2692031c53e48374a75c">mod_hd_phys</a>, <a class="el" href="namespacemod__mf__phys.html#ae0e8492e6fff400f12ae4b06980d2d09">mod_mf_phys</a>, <a class="el" href="namespacemod__mhd__phys.html#a57989011f7e48288199305748bd4fa74">mod_mhd_phys</a>, <a class="el" href="namespacemod__rmhd__phys.html#a4f800232ad8de8e868433dd1d29b6375">mod_rmhd_phys</a></li>
 <li>mag&#160;:&#160;<a class="el" href="namespacemod__functions__bfield.html#a9325934e82e214dd9a5fc608b174fbb9">mod_functions_bfield</a></li>
 <li>magnetofriction()&#160;:&#160;<a class="el" href="namespacemod__magnetofriction.html#a3de7430e3b56ca99143c667663732dbe">mod_magnetofriction</a></li>
 <li>magnetofriction_init()&#160;:&#160;<a class="el" href="namespacemod__magnetofriction.html#a7a760a33229888d9d1388aa2bb2f874e">mod_magnetofriction</a></li>
@@ -101,17 +102,14 @@ $(function() {
 <li>mf_cy_max&#160;:&#160;<a class="el" href="namespacemod__magnetofriction.html#a9788470f54edb0dbbd31100a1b85f5b2">mod_magnetofriction</a></li>
 <li>mf_decay_scale&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#ac193761ebab798c4b68cc4e3beb0ab66">mod_mf_phys</a></li>
 <li>mf_ditsave&#160;:&#160;<a class="el" href="namespacemod__magnetofriction.html#a639e60d9fa085fecb404ac596e32c325">mod_magnetofriction</a></li>
-<li>mf_divb_4thorder&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#a05d71519822779ecaeadee5827de7c57">mod_mf_phys</a></li>
+<li>mf_divb_nth&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#a16c7d41830be632b0170a7e3e3b98150">mod_mf_phys</a></li>
 <li>mf_eta&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#aead465002058bc6820a3006c804bbc1e">mod_mf_phys</a></li>
 <li>mf_eta_hyper&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#a798e81802e661a07a9dfadedcdb301f6">mod_mf_phys</a></li>
 <li>mf_face_to_center()&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#a4a98a656d79ffa62895208194b0f8cca">mod_mf_phys</a></li>
-<li>mf_get_v()&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#a6e99cf6fe3400e0d8a68ec38ba3b4ee0">mod_mf_phys</a></li>
-<li>mf_get_v_idim()&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#a3af72729f0e67749297eb9b99bc193d8">mod_mf_phys</a></li>
 <li>mf_glm&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#a7565c3f4e99fff0899067ccd5f946e29">mod_mf_phys</a></li>
 <li>mf_glm_alpha&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#a8c7f67659898713ad0c8f690015132ab">mod_mf_phys</a></li>
 <li>mf_it&#160;:&#160;<a class="el" href="namespacemod__magnetofriction.html#a56bb5d411470d6a1668c3cabf3de3623">mod_magnetofriction</a></li>
 <li>mf_it_max&#160;:&#160;<a class="el" href="namespacemod__magnetofriction.html#a9390b7bdb9a1d00af91423c94f42d7e3">mod_magnetofriction</a></li>
-<li>mf_mag_en_all()&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#a327f9802dc804f16acbb13effbde3806">mod_mf_phys</a></li>
 <li>mf_nu&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#a04818f8dcd02e50347961c4e97a86322">mod_mf_phys</a></li>
 <li>mf_params_read()&#160;:&#160;<a class="el" href="namespacemod__magnetofriction.html#ae6b9161f803d020224a1ade638ccfcd2">mod_magnetofriction</a></li>
 <li>mf_particles&#160;:&#160;<a class="el" href="namespacemod__mf__phys.html#adea4764cfae0de021993f276aa871629">mod_mf_phys</a></li>
@@ -222,10 +220,9 @@ $(function() {
 <li>mhd_ambipolar&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a6c82b7446e0c970b4a5b2015fb77e6a6">mod_mhd_phys</a></li>
 <li>mhd_ambipolar_exp&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a9165b1246c80991fcf004eb1c6c682a2">mod_mhd_phys</a></li>
 <li>mhd_ambipolar_sts&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#aedb65d7747e6634c3eb180a4360e0e73">mod_mhd_phys</a></li>
-<li>mhd_boris_simplification&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a78196b4eb58df775e9940c6bdd71ee48">mod_mhd_phys</a></li>
 <li>mhd_cak_force&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a5e5f988a39987b87235f276fdc51bf1a">mod_mhd_phys</a></li>
 <li>mhd_clean_divb_multigrid()&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a146ddbc522f5c61e67c327808e6a8220">mod_mhd_phys</a></li>
-<li>mhd_divb_4thorder&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a3ae4866a2699747554f4c4425f640874">mod_mhd_phys</a></li>
+<li>mhd_divb_nth&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a4f86830b8f32b7c5d77808afde3ed1d4">mod_mhd_phys</a></li>
 <li>mhd_dump_full_vars&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#abff931fd68f112b30aacf672a8c1446b">mod_mhd_phys</a></li>
 <li>mhd_e_to_ei()&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a2496b6220ad0dcae99878a0e22ca3e54">mod_mhd_phys</a></li>
 <li>mhd_ei_to_e()&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#af0bab1b3ad07312a82c867579d3714b3">mod_mhd_phys</a></li>
@@ -237,21 +234,20 @@ $(function() {
 <li>mhd_etah&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#acafe52e5e4a53022fe975f43b8b581bc">mod_mhd_phys</a></li>
 <li>mhd_face_to_center()&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#ac54ab9cded448f662757e2a9fb5f8bd1">mod_mhd_phys</a></li>
 <li>mhd_gamma&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a3d13dc1cdbc277393bc68ed25e0fa5af">mod_mhd_phys</a></li>
-<li>mhd_get_csound2()&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a40519f8a53b76e1255e440b4a4b3f36c">mod_mhd_phys</a></li>
 <li>mhd_get_pthermal&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#aeddcf4396bdbd06b2f285c4e717554f4">mod_mhd_phys</a></li>
 <li>mhd_get_rho()&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#af871b6be3fe6f0ca6cca59a59309c86c">mod_mhd_phys</a></li>
 <li>mhd_get_temperature&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#ab0e9578210815171702ac806eba0bcc0">mod_mhd_phys</a></li>
-<li>mhd_get_v&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a02894eede360c6c766a3bfbade24a92c">mod_mhd_phys</a></li>
-<li>mhd_get_v_idim()&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a61ef4a6797708d73c9c12f9d098d09e7">mod_mhd_phys</a></li>
+<li>mhd_get_v()&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#ad16a691811dcb9e9b616bdfdfc9ee0de">mod_mhd_phys</a></li>
 <li>mhd_glm&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a94baa0279604be0f73cf10915b84f52d">mod_mhd_phys</a></li>
 <li>mhd_glm_alpha&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a7cb5b2eb67d8da51ce043fe03da1836e">mod_mhd_phys</a></li>
 <li>mhd_glm_extended&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a100c01b937d9c5e98953db6276fb9632">mod_mhd_phys</a></li>
 <li>mhd_gravity&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a02de01b440a45192cdfbcc9eff44b372">mod_mhd_phys</a></li>
 <li>mhd_hall&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a6240d6ab2d279d71a269292ae948e5a8">mod_mhd_phys</a></li>
 <li>mhd_hllc_init()&#160;:&#160;<a class="el" href="namespacemod__mhd__hllc.html#a348634cd8122197d331e1a06d555568b">mod_mhd_hllc</a></li>
+<li>mhd_htc_sat&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a9270d689a0479729912aa65936645ce8">mod_mhd_phys</a></li>
 <li>mhd_hydrodynamic_e&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#ad55c7c3f4a87faefdc9cc4776ae4a7a2">mod_mhd_phys</a></li>
+<li>mhd_hyperbolic_thermal_conduction&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a14c1c364cc1567b9fd144126c2ee5d12">mod_mhd_phys</a></li>
 <li>mhd_internal_e&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a0d6a92d69d09e86bb927cc30c4d43bea">mod_mhd_phys</a></li>
-<li>mhd_kin_en&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#ae763d739e4591f565fa9fc4b69e56ef4">mod_mhd_phys</a></li>
 <li>mhd_mag_en_all()&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a7cefae9319d59d3d9182e9b35bad1e28">mod_mhd_phys</a></li>
 <li>mhd_magnetofriction&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a9f53fd051b1700e295f37d3b24dca362">mod_mhd_phys</a></li>
 <li>mhd_n_tracer&#160;:&#160;<a class="el" href="namespacemod__mhd__phys.html#a53f47437ef8854eb2ac6d95a771846b2">mod_mhd_phys</a></li>
@@ -276,7 +272,7 @@ $(function() {
 <li>minrho&#160;:&#160;<a class="el" href="namespacemod__srhd__phys.html#ae07d7d91d8e2546f7a741e8f71ec2606">mod_srhd_phys</a></li>
 <li>miu0_si&#160;:&#160;<a class="el" href="namespacemod__constants.html#a9cbe7a0d5cff593ffa4c27bd0884443e">mod_constants</a></li>
 <li>modify_ic()&#160;:&#160;<a class="el" href="namespacemod__initialize__amr.html#ac2c24309d6ecbdc2f734308561d22363">mod_initialize_amr</a></li>
-<li>mom&#160;:&#160;<a class="el" href="namespacemod__hd__phys.html#a6114a4fe01119b313ef898d00e1559e9">mod_hd_phys</a>, <a class="el" href="namespacemod__mf__phys.html#ad9c148e3a71f9839c3cb1069aeb649b5">mod_mf_phys</a>, <a class="el" href="namespacemod__mhd__phys.html#a12c911e7c3dc6e3f66434f31bd5f5def">mod_mhd_phys</a>, <a class="el" href="namespacemod__rhd__phys.html#a48a856ee050da08341a79fbbdbe51ef1">mod_rhd_phys</a>, <a class="el" href="namespacemod__srhd__phys.html#a835dfd74e39d495f57cb942dcdbb5e70">mod_srhd_phys</a></li>
+<li>mom&#160;:&#160;<a class="el" href="namespacemod__ffhd__phys.html#a6bb24948de74c5caa25d58174ca4441c">mod_ffhd_phys</a>, <a class="el" href="namespacemod__hd__phys.html#a6114a4fe01119b313ef898d00e1559e9">mod_hd_phys</a>, <a class="el" href="namespacemod__mf__phys.html#ad9c148e3a71f9839c3cb1069aeb649b5">mod_mf_phys</a>, <a class="el" href="namespacemod__mhd__phys.html#a12c911e7c3dc6e3f66434f31bd5f5def">mod_mhd_phys</a>, <a class="el" href="namespacemod__rhd__phys.html#a48a856ee050da08341a79fbbdbe51ef1">mod_rhd_phys</a>, <a class="el" href="namespacemod__rmhd__phys.html#a93e724e67c63bbc8d63dea750d6d452c">mod_rmhd_phys</a>, <a class="el" href="namespacemod__srhd__phys.html#a835dfd74e39d495f57cb942dcdbb5e70">mod_srhd_phys</a></li>
 <li>mom_c&#160;:&#160;<a class="el" href="namespacemod__twofl__phys.html#a74405b485d3340c1b9a2cb6faa9c9c45">mod_twofl_phys</a></li>
 <li>mom_n&#160;:&#160;<a class="el" href="namespacemod__twofl__phys.html#ab83f958c01ba18adeeabacdd5c8805d9">mod_twofl_phys</a></li>
 <li>morton_start&#160;:&#160;<a class="el" href="namespacemod__forest.html#a4404ff14f2bb4b3a5ff3a95649b5e403">mod_forest</a></li>

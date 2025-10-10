@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -131,7 +131,7 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memdesc:ac81a1ee4c7e051b4aab8bcce989bf046"><td class="mdescLeft">&#160;</td><td class="mdescRight">get dimensionless div B = |divB| * volume / area / |B|  <br /></td></tr>
 <tr class="separator:ac81a1ee4c7e051b4aab8bcce989bf046"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9ef22fc270b755c403e24862bfa2975" id="r_ac9ef22fc270b755c403e24862bfa2975"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#ac9ef22fc270b755c403e24862bfa2975">mod_twofl_phys::get_current</a> (w, ixil, ixol, idirmin, current)</td></tr>
-<tr class="memdesc:ac9ef22fc270b755c403e24862bfa2975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#af2f7436240818f02fc7b675a70cae4a3">dxlevel(^D)</a> is set correctly.  <br /></td></tr>
+<tr class="memdesc:ac9ef22fc270b755c403e24862bfa2975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#ac487446056522027f949f42ba64b2e11" title="store unstretched cell size of current level">dxlevel(^D)</a> is set correctly.  <br /></td></tr>
 <tr class="separator:ac9ef22fc270b755c403e24862bfa2975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a389cd0166f6add250f06b7d1b0cb23a7" id="r_a389cd0166f6add250f06b7d1b0cb23a7"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__twofl__phys_8t.html#a389cd0166f6add250f06b7d1b0cb23a7">twofl_get_p_c_total</a> (w, x, ixil, ixol, p)</td></tr>
 <tr class="separator:a389cd0166f6add250f06b7d1b0cb23a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,9 +315,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a4dc46a269bd027e957f6523f96068474" id="r_a4dc46a269bd027e957f6523f96068474"><td class="memItemLeft" align="right" valign="top">character(len=std_len), public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#a4dc46a269bd027e957f6523f96068474">mod_twofl_phys::type_ct</a> = 'uct_contact'</td></tr>
 <tr class="memdesc:a4dc46a269bd027e957f6523f96068474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method type of constrained transport.  <br /></td></tr>
 <tr class="separator:a4dc46a269bd027e957f6523f96068474"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac82b357cdb32f39457f8616b25f4f4b9" id="r_ac82b357cdb32f39457f8616b25f4f4b9"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#ac82b357cdb32f39457f8616b25f4f4b9">mod_twofl_phys::twofl_divb_4thorder</a> = .false.</td></tr>
-<tr class="memdesc:ac82b357cdb32f39457f8616b25f4f4b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether divB is computed with a fourth order approximation.  <br /></td></tr>
-<tr class="separator:ac82b357cdb32f39457f8616b25f4f4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3a95150d1657aace983c5cd0cb5327a" id="r_ac3a95150d1657aace983c5cd0cb5327a"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#ac3a95150d1657aace983c5cd0cb5327a">mod_twofl_phys::twofl_divb_nth</a> = 1</td></tr>
+<tr class="memdesc:ac3a95150d1657aace983c5cd0cb5327a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether divB is computed with a fourth order approximation.  <br /></td></tr>
+<tr class="separator:ac3a95150d1657aace983c5cd0cb5327a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09a4f8abb19c33c312cb76b8a342f5b2" id="r_a09a4f8abb19c33c312cb76b8a342f5b2"><td class="memItemLeft" align="right" valign="top">logical, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#a09a4f8abb19c33c312cb76b8a342f5b2">mod_twofl_phys::clean_initial_divb</a> = .false.</td></tr>
 <tr class="memdesc:a09a4f8abb19c33c312cb76b8a342f5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">clean initial divB  <br /></td></tr>
 <tr class="separator:a09a4f8abb19c33c312cb76b8a342f5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -355,7 +355,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l06308">6308</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l06354">6354</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -452,7 +452,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l02632">2632</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l02679">2679</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -530,7 +530,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l04758">4758</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l04804">4804</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -236,7 +236,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Limit the centered dwC differences within ixC for iw in direction idim. The limiter is chosen according to typelim. </p>
-<p>Note that this subroutine is called from upwindLR (hence from methods like tvdlf, hancock, hll(c) etc) or directly from tvd.t, but also from the gradientS and divvectorS subroutines in geometry.t Accordingly, the typelim here corresponds to one of limiter or one of gradient_limiter. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Note that this subroutine is called from upwindLR (hence from methods like tvdlf, hancock, hll(c) etc) or directly from tvd.t, but also from the gradientL and divvectorS subroutines in geometry.t Accordingly, the typelim here corresponds to one of limiter or one of gradient_limiter. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">ldw</td><td>Result using left-limiter (same as right for symmetric) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">rdw</td><td>Result using right-limiter (same as left for symmetric) </td></tr>

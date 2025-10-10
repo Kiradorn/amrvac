@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -107,11 +107,15 @@ $(function() {
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">name   </th><th class="markdownTableHeadNone">description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>ps(igrid)%w</code>   </td><td class="markdownTableBodyNone">w - conservative variables    </td></tr>
+<td class="markdownTableBodyNone"><code>ps(igrid)%w</code>   </td><td class="markdownTableBodyNone">w - conservative variables at cell center    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>pso(igrid)%w</code>   </td><td class="markdownTableBodyNone">w at beginning of current time step    </td></tr>
+<td class="markdownTableBodyNone"><code>psc(igrid)%w</code>   </td><td class="markdownTableBodyNone">w - conservative variables on coarser grids    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>ps(igrid)%x</code>   </td><td class="markdownTableBodyNone">x - spatial variables    </td></tr>
+<td class="markdownTableBodyNone"><code>ps(igrid)%ws</code>   </td><td class="markdownTableBodyNone">ws - staggered variables on cell faces    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>ps(igrid)%x</code>   </td><td class="markdownTableBodyNone">x - spatial variables at cell center    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">igrid   </td><td class="markdownTableBodyNone">serial number of a block    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">global_time   </td><td class="markdownTableBodyNone">time    </td></tr>
 <tr class="markdownTableRowOdd">

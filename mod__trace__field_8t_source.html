@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -132,14 +132,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">logical</span>, <span class="keywordtype">intent(in)</span> :: forwardm(numL)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">character(len=std_len)</span>, <span class="keywordtype">intent(in)</span> :: ftype,tcondi</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">integer</span> :: indomain,ipe_now,igrid_now,igrid,j,iL</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">integer</span> :: ipoint_in,ipoint_out,numSend,nRT,nRTmax</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">double precision</span> :: x3d(3),statusF(4+ndim),statusL(numL,4+ndim+nwL),statusS(numL,4+ndim+nwL)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">logical</span> :: continueL(numL),myL(numL)</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">logical</span> :: stopT,forward</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">double precision</span> :: x3d(3),statusF(4+ndim),statusL(numL,4+ndim+nwL),statusS(numL,4+ndim+nwL)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">double precision</span> :: xf(numP,ndim),wP(numP,nwP),wL(1+nwL)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">allocatable</span> :: data_send(:,:,:),data_recv(:,:,:)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">integer</span> :: indomain,ipe_now,igrid_now,igrid,j,iL</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">integer</span> :: ipoint_in,ipoint_out,numSend,nRT,nRTmax</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">integer</span> :: ipointm(numL),igridm(numL)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">double precision</span> :: xf(numP,ndim),wP(numP,nwP),wL(1+nwL)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">allocatable</span> :: data_send(:,:,:),data_recv(:,:,:)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">logical</span> :: continueL(numL),myL(numL)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">logical</span> :: stopT,forward</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (tcondi/=<span class="stringliteral">&#39;TRAC&#39;</span>) <span class="keywordflow">then</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      wpm=zero</div>
@@ -299,11 +299,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordtype">logical</span>, <span class="keywordtype">intent(in)</span> :: forward</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordtype">character(len=std_len)</span>, <span class="keywordtype">intent(in)</span> :: ftype,tcondi</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordtype">integer</span> :: indomain,ipoint_in,ipe_now,igrid_now,igrid,j</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordtype">integer</span> :: ipoint_out,ipe_next,igrid_next,numRT</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordtype">double precision</span> :: x3d(3),statusF(4+ndim),status_bcast(4+ndim+nwL)</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordtype">logical</span> :: stopT</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">allocatable</span> :: data_send(:,:),data_recv(:,:)</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordtype">double precision</span> :: x3d(3),statusF(4+ndim),status_bcast(4+ndim+nwL)</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">allocatable</span> :: data_send(:,:),data_recv(:,:)</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordtype">integer</span> :: indomain,ipoint_in,ipe_now,igrid_now,igrid,j</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordtype">integer</span> :: ipoint_out,ipe_next,igrid_next,numRT</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordtype">logical</span> :: stopT</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    wp=zero</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    wl=zero</div>
@@ -398,9 +398,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <span class="keywordtype">character(len=std_len)</span>, <span class="keywordtype">intent(in)</span> :: ftype,tcondi</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(inout)</span> :: statusF(4+ndim)</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keywordtype">integer</span> :: ipe_next,igrid_next,ip_in,ip_out,j,indomain</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordtype">logical</span> :: newpe,stopT</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <span class="keywordtype">double precision</span> :: xfout(ndim)</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keywordtype">double precision</span> :: xfout(ndim)</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordtype">integer</span> :: ipe_next,igrid_next,ip_in,ip_out,j,indomain</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <span class="keywordtype">logical</span> :: newpe,stopT</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    ip_in=ipoint_in</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    newpe=.false.</div>
@@ -462,9 +462,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    <span class="keywordtype">logical</span>, <span class="keywordtype">intent(inout)</span> :: newpe,stopT</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span> </div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="keywordtype">double precision</span> :: dxb^D,xb^L,xbmid^D</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    <span class="keywordtype">integer</span> :: idn^D,my_neighbor_type,inblock</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    <span class="keywordtype">integer</span> :: ic^D,inc^D,ipe_neighbor,igrid_neighbor</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <span class="keywordtype">double precision</span> :: xbn^L</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    <span class="keywordtype">double precision</span> :: xbn^L</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    <span class="keywordtype">integer</span> :: idn^D,my_neighbor_type,inblock</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <span class="keywordtype">integer</span> :: ic^D,inc^D,ipe_neighbor,igrid_neighbor</div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span> </div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>    ^d&amp;xbmin^d=<a class="code hl_variable" href="namespacemod__global__parameters.html#a9dd666c3ecb8ef351f14f46cf32a3a62">rnode</a>(<a class="code hl_variable" href="namespacemod__global__parameters.html#a479b16476da7b1ec12a73e7815a61614">rpxmin</a>^<a class="code hl_variable" href="namespacemod__global__parameters.html#aa3194833cc9e7e739ed1fa396655a636">d_</a>,igrid)\</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    ^d&amp;xbmax^d=<a class="code hl_variable" href="namespacemod__global__parameters.html#a9dd666c3ecb8ef351f14f46cf32a3a62">rnode</a>(<a class="code hl_variable" href="namespacemod__global__parameters.html#ac7028ff82a4d1fd8d5ddf936665837c3">rpxmax</a>^<a class="code hl_variable" href="namespacemod__global__parameters.html#aa3194833cc9e7e739ed1fa396655a636">d_</a>,igrid)\</div>
@@ -538,11 +538,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>    <span class="keywordtype">character(len=std_len)</span>, <span class="keywordtype">intent(in)</span> :: ftype,tcondi</div>
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span> </div>
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    <span class="keywordtype">double precision</span> :: dxb^D,xb^L</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    <span class="keywordtype">integer</span>          :: ip,inblock,ixI^L,ixO^L,j</div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>    <span class="keywordtype">double precision</span> :: field(ixg^T,ndir)</div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    <span class="keywordtype">double precision</span> :: xs1(ndim),xs2(ndim),K1(ndim),K2(ndim)</div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    <span class="keywordtype">double precision</span> :: xfpre(ndim),xfnow(ndim),xfnext(ndim)</div>
-<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>    <span class="keywordtype">double precision</span> :: Tpre,Tnow,Tnext,dTds,Lt,Lr,ds,T_bott,trac_delta</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    <span class="keywordtype">double precision</span> :: field(ixg^T,ndir)</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>    <span class="keywordtype">double precision</span> :: xs1(ndim),xs2(ndim),K1(ndim),K2(ndim)</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    <span class="keywordtype">double precision</span> :: xfpre(ndim),xfnow(ndim),xfnext(ndim)</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    <span class="keywordtype">double precision</span> :: Tpre,Tnow,Tnext,dTds,Lt,Lr,ds,T_bott,trac_delta</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>    <span class="keywordtype">integer</span>          :: ip,inblock,ixI^L,ixO^L,j</div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span> </div>
 <div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>    ixi^l=ixg^<a class="code hl_variable" href="namespacemod__global__parameters.html#a66b6d102b0c1abd62b12a11b7fdb31b3">ll</a>;</div>
 <div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>    ixo^l=<a class="code hl_variable" href="namespacemod__global__parameters.html#a6f52fc825865569352db4ebc034361b4">ixm</a>^<a class="code hl_variable" href="namespacemod__global__parameters.html#a66b6d102b0c1abd62b12a11b7fdb31b3">ll</a>;</div>
@@ -643,11 +643,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    <span class="keywordtype">double precision</span> :: xfn(ndim),K(ndim)</div>
 <div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    <span class="keywordtype">character(len=std_len)</span> :: ftype</div>
 <div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span> </div>
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    <span class="keywordtype">integer</span>          :: ixb^D,ix^D,ixbl^D,ixO^L,j</div>
-<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>    <span class="keywordtype">double precision</span> :: xd^D</div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>    <span class="keywordtype">double precision</span> :: field(0:1^D&amp;,ndir),Fx(ndim),factor(0:1^D&amp;)</div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>    <span class="keywordtype">double precision</span> :: vector(ixI^S,1:ndir)</div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    <span class="keywordtype">double precision</span> :: Ftotal</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    <span class="keywordtype">double precision</span> :: xd^D</div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>    <span class="keywordtype">double precision</span> :: field(0:1^D&amp;,ndir),Fx(ndim),factor(0:1^D&amp;)</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>    <span class="keywordtype">double precision</span> :: vector(ixI^S,1:ndir)</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>    <span class="keywordtype">double precision</span> :: Ftotal</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    <span class="keywordtype">integer</span>          :: ixb^D,ix^D,ixbl^D,ixO^L,j</div>
 <div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span> </div>
 <div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>    ^d&amp;ixbl^d=floor((xfn(^d)-ps(igrid)%x(iximin^dd,^d))/dxb^d)+iximin^d;</div>
 <div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>    ^d&amp;xd^d=(xfn(^d)-ps(igrid)%x(ixbl^dd,^d))/dxb^d;</div>
@@ -656,114 +656,118 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>    vector=zero</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span> </div>
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    field=zero</div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    <span class="keywordflow">if</span> (ftype==<span class="stringliteral">&#39;Bfield&#39;</span>) <span class="keywordflow">then</span></div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>      <span class="keywordflow">if</span> (b0field) <span class="keywordflow">then</span></div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>        vector(ixo^s,1:ndir)=ps(igrid)%w(ixo^s,iw_mag(1:ndir))+ps(igrid)%B0(ixo^s,1:ndir,0)</div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>      <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        vector(ixo^s,1:ndir)=ps(igrid)%w(ixo^s,iw_mag(1:ndir))</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span><span class="keywordflow">      endif</span></div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ftype==<span class="stringliteral">&#39;Vfield&#39;</span>) <span class="keywordflow">then</span></div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>      <span class="keyword">call </span><a class="code hl_variable" href="namespacemod__physics.html#ae19630150a3f06bcc5efe6b2bfe0987e">phys_get_v</a>(ps(igrid)%w,ps(igrid)%x,ixi^l,ixo^l,vector)</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span><span class="keywordflow">    endif</span></div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>    {<span class="keywordflow">do</span> ix^d=0,1\}</div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>      factor(ix^d)={abs(1-ix^d-xd^d)*}</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>      field(ix^d,1:ndir)=vector(ixbl^d+ix^d,1:ndir)</div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    {enddo\}    </div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span> </div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    fx=0.d0</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    {<span class="keywordflow">do</span> ix^db=0,1\}</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>      <span class="keywordflow">do</span> j=1,ndim</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>        fx(j)=fx(j)+field(ix^d,j)*factor(ix^d)</div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span><span class="keywordflow">      enddo</span></div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>    {enddo\}</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span> </div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>    <span class="keywordflow">if</span> (ftype==<span class="stringliteral">&#39;Bfield&#39;</span> .or. ftype==<span class="stringliteral">&#39;Vfield&#39;</span>) <span class="keywordflow">then</span></div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>      fx=0.d0</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>      {<span class="keywordflow">do</span> ix^db=0,1\}</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>        <span class="keywordflow">do</span> j=1,ndim</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>          fx(j)=fx(j)+field(ix^d,j)*factor(ix^d)</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span><span class="keywordflow">        enddo</span></div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>      {enddo\}</div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">associated</span>(<a class="code hl_variable" href="namespacemod__usr__methods.html#afbc14ab0f8c2422f4922976cae6b306f">usr_set_field</a>)) <span class="keywordflow">then</span></div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>      <span class="keyword">call </span><a class="code hl_variable" href="namespacemod__usr__methods.html#afbc14ab0f8c2422f4922976cae6b306f">usr_set_field</a>(xfn,igrid,fx,ftype)</div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>      <span class="keyword">call </span>mpistop(<span class="stringliteral">&#39;Field tracing error: wrong field type!&#39;</span>)</div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span><span class="keywordflow">    endif</span></div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span> </div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    ftotal=zero</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>    <span class="keywordflow">do</span> j=1,ndim</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>      ftotal=ftotal+(fx(j))**2</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span><span class="keywordflow">    enddo</span></div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>    ftotal=dsqrt(ftotal)</div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span> </div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    <span class="keywordflow">if</span> (ftotal==0.d0) <span class="keywordflow">then</span></div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>      k=0.d0</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>      k(1)=1.d0</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>      k(1:ndim)=fx(1:ndim)/ftotal</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span><span class="keywordflow">    endif</span></div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span> </div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    <span class="keywordflow">if</span>(ftype==<span class="stringliteral">&#39;Bfield&#39;</span>) <span class="keywordflow">then</span></div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>      <span class="keywordflow">if</span>(b0field) <span class="keywordflow">then</span></div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>        <span class="keywordflow">if</span>(<span class="keyword">allocated</span>(iw_mag)) <span class="keywordflow">then</span></div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>          vector(ixo^s,1:ndir)=ps(igrid)%w(ixo^s,iw_mag(1:ndir))+ps(igrid)%B0(ixo^s,1:ndir,0)</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>          vector(ixo^s,1:ndir)=ps(igrid)%B0(ixo^s,1:ndir,0)</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span><span class="keywordflow">        endif</span></div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>      <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>        vector(ixo^s,1:ndir)=ps(igrid)%w(ixo^s,iw_mag(1:ndir))</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span><span class="keywordflow">      endif</span></div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ftype==<span class="stringliteral">&#39;Vfield&#39;</span>) <span class="keywordflow">then</span></div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>      <span class="keyword">call </span><a class="code hl_variable" href="namespacemod__physics.html#ae19630150a3f06bcc5efe6b2bfe0987e">phys_get_v</a>(ps(igrid)%w,ps(igrid)%x,ixi^l,ixo^l,vector)</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span><span class="keywordflow">    endif</span></div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    {<span class="keywordflow">do</span> ix^d=0,1\}</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>      factor(ix^d)={abs(1-ix^d-xd^d)*}</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>      field(ix^d,1:ndir)=vector(ixbl^d+ix^d,1:ndir)</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    {enddo\}    </div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    fx=0.d0</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>    {<span class="keywordflow">do</span> ix^db=0,1\}</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>      <span class="keywordflow">do</span> j=1,ndim</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>        fx(j)=fx(j)+field(ix^d,j)*factor(ix^d)</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="keywordflow">      enddo</span></div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>    {enddo\}</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span> </div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>    <span class="keywordflow">if</span> (ftype==<span class="stringliteral">&#39;Bfield&#39;</span> .or. ftype==<span class="stringliteral">&#39;Vfield&#39;</span>) <span class="keywordflow">then</span></div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>      fx=0.d0</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>      {<span class="keywordflow">do</span> ix^db=0,1\}</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>        <span class="keywordflow">do</span> j=1,ndim</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>          fx(j)=fx(j)+field(ix^d,j)*factor(ix^d)</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span><span class="keywordflow">        enddo</span></div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>      {enddo\}</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">associated</span>(<a class="code hl_variable" href="namespacemod__usr__methods.html#afbc14ab0f8c2422f4922976cae6b306f">usr_set_field</a>)) <span class="keywordflow">then</span></div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>      <span class="keyword">call </span><a class="code hl_variable" href="namespacemod__usr__methods.html#afbc14ab0f8c2422f4922976cae6b306f">usr_set_field</a>(xfn,igrid,fx,ftype)</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>      <span class="keyword">call </span>mpistop(<span class="stringliteral">&#39;Field tracing error: wrong field type!&#39;</span>)</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span><span class="keywordflow">    endif</span></div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>    ftotal=zero</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>    <span class="keywordflow">do</span> j=1,ndim</div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>      ftotal=ftotal+(fx(j))**2</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span><span class="keywordflow">    enddo</span></div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    ftotal=dsqrt(ftotal)</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span> </div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    <span class="keywordflow">if</span> (ftotal==0.d0) <span class="keywordflow">then</span></div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>      k=0.d0</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>      k(1)=1.d0</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>      k(1:ndim)=fx(1:ndim)/ftotal</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span><span class="keywordflow">    endif</span></div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span> </div>
 </div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>  <span class="keyword">end subroutine </span><a class="code hl_function" href="namespacemod__trace__field.html#a3c456e6b257e76ba260d143104deb444">get_k</a></div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span> </div>
-<div class="foldopen" id="foldopen00605" data-start="" data-end="">
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno"><a class="line" href="namespacemod__trace__field.html#ae5f946d10eca246b569e842697f1df8a">  605</a></span>  <span class="keyword">subroutine </span><a class="code hl_function" href="namespacemod__trace__field.html#ae5f946d10eca246b569e842697f1df8a">get_t_loc_trac</a>(igrid,xloc,Tloc,ixI^L,dxb^D)</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    <span class="comment">! grid T has been calculated and stored in wextra(ixI^S,Tcoff_)</span></div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>    <span class="comment">! see mod_trac</span></div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>    <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: igrid,ixI^L</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(inout)</span> :: xloc(ndim)</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(inout)</span> :: Tloc</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(in)</span> :: dxb^D</div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    <span class="keywordtype">integer</span>          :: ixb^D,ix^D,ixbl^D,j,ixO^L</div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    <span class="keywordtype">double precision</span> :: xd^D</div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>    <span class="keywordtype">double precision</span> :: factor(0:1^D&amp;),Tnear(0:1^D&amp;)</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>  <span class="keyword">end subroutine </span><a class="code hl_function" href="namespacemod__trace__field.html#a3c456e6b257e76ba260d143104deb444">get_k</a></div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span> </div>
+<div class="foldopen" id="foldopen00609" data-start="" data-end="">
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno"><a class="line" href="namespacemod__trace__field.html#ae5f946d10eca246b569e842697f1df8a">  609</a></span>  <span class="keyword">subroutine </span><a class="code hl_function" href="namespacemod__trace__field.html#ae5f946d10eca246b569e842697f1df8a">get_t_loc_trac</a>(igrid,xloc,Tloc,ixI^L,dxb^D)</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <span class="comment">! grid T has been calculated and stored in wextra(ixI^S,Tcoff_)</span></div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    <span class="comment">! see mod_trac</span></div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: igrid,ixI^L</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(inout)</span> :: xloc(ndim)</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(inout)</span> :: Tloc</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(in)</span> :: dxb^D</div>
 <div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span> </div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    ^d&amp;ixbl^d=floor((xloc(^d)-ps(igrid)%x(iximin^dd,^d))/dxb^d)+iximin^d;</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    ^d&amp;xd^d=(xloc(^d)-ps(igrid)%x(ixbl^dd,^d))/dxb^d;</div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>    ^d&amp;ixomin^d=ixbl^d;</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>    ^d&amp;ixomax^d=ixomin^d+1;</div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span> </div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    {<span class="keywordflow">do</span> ix^d=0,1\}</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>      factor(ix^d)={abs(1-ix^d-xd^d)*}</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>      tnear(ix^d)=ps(igrid)%wextra(ixbl^d+ix^d,iw_tcoff)</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>    {enddo\}</div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span> </div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    tloc=0.d0</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>    <span class="comment">! interpolation</span></div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    {<span class="keywordflow">do</span> ix^db=0,1\}</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>      tloc=tloc+tnear(ix^d)*factor(ix^d)</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    {enddo\}</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <span class="keywordtype">double precision</span> :: xd^D</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    <span class="keywordtype">double precision</span> :: factor(0:1^D&amp;),Tnear(0:1^D&amp;)</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>    <span class="keywordtype">integer</span>          :: ixb^D,ix^D,ixbl^D,j,ixO^L</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span> </div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>    ^d&amp;ixbl^d=floor((xloc(^d)-ps(igrid)%x(iximin^dd,^d))/dxb^d)+iximin^d;</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    ^d&amp;xd^d=(xloc(^d)-ps(igrid)%x(ixbl^dd,^d))/dxb^d;</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    ^d&amp;ixomin^d=ixbl^d;</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    ^d&amp;ixomax^d=ixomin^d+1;</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span> </div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>    {<span class="keywordflow">do</span> ix^d=0,1\}</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>      factor(ix^d)={abs(1-ix^d-xd^d)*}</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>      tnear(ix^d)=ps(igrid)%wextra(ixbl^d+ix^d,iw_tcoff)</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    {enddo\}</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span> </div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    tloc=0.d0</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    <span class="comment">! interpolation</span></div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>    {<span class="keywordflow">do</span> ix^db=0,1\}</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>      tloc=tloc+tnear(ix^d)*factor(ix^d)</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>    {enddo\}</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span> </div>
 </div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>  <span class="keyword">end subroutine </span><a class="code hl_function" href="namespacemod__trace__field.html#ae5f946d10eca246b569e842697f1df8a">get_t_loc_trac</a></div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span> </div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span><span class="keyword">end module </span><a class="code hl_namespace" href="namespacemod__trace__field.html">mod_trace_field</a></div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>  <span class="keyword">end subroutine </span><a class="code hl_function" href="namespacemod__trace__field.html#ae5f946d10eca246b569e842697f1df8a">get_t_loc_trac</a></div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span> </div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span><span class="keyword">end module </span><a class="code hl_namespace" href="namespacemod__trace__field.html">mod_trace_field</a></div>
 <div class="ttc" id="anamespacemod__forest_html"><div class="ttname"><a href="namespacemod__forest.html">mod_forest</a></div><div class="ttdoc">Module with basic grid data structures.</div><div class="ttdef"><b>Definition</b> <a href="mod__forest_8t_source.html#l00002">mod_forest.t:2</a></div></div>
 <div class="ttc" id="anamespacemod__global__parameters_html"><div class="ttname"><a href="namespacemod__global__parameters.html">mod_global_parameters</a></div><div class="ttdoc">This module contains definitions of global parameters and variables and some generic functions/subrou...</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00004">mod_global_parameters.t:4</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_a343c17217840077aed7f0477467113de"><div class="ttname"><a href="namespacemod__global__parameters.html#a343c17217840077aed7f0477467113de">mod_global_parameters::phys_trac_mask</a></div><div class="ttdeci">double precision phys_trac_mask</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00383">mod_global_parameters.t:383</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_a479b16476da7b1ec12a73e7815a61614"><div class="ttname"><a href="namespacemod__global__parameters.html#a479b16476da7b1ec12a73e7815a61614">mod_global_parameters::rpxmin</a></div><div class="ttdeci">integer, parameter rpxmin</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00148">mod_global_parameters.t:148</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_a5704f1c57aa09935d3491f65ad240861"><div class="ttname"><a href="namespacemod__global__parameters.html#a5704f1c57aa09935d3491f65ad240861">mod_global_parameters::icomm</a></div><div class="ttdeci">integer icomm</div><div class="ttdoc">The MPI communicator.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00025">mod_global_parameters.t:25</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_a605b2c8e7a386f644c7f8817421b6d67"><div class="ttname"><a href="namespacemod__global__parameters.html#a605b2c8e7a386f644c7f8817421b6d67">mod_global_parameters::mype</a></div><div class="ttdeci">integer mype</div><div class="ttdoc">The rank of the current MPI task.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00022">mod_global_parameters.t:22</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_a66b6d102b0c1abd62b12a11b7fdb31b3"><div class="ttname"><a href="namespacemod__global__parameters.html#a66b6d102b0c1abd62b12a11b7fdb31b3">mod_global_parameters::ll</a></div><div class="ttdeci">integer ll</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00051">mod_global_parameters.t:51</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_a6f52fc825865569352db4ebc034361b4"><div class="ttname"><a href="namespacemod__global__parameters.html#a6f52fc825865569352db4ebc034361b4">mod_global_parameters::ixm</a></div><div class="ttdeci">integer ixm</div><div class="ttdoc">the mesh range of a physical block without ghost cells</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00051">mod_global_parameters.t:51</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_a701c9a9b2d5f02bb7c7a8181f09df2ae"><div class="ttname"><a href="namespacemod__global__parameters.html#a701c9a9b2d5f02bb7c7a8181f09df2ae">mod_global_parameters::ierrmpi</a></div><div class="ttdeci">integer ierrmpi</div><div class="ttdoc">A global MPI error return code.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00028">mod_global_parameters.t:28</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_a9dd666c3ecb8ef351f14f46cf32a3a62"><div class="ttname"><a href="namespacemod__global__parameters.html#a9dd666c3ecb8ef351f14f46cf32a3a62">mod_global_parameters::rnode</a></div><div class="ttdeci">double precision, dimension(:,:), allocatable rnode</div><div class="ttdoc">Corner coordinates.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00154">mod_global_parameters.t:154</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_aa1fac5bb69ce3e968348d1435b29f1ac"><div class="ttname"><a href="namespacemod__global__parameters.html#aa1fac5bb69ce3e968348d1435b29f1ac">mod_global_parameters::unit_temperature</a></div><div class="ttdeci">double precision unit_temperature</div><div class="ttdoc">Physical scaling factor for temperature.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00330">mod_global_parameters.t:330</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_aa3194833cc9e7e739ed1fa396655a636"><div class="ttname"><a href="namespacemod__global__parameters.html#aa3194833cc9e7e739ed1fa396655a636">mod_global_parameters::d_</a></div><div class="ttdeci">integer, parameter d_</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00140">mod_global_parameters.t:140</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_ac7028ff82a4d1fd8d5ddf936665837c3"><div class="ttname"><a href="namespacemod__global__parameters.html#ac7028ff82a4d1fd8d5ddf936665837c3">mod_global_parameters::rpxmax</a></div><div class="ttdeci">integer, parameter rpxmax</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00150">mod_global_parameters.t:150</a></div></div>
-<div class="ttc" id="anamespacemod__global__parameters_html_ad720343997778dd3cdeb03a7b389a3b0"><div class="ttname"><a href="namespacemod__global__parameters.html#ad720343997778dd3cdeb03a7b389a3b0">mod_global_parameters::rpdx</a></div><div class="ttdeci">integer, parameter rpdx</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00151">mod_global_parameters.t:151</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_a343c17217840077aed7f0477467113de"><div class="ttname"><a href="namespacemod__global__parameters.html#a343c17217840077aed7f0477467113de">mod_global_parameters::phys_trac_mask</a></div><div class="ttdeci">double precision phys_trac_mask</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00112">mod_global_parameters.t:112</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_a479b16476da7b1ec12a73e7815a61614"><div class="ttname"><a href="namespacemod__global__parameters.html#a479b16476da7b1ec12a73e7815a61614">mod_global_parameters::rpxmin</a></div><div class="ttdeci">integer, parameter rpxmin</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00313">mod_global_parameters.t:313</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_a5704f1c57aa09935d3491f65ad240861"><div class="ttname"><a href="namespacemod__global__parameters.html#a5704f1c57aa09935d3491f65ad240861">mod_global_parameters::icomm</a></div><div class="ttdeci">integer icomm</div><div class="ttdoc">The MPI communicator.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00224">mod_global_parameters.t:224</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_a605b2c8e7a386f644c7f8817421b6d67"><div class="ttname"><a href="namespacemod__global__parameters.html#a605b2c8e7a386f644c7f8817421b6d67">mod_global_parameters::mype</a></div><div class="ttdeci">integer mype</div><div class="ttdoc">The rank of the current MPI task.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00221">mod_global_parameters.t:221</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_a66b6d102b0c1abd62b12a11b7fdb31b3"><div class="ttname"><a href="namespacemod__global__parameters.html#a66b6d102b0c1abd62b12a11b7fdb31b3">mod_global_parameters::ll</a></div><div class="ttdeci">integer ll</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00248">mod_global_parameters.t:248</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_a6f52fc825865569352db4ebc034361b4"><div class="ttname"><a href="namespacemod__global__parameters.html#a6f52fc825865569352db4ebc034361b4">mod_global_parameters::ixm</a></div><div class="ttdeci">integer ixm</div><div class="ttdoc">the mesh range of a physical block without ghost cells</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00248">mod_global_parameters.t:248</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_a701c9a9b2d5f02bb7c7a8181f09df2ae"><div class="ttname"><a href="namespacemod__global__parameters.html#a701c9a9b2d5f02bb7c7a8181f09df2ae">mod_global_parameters::ierrmpi</a></div><div class="ttdeci">integer ierrmpi</div><div class="ttdoc">A global MPI error return code.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00227">mod_global_parameters.t:227</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_a9dd666c3ecb8ef351f14f46cf32a3a62"><div class="ttname"><a href="namespacemod__global__parameters.html#a9dd666c3ecb8ef351f14f46cf32a3a62">mod_global_parameters::rnode</a></div><div class="ttdeci">double precision, dimension(:,:), allocatable rnode</div><div class="ttdoc">Corner coordinates.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00174">mod_global_parameters.t:174</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_aa1fac5bb69ce3e968348d1435b29f1ac"><div class="ttname"><a href="namespacemod__global__parameters.html#aa1fac5bb69ce3e968348d1435b29f1ac">mod_global_parameters::unit_temperature</a></div><div class="ttdeci">double precision unit_temperature</div><div class="ttdoc">Physical scaling factor for temperature.</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00084">mod_global_parameters.t:84</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_aa3194833cc9e7e739ed1fa396655a636"><div class="ttname"><a href="namespacemod__global__parameters.html#aa3194833cc9e7e739ed1fa396655a636">mod_global_parameters::d_</a></div><div class="ttdeci">integer, parameter d_</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00305">mod_global_parameters.t:305</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_ac7028ff82a4d1fd8d5ddf936665837c3"><div class="ttname"><a href="namespacemod__global__parameters.html#ac7028ff82a4d1fd8d5ddf936665837c3">mod_global_parameters::rpxmax</a></div><div class="ttdeci">integer, parameter rpxmax</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00315">mod_global_parameters.t:315</a></div></div>
+<div class="ttc" id="anamespacemod__global__parameters_html_ad720343997778dd3cdeb03a7b389a3b0"><div class="ttname"><a href="namespacemod__global__parameters.html#ad720343997778dd3cdeb03a7b389a3b0">mod_global_parameters::rpdx</a></div><div class="ttdeci">integer, parameter rpdx</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00316">mod_global_parameters.t:316</a></div></div>
 <div class="ttc" id="anamespacemod__particle__base_html"><div class="ttname"><a href="namespacemod__particle__base.html">mod_particle_base</a></div><div class="ttdoc">Module with shared functionality for all the particle movers.</div><div class="ttdef"><b>Definition</b> <a href="mod__particle__base_8t_source.html#l00002">mod_particle_base.t:2</a></div></div>
-<div class="ttc" id="anamespacemod__particle__base_html_a557c63a62cb1491a66af98fb29258dd5"><div class="ttname"><a href="namespacemod__particle__base.html#a557c63a62cb1491a66af98fb29258dd5">mod_particle_base::find_particle_ipe</a></div><div class="ttdeci">subroutine find_particle_ipe(x, igrid_particle, ipe_particle)</div><div class="ttdef"><b>Definition</b> <a href="mod__particle__base_8t_source.html#l01219">mod_particle_base.t:1220</a></div></div>
+<div class="ttc" id="anamespacemod__particle__base_html_a557c63a62cb1491a66af98fb29258dd5"><div class="ttname"><a href="namespacemod__particle__base.html#a557c63a62cb1491a66af98fb29258dd5">mod_particle_base::find_particle_ipe</a></div><div class="ttdeci">subroutine find_particle_ipe(x, igrid_particle, ipe_particle)</div><div class="ttdef"><b>Definition</b> <a href="mod__particle__base_8t_source.html#l01281">mod_particle_base.t:1282</a></div></div>
 <div class="ttc" id="anamespacemod__physics_html"><div class="ttname"><a href="namespacemod__physics.html">mod_physics</a></div><div class="ttdoc">This module defines the procedures of a physics module. It contains function pointers for the various...</div><div class="ttdef"><b>Definition</b> <a href="mod__physics_8t_source.html#l00004">mod_physics.t:4</a></div></div>
-<div class="ttc" id="anamespacemod__physics_html_ae19630150a3f06bcc5efe6b2bfe0987e"><div class="ttname"><a href="namespacemod__physics.html#ae19630150a3f06bcc5efe6b2bfe0987e">mod_physics::phys_get_v</a></div><div class="ttdeci">procedure(sub_get_v), pointer phys_get_v</div><div class="ttdef"><b>Definition</b> <a href="mod__physics_8t_source.html#l00068">mod_physics.t:68</a></div></div>
+<div class="ttc" id="anamespacemod__physics_html_ae19630150a3f06bcc5efe6b2bfe0987e"><div class="ttname"><a href="namespacemod__physics.html#ae19630150a3f06bcc5efe6b2bfe0987e">mod_physics::phys_get_v</a></div><div class="ttdeci">procedure(sub_get_v), pointer phys_get_v</div><div class="ttdef"><b>Definition</b> <a href="mod__physics_8t_source.html#l00064">mod_physics.t:64</a></div></div>
 <div class="ttc" id="anamespacemod__trace__field_html"><div class="ttname"><a href="namespacemod__trace__field.html">mod_trace_field</a></div><div class="ttdef"><b>Definition</b> <a href="mod__trace__field_8t_source.html#l00001">mod_trace_field.t:1</a></div></div>
 <div class="ttc" id="anamespacemod__trace__field_html_a0f05eab9d3b6eaebb6101581c6e41650"><div class="ttname"><a href="namespacemod__trace__field.html#a0f05eab9d3b6eaebb6101581c6e41650">mod_trace_field::trace_field_single</a></div><div class="ttdeci">subroutine trace_field_single(xf, wp, wl, dl, nump, nwp, nwl, forward, ftype, tcondi)</div><div class="ttdef"><b>Definition</b> <a href="mod__trace__field_8t_source.html#l00173">mod_trace_field.t:174</a></div></div>
 <div class="ttc" id="anamespacemod__trace__field_html_a112f115eac47539174c13f5bca0dd984"><div class="ttname"><a href="namespacemod__trace__field.html#a112f115eac47539174c13f5bca0dd984">mod_trace_field::trace_field_multi</a></div><div class="ttdeci">subroutine trace_field_multi(xfm, wpm, wlm, dl, numl, nump, nwp, nwl, forwardm, ftype, tcondi)</div><div class="ttdef"><b>Definition</b> <a href="mod__trace__field_8t_source.html#l00008">mod_trace_field.t:9</a></div></div>
 <div class="ttc" id="anamespacemod__trace__field_html_a3c456e6b257e76ba260d143104deb444"><div class="ttname"><a href="namespacemod__trace__field.html#a3c456e6b257e76ba260d143104deb444">mod_trace_field::get_k</a></div><div class="ttdeci">subroutine get_k(xfn, igrid, k, ixil, dxbd, ftype)</div><div class="ttdef"><b>Definition</b> <a href="mod__trace__field_8t_source.html#l00535">mod_trace_field.t:536</a></div></div>
 <div class="ttc" id="anamespacemod__trace__field_html_ac78caf7a2a043329a80ed18268fdc3a5"><div class="ttname"><a href="namespacemod__trace__field.html#ac78caf7a2a043329a80ed18268fdc3a5">mod_trace_field::find_points_in_pe</a></div><div class="ttdeci">subroutine find_points_in_pe(igrid, ipoint_in, xf, wp, wl, dl, nump, nwp, nwl, forward, ftype, tcondi, statusf)</div><div class="ttdef"><b>Definition</b> <a href="mod__trace__field_8t_source.html#l00294">mod_trace_field.t:295</a></div></div>
 <div class="ttc" id="anamespacemod__trace__field_html_ad82d49ec2c6eb75a4c6b83ef4fd9d0e2"><div class="ttname"><a href="namespacemod__trace__field.html#ad82d49ec2c6eb75a4c6b83ef4fd9d0e2">mod_trace_field::find_next_grid</a></div><div class="ttdeci">subroutine find_next_grid(igrid, igrid_next, ipe_next, xf1, newpe, stopt)</div><div class="ttdef"><b>Definition</b> <a href="mod__trace__field_8t_source.html#l00355">mod_trace_field.t:356</a></div></div>
-<div class="ttc" id="anamespacemod__trace__field_html_ae5f946d10eca246b569e842697f1df8a"><div class="ttname"><a href="namespacemod__trace__field.html#ae5f946d10eca246b569e842697f1df8a">mod_trace_field::get_t_loc_trac</a></div><div class="ttdeci">subroutine get_t_loc_trac(igrid, xloc, tloc, ixil, dxbd)</div><div class="ttdef"><b>Definition</b> <a href="mod__trace__field_8t_source.html#l00605">mod_trace_field.t:606</a></div></div>
+<div class="ttc" id="anamespacemod__trace__field_html_ae5f946d10eca246b569e842697f1df8a"><div class="ttname"><a href="namespacemod__trace__field.html#ae5f946d10eca246b569e842697f1df8a">mod_trace_field::get_t_loc_trac</a></div><div class="ttdeci">subroutine get_t_loc_trac(igrid, xloc, tloc, ixil, dxbd)</div><div class="ttdef"><b>Definition</b> <a href="mod__trace__field_8t_source.html#l00609">mod_trace_field.t:610</a></div></div>
 <div class="ttc" id="anamespacemod__trace__field_html_afbe586c72181cc0f5f5e46509a6a1347"><div class="ttname"><a href="namespacemod__trace__field.html#afbe586c72181cc0f5f5e46509a6a1347">mod_trace_field::find_points_interp</a></div><div class="ttdeci">subroutine find_points_interp(igrid, ip_in, ip_out, xf, wp, wl, nump, nwp, nwl, dl, forward, ftype, tcondi)</div><div class="ttdef"><b>Definition</b> <a href="mod__trace__field_8t_source.html#l00428">mod_trace_field.t:429</a></div></div>
 <div class="ttc" id="anamespacemod__usr__methods_html"><div class="ttname"><a href="namespacemod__usr__methods.html">mod_usr_methods</a></div><div class="ttdoc">Module with all the methods that users can customize in AMRVAC.</div><div class="ttdef"><b>Definition</b> <a href="mod__usr__methods_8t_source.html#l00004">mod_usr_methods.t:4</a></div></div>
 <div class="ttc" id="anamespacemod__usr__methods_html_a9869e5c920bae9a60d6fcebc866e2aab"><div class="ttname"><a href="namespacemod__usr__methods.html#a9869e5c920bae9a60d6fcebc866e2aab">mod_usr_methods::usr_set_field_w</a></div><div class="ttdeci">procedure(set_field_w), pointer usr_set_field_w</div><div class="ttdef"><b>Definition</b> <a href="mod__usr__methods_8t_source.html#l00105">mod_usr_methods.t:105</a></div></div>

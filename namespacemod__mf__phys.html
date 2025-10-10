@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -98,21 +98,12 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:ae91deb72f6f5352614c7541a8815b92d" id="r_ae91deb72f6f5352614c7541a8815b92d"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ae91deb72f6f5352614c7541a8815b92d">mf_to_primitive</a> (ixil, ixol, w, x)</td></tr>
 <tr class="memdesc:ae91deb72f6f5352614c7541a8815b92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform conservative variables into primitive ones.  <br /></td></tr>
 <tr class="separator:ae91deb72f6f5352614c7541a8815b92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e99cf6fe3400e0d8a68ec38ba3b4ee0" id="r_a6e99cf6fe3400e0d8a68ec38ba3b4ee0"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a6e99cf6fe3400e0d8a68ec38ba3b4ee0">mf_get_v</a> (w, x, ixil, ixol, v)</td></tr>
-<tr class="memdesc:a6e99cf6fe3400e0d8a68ec38ba3b4ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate v vector.  <br /></td></tr>
-<tr class="separator:a6e99cf6fe3400e0d8a68ec38ba3b4ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3af72729f0e67749297eb9b99bc193d8" id="r_a3af72729f0e67749297eb9b99bc193d8"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a3af72729f0e67749297eb9b99bc193d8">mf_get_v_idim</a> (w, x, ixil, ixol, idim, v)</td></tr>
-<tr class="memdesc:a3af72729f0e67749297eb9b99bc193d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate v component.  <br /></td></tr>
-<tr class="separator:a3af72729f0e67749297eb9b99bc193d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab11ecbc8587af5e14f686e74d66a69e8" id="r_ab11ecbc8587af5e14f686e74d66a69e8"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ab11ecbc8587af5e14f686e74d66a69e8">get_normalized_divb</a> (w, ixil, ixol, divb)</td></tr>
 <tr class="memdesc:ab11ecbc8587af5e14f686e74d66a69e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get dimensionless div B = |divB| * volume / area / |B|  <br /></td></tr>
 <tr class="separator:ab11ecbc8587af5e14f686e74d66a69e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad553db91857bc6b8a6cdde18dde649ba" id="r_ad553db91857bc6b8a6cdde18dde649ba"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ad553db91857bc6b8a6cdde18dde649ba">get_current</a> (w, ixil, ixol, idirmin, current, fourthorder)</td></tr>
-<tr class="memdesc:ad553db91857bc6b8a6cdde18dde649ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#af2f7436240818f02fc7b675a70cae4a3">dxlevel(^D)</a> is set correctly.  <br /></td></tr>
+<tr class="memdesc:ad553db91857bc6b8a6cdde18dde649ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#ac487446056522027f949f42ba64b2e11" title="store unstretched cell size of current level">dxlevel(^D)</a> is set correctly.  <br /></td></tr>
 <tr class="separator:ad553db91857bc6b8a6cdde18dde649ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a327f9802dc804f16acbb13effbde3806" id="r_a327f9802dc804f16acbb13effbde3806"><td class="memItemLeft" align="right" valign="top">double precision function, dimension(ixo^s), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a327f9802dc804f16acbb13effbde3806">mf_mag_en_all</a> (w, ixil, ixol)</td></tr>
-<tr class="memdesc:a327f9802dc804f16acbb13effbde3806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute 2 times total magnetic energy.  <br /></td></tr>
-<tr class="separator:a327f9802dc804f16acbb13effbde3806"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9c6423d95f07ba8b1d77ea65420c6ee" id="r_ad9c6423d95f07ba8b1d77ea65420c6ee"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ad9c6423d95f07ba8b1d77ea65420c6ee">mf_clean_divb_multigrid</a> (qdt, qt, active)</td></tr>
 <tr class="separator:ad9c6423d95f07ba8b1d77ea65420c6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a98a656d79ffa62895208194b0f8cca" id="r_a4a98a656d79ffa62895208194b0f8cca"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a4a98a656d79ffa62895208194b0f8cca">mf_face_to_center</a> (ixol, s)</td></tr>
@@ -135,6 +126,36 @@ Variables</h2></td></tr>
 <tr class="memitem:ac193761ebab798c4b68cc4e3beb0ab66" id="r_ac193761ebab798c4b68cc4e3beb0ab66"><td class="memItemLeft" align="right" valign="top">double precision, dimension(2 *^nd), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ac193761ebab798c4b68cc4e3beb0ab66">mf_decay_scale</a> =0.d0</td></tr>
 <tr class="memdesc:ac193761ebab798c4b68cc4e3beb0ab66"><td class="mdescLeft">&#160;</td><td class="mdescRight">decay scale of frictional velocity near boundaries  <br /></td></tr>
 <tr class="separator:ac193761ebab798c4b68cc4e3beb0ab66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c7f67659898713ad0c8f690015132ab" id="r_a8c7f67659898713ad0c8f690015132ab"><td class="memItemLeft" align="right" valign="top">double precision, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a8c7f67659898713ad0c8f690015132ab">mf_glm_alpha</a> = 0.5d0</td></tr>
+<tr class="memdesc:a8c7f67659898713ad0c8f690015132ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">GLM-MHD parameter: ratio of the diffusive and advective time scales for div b taking values within [0, 1].  <br /></td></tr>
+<tr class="separator:a8c7f67659898713ad0c8f690015132ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead465002058bc6820a3006c804bbc1e" id="r_aead465002058bc6820a3006c804bbc1e"><td class="memItemLeft" align="right" valign="top">double precision, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#aead465002058bc6820a3006c804bbc1e">mf_eta</a> = 0.0d0</td></tr>
+<tr class="memdesc:aead465002058bc6820a3006c804bbc1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The resistivity.  <br /></td></tr>
+<tr class="separator:aead465002058bc6820a3006c804bbc1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798e81802e661a07a9dfadedcdb301f6" id="r_a798e81802e661a07a9dfadedcdb301f6"><td class="memItemLeft" align="right" valign="top">double precision, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a798e81802e661a07a9dfadedcdb301f6">mf_eta_hyper</a> = 0.0d0</td></tr>
+<tr class="memdesc:a798e81802e661a07a9dfadedcdb301f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hyper-resistivity.  <br /></td></tr>
+<tr class="separator:a798e81802e661a07a9dfadedcdb301f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af607e2dcf3c7e141c203b92a618cff21" id="r_af607e2dcf3c7e141c203b92a618cff21"><td class="memItemLeft" align="right" valign="top">double precision, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#af607e2dcf3c7e141c203b92a618cff21">he_abundance</a> =0.1d0</td></tr>
+<tr class="memdesc:af607e2dcf3c7e141c203b92a618cff21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helium abundance over Hydrogen.  <br /></td></tr>
+<tr class="separator:af607e2dcf3c7e141c203b92a618cff21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9c148e3a71f9839c3cb1069aeb649b5" id="r_ad9c148e3a71f9839c3cb1069aeb649b5"><td class="memItemLeft" align="right" valign="top">integer, dimension(:), allocatable, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ad9c148e3a71f9839c3cb1069aeb649b5">mom</a></td></tr>
+<tr class="memdesc:ad9c148e3a71f9839c3cb1069aeb649b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the momentum density.  <br /></td></tr>
+<tr class="separator:ad9c148e3a71f9839c3cb1069aeb649b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942f87980d178c1904b0d8db3d4d5ea7" id="r_a942f87980d178c1904b0d8db3d4d5ea7"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a942f87980d178c1904b0d8db3d4d5ea7">c</a></td></tr>
+<tr class="memdesc:a942f87980d178c1904b0d8db3d4d5ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the momentum density for the form of better vectorization.  <br /></td></tr>
+<tr class="separator:a942f87980d178c1904b0d8db3d4d5ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0e8492e6fff400f12ae4b06980d2d09" id="r_ae0e8492e6fff400f12ae4b06980d2d09"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ae0e8492e6fff400f12ae4b06980d2d09">m</a></td></tr>
+<tr class="separator:ae0e8492e6fff400f12ae4b06980d2d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ea8c676ec0aac6d9cd74cb3d9423ae" id="r_a96ea8c676ec0aac6d9cd74cb3d9423ae"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a96ea8c676ec0aac6d9cd74cb3d9423ae">c_</a></td></tr>
+<tr class="separator:a96ea8c676ec0aac6d9cd74cb3d9423ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a3493ee88005d6b67bd0a8f83602ad" id="r_a00a3493ee88005d6b67bd0a8f83602ad"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a00a3493ee88005d6b67bd0a8f83602ad">b</a></td></tr>
+<tr class="separator:a00a3493ee88005d6b67bd0a8f83602ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad757a51b54302ed9b356eb98a4aa4be8" id="r_ad757a51b54302ed9b356eb98a4aa4be8"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ad757a51b54302ed9b356eb98a4aa4be8">psi_</a></td></tr>
+<tr class="memdesc:ad757a51b54302ed9b356eb98a4aa4be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the GLM psi.  <br /></td></tr>
+<tr class="separator:ad757a51b54302ed9b356eb98a4aa4be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaa0ad4af93c0ce53744c5adf304a023" id="r_abaa0ad4af93c0ce53744c5adf304a023"><td class="memItemLeft" align="right" valign="top">integer, dimension(2 *^nd), public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#abaa0ad4af93c0ce53744c5adf304a023">boundary_divbfix_skip</a> =0</td></tr>
+<tr class="memdesc:abaa0ad4af93c0ce53744c5adf304a023"><td class="mdescLeft">&#160;</td><td class="mdescRight">To skip * layer of ghost cells during divB=0 fix for boundary.  <br /></td></tr>
+<tr class="separator:abaa0ad4af93c0ce53744c5adf304a023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adea4764cfae0de021993f276aa871629" id="r_adea4764cfae0de021993f276aa871629"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#adea4764cfae0de021993f276aa871629">mf_particles</a> = .false.</td></tr>
 <tr class="memdesc:adea4764cfae0de021993f276aa871629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether particles module is added.  <br /></td></tr>
 <tr class="separator:adea4764cfae0de021993f276aa871629"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,51 +165,30 @@ Variables</h2></td></tr>
 <tr class="memitem:af376f08bb8cbdd0d839d4f0a46b7e8ff" id="r_af376f08bb8cbdd0d839d4f0a46b7e8ff"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#af376f08bb8cbdd0d839d4f0a46b7e8ff">source_split_divb</a> = .false.</td></tr>
 <tr class="memdesc:af376f08bb8cbdd0d839d4f0a46b7e8ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether divB cleaning sources are added splitting from fluid solver.  <br /></td></tr>
 <tr class="separator:af376f08bb8cbdd0d839d4f0a46b7e8ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c7f67659898713ad0c8f690015132ab" id="r_a8c7f67659898713ad0c8f690015132ab"><td class="memItemLeft" align="right" valign="top">double precision, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a8c7f67659898713ad0c8f690015132ab">mf_glm_alpha</a> = 0.5d0</td></tr>
-<tr class="memdesc:a8c7f67659898713ad0c8f690015132ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">GLM-MHD parameter: ratio of the diffusive and advective time scales for div b taking values within [0, 1].  <br /></td></tr>
-<tr class="separator:a8c7f67659898713ad0c8f690015132ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5013d5745d69b155cfb64cd8cf1ecc8" id="r_ad5013d5745d69b155cfb64cd8cf1ecc8"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ad5013d5745d69b155cfb64cd8cf1ecc8">mf_4th_order</a> = .false.</td></tr>
 <tr class="memdesc:ad5013d5745d69b155cfb64cd8cf1ecc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">MHD fourth order.  <br /></td></tr>
 <tr class="separator:ad5013d5745d69b155cfb64cd8cf1ecc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2993ef3e3fdb1fd75b63a53f26459391" id="r_a2993ef3e3fdb1fd75b63a53f26459391"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a2993ef3e3fdb1fd75b63a53f26459391">mf_record_electric_field</a> = .false.</td></tr>
 <tr class="memdesc:a2993ef3e3fdb1fd75b63a53f26459391"><td class="mdescLeft">&#160;</td><td class="mdescRight">set to true if need to record electric field on cell edges  <br /></td></tr>
 <tr class="separator:a2993ef3e3fdb1fd75b63a53f26459391"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9c148e3a71f9839c3cb1069aeb649b5" id="r_ad9c148e3a71f9839c3cb1069aeb649b5"><td class="memItemLeft" align="right" valign="top">integer, dimension(:), allocatable, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ad9c148e3a71f9839c3cb1069aeb649b5">mom</a></td></tr>
-<tr class="memdesc:ad9c148e3a71f9839c3cb1069aeb649b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the momentum density.  <br /></td></tr>
-<tr class="separator:ad9c148e3a71f9839c3cb1069aeb649b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad757a51b54302ed9b356eb98a4aa4be8" id="r_ad757a51b54302ed9b356eb98a4aa4be8"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#ad757a51b54302ed9b356eb98a4aa4be8">psi_</a></td></tr>
-<tr class="memdesc:ad757a51b54302ed9b356eb98a4aa4be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the GLM psi.  <br /></td></tr>
-<tr class="separator:ad757a51b54302ed9b356eb98a4aa4be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aead465002058bc6820a3006c804bbc1e" id="r_aead465002058bc6820a3006c804bbc1e"><td class="memItemLeft" align="right" valign="top">double precision, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#aead465002058bc6820a3006c804bbc1e">mf_eta</a> = 0.0d0</td></tr>
-<tr class="memdesc:aead465002058bc6820a3006c804bbc1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The resistivity.  <br /></td></tr>
-<tr class="separator:aead465002058bc6820a3006c804bbc1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a798e81802e661a07a9dfadedcdb301f6" id="r_a798e81802e661a07a9dfadedcdb301f6"><td class="memItemLeft" align="right" valign="top">double precision, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a798e81802e661a07a9dfadedcdb301f6">mf_eta_hyper</a> = 0.0d0</td></tr>
-<tr class="memdesc:a798e81802e661a07a9dfadedcdb301f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hyper-resistivity.  <br /></td></tr>
-<tr class="separator:a798e81802e661a07a9dfadedcdb301f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16c7d41830be632b0170a7e3e3b98150" id="r_a16c7d41830be632b0170a7e3e3b98150"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a16c7d41830be632b0170a7e3e3b98150">mf_divb_nth</a> = 1</td></tr>
+<tr class="memdesc:a16c7d41830be632b0170a7e3e3b98150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether divB is computed with a fourth order approximation.  <br /></td></tr>
+<tr class="separator:a16c7d41830be632b0170a7e3e3b98150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a4446afad80d6f4ed88e384730d8f87" id="r_a9a4446afad80d6f4ed88e384730d8f87"><td class="memItemLeft" align="right" valign="top">logical, dimension(2 *^nd), public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a9a4446afad80d6f4ed88e384730d8f87">boundary_divbfix</a> =.true.</td></tr>
+<tr class="memdesc:a9a4446afad80d6f4ed88e384730d8f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">To control divB=0 fix for boundary.  <br /></td></tr>
+<tr class="separator:a9a4446afad80d6f4ed88e384730d8f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44b5c40b7587279433d916f3a5d52086" id="r_a44b5c40b7587279433d916f3a5d52086"><td class="memItemLeft" align="right" valign="top">logical, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a44b5c40b7587279433d916f3a5d52086">divbwave</a> = .true.</td></tr>
+<tr class="memdesc:a44b5c40b7587279433d916f3a5d52086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add divB wave in Roe solver.  <br /></td></tr>
+<tr class="separator:a44b5c40b7587279433d916f3a5d52086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cbdde47fd036e1d6eab5619370dc80b" id="r_a3cbdde47fd036e1d6eab5619370dc80b"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a3cbdde47fd036e1d6eab5619370dc80b">clean_initial_divb</a> =.false.</td></tr>
+<tr class="memdesc:a3cbdde47fd036e1d6eab5619370dc80b"><td class="mdescLeft">&#160;</td><td class="mdescRight">clean divb in the initial condition  <br /></td></tr>
+<tr class="separator:a3cbdde47fd036e1d6eab5619370dc80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf1de77c578f6af67968e34e56059e4e" id="r_aaf1de77c578f6af67968e34e56059e4e"><td class="memItemLeft" align="right" valign="top">character(len=std_len), public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#aaf1de77c578f6af67968e34e56059e4e">typedivbfix</a> = 'ct'</td></tr>
 <tr class="memdesc:aaf1de77c578f6af67968e34e56059e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method type to clean divergence of B.  <br /></td></tr>
 <tr class="separator:aaf1de77c578f6af67968e34e56059e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa85a6eb37e14ee1fd9c0e4075c4d37b3" id="r_aa85a6eb37e14ee1fd9c0e4075c4d37b3"><td class="memItemLeft" align="right" valign="top">character(len=std_len), public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#aa85a6eb37e14ee1fd9c0e4075c4d37b3">type_ct</a> = 'average'</td></tr>
 <tr class="memdesc:aa85a6eb37e14ee1fd9c0e4075c4d37b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method type of constrained transport.  <br /></td></tr>
 <tr class="separator:aa85a6eb37e14ee1fd9c0e4075c4d37b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05d71519822779ecaeadee5827de7c57" id="r_a05d71519822779ecaeadee5827de7c57"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a05d71519822779ecaeadee5827de7c57">mf_divb_4thorder</a> = .false.</td></tr>
-<tr class="memdesc:a05d71519822779ecaeadee5827de7c57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether divB is computed with a fourth order approximation.  <br /></td></tr>
-<tr class="separator:a05d71519822779ecaeadee5827de7c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44b5c40b7587279433d916f3a5d52086" id="r_a44b5c40b7587279433d916f3a5d52086"><td class="memItemLeft" align="right" valign="top">logical, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a44b5c40b7587279433d916f3a5d52086">divbwave</a> = .true.</td></tr>
-<tr class="memdesc:a44b5c40b7587279433d916f3a5d52086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add divB wave in Roe solver.  <br /></td></tr>
-<tr class="separator:a44b5c40b7587279433d916f3a5d52086"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af607e2dcf3c7e141c203b92a618cff21" id="r_af607e2dcf3c7e141c203b92a618cff21"><td class="memItemLeft" align="right" valign="top">double precision, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#af607e2dcf3c7e141c203b92a618cff21">he_abundance</a> =0.1d0</td></tr>
-<tr class="memdesc:af607e2dcf3c7e141c203b92a618cff21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helium abundance over Hydrogen.  <br /></td></tr>
-<tr class="separator:af607e2dcf3c7e141c203b92a618cff21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a4446afad80d6f4ed88e384730d8f87" id="r_a9a4446afad80d6f4ed88e384730d8f87"><td class="memItemLeft" align="right" valign="top">logical, dimension(2 *^nd), public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a9a4446afad80d6f4ed88e384730d8f87">boundary_divbfix</a> =.true.</td></tr>
-<tr class="memdesc:a9a4446afad80d6f4ed88e384730d8f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">To control divB=0 fix for boundary.  <br /></td></tr>
-<tr class="separator:a9a4446afad80d6f4ed88e384730d8f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaa0ad4af93c0ce53744c5adf304a023" id="r_abaa0ad4af93c0ce53744c5adf304a023"><td class="memItemLeft" align="right" valign="top">integer, dimension(2 *^nd), public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#abaa0ad4af93c0ce53744c5adf304a023">boundary_divbfix_skip</a> =0</td></tr>
-<tr class="memdesc:abaa0ad4af93c0ce53744c5adf304a023"><td class="mdescLeft">&#160;</td><td class="mdescRight">To skip * layer of ghost cells during divB=0 fix for boundary.  <br /></td></tr>
-<tr class="separator:abaa0ad4af93c0ce53744c5adf304a023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cbdde47fd036e1d6eab5619370dc80b" id="r_a3cbdde47fd036e1d6eab5619370dc80b"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__mf__phys.html#a3cbdde47fd036e1d6eab5619370dc80b">clean_initial_divb</a> =.false.</td></tr>
-<tr class="memdesc:a3cbdde47fd036e1d6eab5619370dc80b"><td class="mdescLeft">&#160;</td><td class="mdescRight">clean divb in the initial condition  <br /></td></tr>
-<tr class="separator:a3cbdde47fd036e1d6eab5619370dc80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Magnetofriction module. </p>
@@ -257,7 +257,7 @@ Variables</h2></td></tr>
 
 <p>calculate magnetic field from vector potential </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l02436">2436</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l02447">2447</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -333,9 +333,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#af2f7436240818f02fc7b675a70cae4a3">dxlevel(^D)</a> is set correctly. </p>
+<p>Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#ac487446056522027f949f42ba64b2e11" title="store unstretched cell size of current level">dxlevel(^D)</a> is set correctly. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l01151">1151</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l01174">1174</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -402,17 +402,7 @@ Here is the call graph for this function:</div>
 
 <p>get dimensionless div B = |divB| * volume / area / |B| </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l01117">1117</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacemod__mf__phys_ab11ecbc8587af5e14f686e74d66a69e8_cgraph.png" border="0" usemap="#anamespacemod__mf__phys_ab11ecbc8587af5e14f686e74d66a69e8_cgraph" alt=""/></div>
-<map name="anamespacemod__mf__phys_ab11ecbc8587af5e14f686e74d66a69e8_cgraph" id="anamespacemod__mf__phys_ab11ecbc8587af5e14f686e74d66a69e8_cgraph">
-<area shape="rect" title="get dimensionless div B = |divB| * volume / area / |B|" alt="" coords="5,13,264,38"/>
-<area shape="rect" href="namespacemod__mf__phys.html#a327f9802dc804f16acbb13effbde3806" title="Compute 2 times total magnetic energy." alt="" coords="312,5,488,45"/>
-<area shape="poly" title=" " alt="" coords="264,23,298,23,298,28,264,28"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l01140">1140</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -456,7 +446,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l01746">1746</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l01751">1751</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -465,10 +455,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,121,188,161"/>
 <area shape="rect" href="namespacemod__mf__phys.html#ad553db91857bc6b8a6cdde18dde649ba" title="Calculate idirmin and the idirmin:3 components of the common current array make sure that dxlevel(^D)..." alt="" coords="238,29,434,55"/>
 <area shape="poly" title=" " alt="" coords="128,118,178,90,235,64,258,56,260,61,237,68,180,95,131,123"/>
-<area shape="rect" href="namespacemod__geometry.html#a5e16962a2f11058e42599f6c5e21f207" title="Calculate gradient of a scalar q within ixL in direction idir." alt="" coords="245,79,427,104"/>
+<area shape="rect" href="namespacemod__geometry.html#a9be440eb43ae039be6f1e52e5c841f69" title=" " alt="" coords="245,79,427,104"/>
 <area shape="poly" title=" " alt="" coords="188,119,260,104,261,109,189,124"/>
-<area shape="rect" href="namespacemod__geometry.html#afd910ad76494fa3ec94ffaaf2c96995f" title="Calculate gradient of a scalar q in direction idir at cell interfaces." alt="" coords="241,128,431,153"/>
-<area shape="poly" title=" " alt="" coords="188,138,227,138,227,143,188,143"/>
+<area shape="rect" href="namespacemod__geometry.html#aaaab25a5efeab833798f44aee5bae67c" title=" " alt="" coords="243,128,429,153"/>
+<area shape="poly" title=" " alt="" coords="188,138,229,138,229,143,188,143"/>
 <area shape="rect" href="namespacemod__mf__phys.html#a4a98a656d79ffa62895208194b0f8cca" title="calculate cell&#45;center values from face&#45;center values" alt="" coords="249,178,423,218"/>
 <area shape="poly" title=" " alt="" coords="181,158,239,172,238,177,180,163"/>
 <area shape="rect" href="namespacemod__constrained__transport.html#a1f3105779f16bec5e01f243d61fe32f1" title="Reconstruct scalar q within ixO^L to 1/2 dx in direction idir Return both left and right reconstructe..." alt="" coords="236,242,436,282"/>
@@ -513,211 +503,7 @@ Here is the call graph for this function:</div>
 
 <p>calculate cell-center values from face-center values </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l02376">2376</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
-
-</div>
-</div>
-<a id="a6e99cf6fe3400e0d8a68ec38ba3b4ee0" name="a6e99cf6fe3400e0d8a68ec38ba3b4ee0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e99cf6fe3400e0d8a68ec38ba3b4ee0">&#9670;&#160;</a></span>mf_get_v()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">subroutine, public mod_mf_phys::mf_get_v </td>
-          <td>(</td>
-          <td class="paramtype">double precision, dimension(ixi^s,nw), intent(in)&#160;</td>
-          <td class="paramname"><em>w</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double precision, dimension(ixi^s,1:ndim), intent(in)&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ixi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ixo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double precision, dimension(ixi^s,ndir), intent(out)&#160;</td>
-          <td class="paramname"><em>v</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculate v vector. </p>
-
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00398">398</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
-
-</div>
-</div>
-<a id="a3af72729f0e67749297eb9b99bc193d8" name="a3af72729f0e67749297eb9b99bc193d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3af72729f0e67749297eb9b99bc193d8">&#9670;&#160;</a></span>mf_get_v_idim()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">subroutine, public mod_mf_phys::mf_get_v_idim </td>
-          <td>(</td>
-          <td class="paramtype">double precision, dimension(ixi^s,nw), intent(in)&#160;</td>
-          <td class="paramname"><em>w</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double precision, dimension(ixi^s,1:ndim), intent(in)&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ixi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ixo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>idim</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double precision, dimension(ixi^s), intent(out)&#160;</td>
-          <td class="paramname"><em>v</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculate v component. </p>
-
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00414">414</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacemod__mf__phys_a3af72729f0e67749297eb9b99bc193d8_cgraph.png" border="0" usemap="#anamespacemod__mf__phys_a3af72729f0e67749297eb9b99bc193d8_cgraph" alt=""/></div>
-<map name="anamespacemod__mf__phys_a3af72729f0e67749297eb9b99bc193d8_cgraph" id="anamespacemod__mf__phys_a3af72729f0e67749297eb9b99bc193d8_cgraph">
-<area shape="rect" title="Calculate v component." alt="" coords="5,195,173,235"/>
-<area shape="rect" href="namespacemod__ghostcells__update.html#a5a035ca86bfa7e52a61d1ba8f5d1389d" title=" " alt="" coords="224,5,415,45"/>
-<area shape="poly" title=" " alt="" coords="101,193,149,129,182,94,220,62,241,49,244,54,223,66,186,97,153,133,106,196"/>
-<area shape="rect" href="namespacemod__geometry.html#a9af21193cc064e92debf8e7b96f86a60" title="Calculate curl of a vector qvec within ixL Options to employ standard second order CD evaluations use..." alt="" coords="465,107,659,133"/>
-<area shape="poly" title=" " alt="" coords="105,193,153,146,185,123,220,106,256,95,293,89,368,86,439,92,499,102,498,107,438,97,368,91,294,94,257,100,222,110,188,127,156,150,109,196"/>
-<area shape="rect" href="namespacemod__mf__phys.html#ad553db91857bc6b8a6cdde18dde649ba" title="Calculate idirmin and the idirmin:3 components of the common current array make sure that dxlevel(^D)..." alt="" coords="221,145,417,170"/>
-<area shape="poly" title=" " alt="" coords="170,192,254,171,255,176,171,197"/>
-<area shape="rect" href="namespacemod__ghostcells__update.html#abc70508ceb326fb28166d751e5de31fc" title="do update ghost cells of all blocks including physical boundaries" alt="" coords="231,195,407,235"/>
-<area shape="poly" title=" " alt="" coords="173,212,218,212,218,217,173,217"/>
-<area shape="rect" href="namespacemod__geometry.html#a5e16962a2f11058e42599f6c5e21f207" title="Calculate gradient of a scalar q within ixL in direction idir." alt="" coords="228,259,411,285"/>
-<area shape="poly" title=" " alt="" coords="171,232,255,253,254,259,170,237"/>
-<area shape="rect" href="namespacemod__geometry.html#a8744a5c0a4182d844e384e4bec8d0ccc" title="Calculate gradient of a scalar q within ixL in direction idir first use limiter to go from cell cente..." alt="" coords="225,309,414,334"/>
-<area shape="poly" title=" " alt="" coords="119,233,166,264,222,294,245,302,244,307,220,298,164,269,116,237"/>
-<area shape="rect" href="namespacemod__mf__phys.html#a6e99cf6fe3400e0d8a68ec38ba3b4ee0" title="Calculate v vector." alt="" coords="228,358,411,383"/>
-<area shape="poly" title=" " alt="" coords="107,233,155,288,187,318,223,343,239,351,237,356,220,348,183,322,151,292,103,237"/>
-<area shape="poly" title=" " alt="" coords="402,142,465,132,466,137,403,147"/>
-<area shape="poly" title=" " alt="" coords="282,146,274,136,278,126,294,120,319,118,352,122,364,131,361,136,350,127,319,123,295,125,282,130,279,136,286,143"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a327f9802dc804f16acbb13effbde3806" name="a327f9802dc804f16acbb13effbde3806"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a327f9802dc804f16acbb13effbde3806">&#9670;&#160;</a></span>mf_mag_en_all()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double precision function, dimension(ixo^s), public mod_mf_phys::mf_mag_en_all </td>
-          <td>(</td>
-          <td class="paramtype">double precision, dimension(ixi^s, nw), intent(in)&#160;</td>
-          <td class="paramname"><em>w</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ixi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ixo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>l</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compute 2 times total magnetic energy. </p>
-
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l01282">1282</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l02385">2385</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -733,25 +519,23 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00161">161</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00163">163</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacemod__mf__phys_a164e326547f7aa16b24fcbaf0e8bf01a_cgraph.png" border="0" usemap="#anamespacemod__mf__phys_a164e326547f7aa16b24fcbaf0e8bf01a_cgraph" alt=""/></div>
 <map name="anamespacemod__mf__phys_a164e326547f7aa16b24fcbaf0e8bf01a_cgraph" id="anamespacemod__mf__phys_a164e326547f7aa16b24fcbaf0e8bf01a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,150,212,175"/>
+<area shape="rect" title=" " alt="" coords="5,127,212,153"/>
 <area shape="rect" href="namespacemod__mf__phys.html#ad9c6423d95f07ba8b1d77ea65420c6ee" title=" " alt="" coords="272,5,455,45"/>
-<area shape="poly" title=" " alt="" coords="125,148,183,107,259,62,288,48,291,53,261,66,186,111,128,152"/>
+<area shape="poly" title=" " alt="" coords="132,125,259,62,292,48,294,53,261,66,135,129"/>
 <area shape="rect" href="namespacemod__mf__phys.html#a4a98a656d79ffa62895208194b0f8cca" title="calculate cell&#45;center values from face&#45;center values" alt="" coords="515,35,689,75"/>
-<area shape="poly" title=" " alt="" coords="139,147,194,126,259,105,384,79,501,62,501,68,385,85,261,111,196,131,141,152"/>
-<area shape="rect" href="namespacemod__mf__phys.html#a6e99cf6fe3400e0d8a68ec38ba3b4ee0" title="Calculate v vector." alt="" coords="272,121,455,146"/>
-<area shape="poly" title=" " alt="" coords="212,148,258,143,259,148,212,153"/>
-<area shape="rect" href="namespacemod__mf__phys.html#ac938faf678e69b784ccf3946ad68c7ee" title="Transform primitive variables into conservative ones." alt="" coords="283,171,443,211"/>
-<area shape="poly" title=" " alt="" coords="212,171,270,178,270,183,212,177"/>
-<area shape="rect" href="namespacemod__mf__phys.html#ae91deb72f6f5352614c7541a8815b92d" title="Transform conservative variables into primitive ones." alt="" coords="283,235,443,275"/>
-<area shape="poly" title=" " alt="" coords="141,173,261,220,283,228,282,233,259,225,139,178"/>
-<area shape="rect" href="namespacemod__particles.html#a7a89b126b34bb788a3911955880ddd8f" title="Initialize particle data and parameters." alt="" coords="260,299,467,325"/>
-<area shape="poly" title=" " alt="" coords="123,173,179,227,218,258,261,284,280,292,278,297,259,289,215,262,176,231,120,177"/>
+<area shape="poly" title=" " alt="" coords="166,125,260,105,501,66,501,71,260,111,167,130"/>
+<area shape="rect" href="namespacemod__mf__phys.html#ac938faf678e69b784ccf3946ad68c7ee" title="Transform primitive variables into conservative ones." alt="" coords="283,120,443,160"/>
+<area shape="poly" title=" " alt="" coords="212,137,270,137,270,143,212,143"/>
+<area shape="rect" href="namespacemod__mf__phys.html#ae91deb72f6f5352614c7541a8815b92d" title="Transform conservative variables into primitive ones." alt="" coords="283,184,443,224"/>
+<area shape="poly" title=" " alt="" coords="161,150,270,178,269,183,160,155"/>
+<area shape="rect" href="namespacemod__particles.html#a7a89b126b34bb788a3911955880ddd8f" title="Initialize particle data and parameters." alt="" coords="260,249,467,274"/>
+<area shape="poly" title=" " alt="" coords="128,151,185,191,222,214,261,234,285,242,283,247,259,238,219,219,182,196,125,155"/>
 <area shape="poly" title=" " alt="" coords="455,34,501,40,501,45,455,39"/>
 </map>
 </div>
@@ -810,7 +594,7 @@ Here is the call graph for this function:</div>
 
 <p>Transform primitive variables into conservative ones. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00378">378</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00459">459</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -866,7 +650,29 @@ Here is the call graph for this function:</div>
 
 <p>Transform conservative variables into primitive ones. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00388">388</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00469">469</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacemod__mf__phys_ae91deb72f6f5352614c7541a8815b92d_cgraph.png" border="0" usemap="#anamespacemod__mf__phys_ae91deb72f6f5352614c7541a8815b92d_cgraph" alt=""/></div>
+<map name="anamespacemod__mf__phys_ae91deb72f6f5352614c7541a8815b92d_cgraph" id="anamespacemod__mf__phys_ae91deb72f6f5352614c7541a8815b92d_cgraph">
+<area shape="rect" title="Transform conservative variables into primitive ones." alt="" coords="5,167,165,207"/>
+<area shape="rect" href="namespacemod__ghostcells__update.html#a5a035ca86bfa7e52a61d1ba8f5d1389d" title=" " alt="" coords="216,5,407,45"/>
+<area shape="poly" title=" " alt="" coords="101,165,148,114,179,86,212,62,236,48,238,53,215,66,182,91,152,118,105,168"/>
+<area shape="rect" href="namespacemod__geometry.html#a9af21193cc064e92debf8e7b96f86a60" title="Calculate curl of a vector qvec within ixL Options to employ standard second order CD evaluations use..." alt="" coords="457,107,651,133"/>
+<area shape="poly" title=" " alt="" coords="108,164,154,132,183,117,213,105,283,92,355,90,423,94,482,102,481,108,423,99,355,95,284,98,214,111,185,122,157,137,111,169"/>
+<area shape="rect" href="namespacemod__mf__phys.html#ad553db91857bc6b8a6cdde18dde649ba" title="Calculate idirmin and the idirmin:3 components of the common current array make sure that dxlevel(^D)..." alt="" coords="213,145,409,170"/>
+<area shape="poly" title=" " alt="" coords="165,174,199,169,200,174,166,179"/>
+<area shape="rect" href="namespacemod__ghostcells__update.html#a1b945d19ee179d85b1b4a719a8dfcad6" title="do update ghost cells of all blocks including physical boundaries" alt="" coords="223,195,399,235"/>
+<area shape="poly" title=" " alt="" coords="166,194,210,199,209,205,165,199"/>
+<area shape="rect" href="namespacemod__geometry.html#a9be440eb43ae039be6f1e52e5c841f69" title=" " alt="" coords="220,259,403,285"/>
+<area shape="poly" title=" " alt="" coords="125,204,214,244,242,253,241,258,212,249,123,209"/>
+<area shape="rect" href="namespacemod__geometry.html#acd1b9edd7157bf60764c69998f7a8d00" title=" " alt="" coords="218,309,405,334"/>
+<area shape="poly" title=" " alt="" coords="106,205,153,250,182,274,215,294,233,302,230,307,212,298,179,278,149,254,102,209"/>
+<area shape="poly" title=" " alt="" coords="394,142,457,132,458,137,395,147"/>
+<area shape="poly" title=" " alt="" coords="275,146,267,136,271,126,286,120,311,118,343,122,355,131,352,135,341,127,311,123,287,125,275,130,272,136,279,143"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -882,7 +688,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l02450">2450</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l02461">2461</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -900,6 +706,22 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a00a3493ee88005d6b67bd0a8f83602ad" name="a00a3493ee88005d6b67bd0a8f83602ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a3493ee88005d6b67bd0a8f83602ad">&#9670;&#160;</a></span>b</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer, public, protected mod_mf_phys::b</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00046">46</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+
+</div>
+</div>
 <a id="a9a4446afad80d6f4ed88e384730d8f87" name="a9a4446afad80d6f4ed88e384730d8f87"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9a4446afad80d6f4ed88e384730d8f87">&#9670;&#160;</a></span>boundary_divbfix</h2>
 
@@ -914,7 +736,7 @@ Here is the call graph for this function:</div>
 
 <p>To control divB=0 fix for boundary. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00080">80</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00085">85</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -932,7 +754,42 @@ Here is the call graph for this function:</div>
 
 <p>To skip * layer of ghost cells during divB=0 fix for boundary. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00083">83</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00052">52</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+
+</div>
+</div>
+<a id="a942f87980d178c1904b0d8db3d4d5ea7" name="a942f87980d178c1904b0d8db3d4d5ea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a942f87980d178c1904b0d8db3d4d5ea7">&#9670;&#160;</a></span>c</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer public protected mod_mf_phys::c</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indices of the momentum density for the form of better vectorization. </p>
+<p>Indices of the magnetic field for the form of better vectorization. </p>
+
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00043">43</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+
+</div>
+</div>
+<a id="a96ea8c676ec0aac6d9cd74cb3d9423ae" name="a96ea8c676ec0aac6d9cd74cb3d9423ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ea8c676ec0aac6d9cd74cb3d9423ae">&#9670;&#160;</a></span>c_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer public protected mod_mf_phys::c_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00043">43</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -950,7 +807,7 @@ Here is the call graph for this function:</div>
 
 <p>clean divb in the initial condition </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00086">86</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00094">94</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -968,7 +825,7 @@ Here is the call graph for this function:</div>
 
 <p>Add divB wave in Roe solver. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00074">74</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00091">91</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -986,7 +843,23 @@ Here is the call graph for this function:</div>
 
 <p>Helium abundance over Hydrogen. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00077">77</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00034">34</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+
+</div>
+</div>
+<a id="ae0e8492e6fff400f12ae4b06980d2d09" name="ae0e8492e6fff400f12ae4b06980d2d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e8492e6fff400f12ae4b06980d2d09">&#9670;&#160;</a></span>m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer, public, protected mod_mf_phys::m</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00043">43</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1004,7 +877,7 @@ Here is the call graph for this function:</div>
 
 <p>MHD fourth order. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00034">34</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00076">76</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1026,21 +899,21 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a05d71519822779ecaeadee5827de7c57" name="a05d71519822779ecaeadee5827de7c57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05d71519822779ecaeadee5827de7c57">&#9670;&#160;</a></span>mf_divb_4thorder</h2>
+<a id="a16c7d41830be632b0170a7e3e3b98150" name="a16c7d41830be632b0170a7e3e3b98150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16c7d41830be632b0170a7e3e3b98150">&#9670;&#160;</a></span>mf_divb_nth</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">logical, public, protected mod_mf_phys::mf_divb_4thorder = .false.</td>
+          <td class="memname">integer, public, protected mod_mf_phys::mf_divb_nth = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Whether divB is computed with a fourth order approximation. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00059">59</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00082">82</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1058,7 +931,7 @@ Here is the call graph for this function:</div>
 
 <p>The resistivity. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00047">47</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00025">25</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1076,7 +949,7 @@ Here is the call graph for this function:</div>
 
 <p>The hyper-resistivity. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00050">50</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00028">28</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1094,7 +967,7 @@ Here is the call graph for this function:</div>
 
 <p>Whether GLM-MHD is used. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00024">24</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00070">70</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1112,7 +985,7 @@ Here is the call graph for this function:</div>
 
 <p>GLM-MHD parameter: ratio of the diffusive and advective time scales for div b taking values within [0, 1]. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00031">31</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00022">22</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1148,7 +1021,7 @@ Here is the call graph for this function:</div>
 
 <p>Whether particles module is added. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00021">21</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00067">67</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1166,7 +1039,7 @@ Here is the call graph for this function:</div>
 
 <p>set to true if need to record electric field on cell edges </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00037">37</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00079">79</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1220,7 +1093,7 @@ Here is the call graph for this function:</div>
 
 <p>Indices of the GLM psi. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00044">44</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00049">49</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1238,7 +1111,7 @@ Here is the call graph for this function:</div>
 
 <p>Whether divB cleaning sources are added splitting from fluid solver. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00027">27</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00073">73</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1256,7 +1129,7 @@ Here is the call graph for this function:</div>
 
 <p>Method type of constrained transport. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00056">56</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00100">100</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1274,7 +1147,7 @@ Here is the call graph for this function:</div>
 
 <p>Method type to clean divergence of B. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00053">53</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__mf__phys_8t_source.html#l00097">97</a> of file <a class="el" href="mod__mf__phys_8t_source.html">mod_mf_phys.t</a>.</p>
 
 </div>
 </div>

@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -117,18 +117,18 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:ad8704dc4f298466b7f931aae68dcb380" id="r_ad8704dc4f298466b7f931aae68dcb380"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#ad8704dc4f298466b7f931aae68dcb380">mod_afld::afld_get_opacity</a> (w, x, ixil, ixol, fld_kappa)</td></tr>
 <tr class="memdesc:ad8704dc4f298466b7f931aae68dcb380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the opacity in the w-array by calling <a class="el" href="namespacemod__opal__opacity.html" title="This module reads in Rosseland-mean opacities from OPAL tables. Table opacity values are given in bas...">mod_opal_opacity</a>.  <br /></td></tr>
 <tr class="separator:ad8704dc4f298466b7f931aae68dcb380"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa10c490f895283ef2905b0e2d8211a61" id="r_aa10c490f895283ef2905b0e2d8211a61"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#aa10c490f895283ef2905b0e2d8211a61">mod_afld::afld_get_fluxlimiter</a> (w, x, ixil, ixol, fld_lambda, fld_r)</td></tr>
-<tr class="memdesc:aa10c490f895283ef2905b0e2d8211a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate fld flux limiter This subroutine calculates flux limiter lambda using the prescription stored in fld_fluxlimiter. It also calculates the ratio of radiation scaleheight and mean free path.  <br /></td></tr>
-<tr class="separator:aa10c490f895283ef2905b0e2d8211a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a2add990ee69beb8ea60a6a50b5088b" id="r_a1a2add990ee69beb8ea60a6a50b5088b"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a1a2add990ee69beb8ea60a6a50b5088b">mod_afld::afld_get_radflux</a> (w, x, ixil, ixol, rad_flux)</td></tr>
-<tr class="memdesc:a1a2add990ee69beb8ea60a6a50b5088b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Radiation Flux stores radiation flux in w-array.  <br /></td></tr>
-<tr class="separator:a1a2add990ee69beb8ea60a6a50b5088b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57d675a71ebfe2fc0788e95eba464351" id="r_a57d675a71ebfe2fc0788e95eba464351"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a57d675a71ebfe2fc0788e95eba464351">mod_afld::afld_get_eddington</a> (w, x, ixil, ixol, eddington_tensor)</td></tr>
-<tr class="memdesc:a57d675a71ebfe2fc0788e95eba464351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Eddington-tensor Stores Eddington-tensor in w-array.  <br /></td></tr>
-<tr class="separator:a57d675a71ebfe2fc0788e95eba464351"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2857b4c66ca99e7af9ce84775eecef25" id="r_a2857b4c66ca99e7af9ce84775eecef25"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a2857b4c66ca99e7af9ce84775eecef25">mod_afld::afld_get_radpress</a> (w, x, ixil, ixol, rad_pressure)</td></tr>
-<tr class="memdesc:a2857b4c66ca99e7af9ce84775eecef25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Radiation Pressure Returns Radiation Pressure as tensor.  <br /></td></tr>
-<tr class="separator:a2857b4c66ca99e7af9ce84775eecef25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a534fb3f2e92a62c9e7518f901ce3ae57" id="r_a534fb3f2e92a62c9e7518f901ce3ae57"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a534fb3f2e92a62c9e7518f901ce3ae57">mod_afld::afld_get_fluxlimiter</a> (w, x, ixil, ixol, fld_lambda, fld_r, nth)</td></tr>
+<tr class="memdesc:a534fb3f2e92a62c9e7518f901ce3ae57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate fld flux limiter This subroutine calculates flux limiter lambda using the prescription stored in fld_fluxlimiter. It also calculates the ratio of radiation scaleheight and mean free path.  <br /></td></tr>
+<tr class="separator:a534fb3f2e92a62c9e7518f901ce3ae57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ae4607d5a4b846f75b99c2e56e756c7" id="r_a3ae4607d5a4b846f75b99c2e56e756c7"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a3ae4607d5a4b846f75b99c2e56e756c7">mod_afld::afld_get_radflux</a> (w, x, ixil, ixol, rad_flux, nth)</td></tr>
+<tr class="memdesc:a3ae4607d5a4b846f75b99c2e56e756c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Radiation Flux Calculate the Flux using the fld closure relation F = -c*lambda/(kappa*rho) *grad E.  <br /></td></tr>
+<tr class="separator:a3ae4607d5a4b846f75b99c2e56e756c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af62a3a09185251d685c0fc17dca38fe0" id="r_af62a3a09185251d685c0fc17dca38fe0"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#af62a3a09185251d685c0fc17dca38fe0">mod_afld::afld_get_eddington</a> (w, x, ixil, ixol, eddington_tensor, nth)</td></tr>
+<tr class="memdesc:af62a3a09185251d685c0fc17dca38fe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Eddington-tensor Stores Eddington-tensor in w-array.  <br /></td></tr>
+<tr class="separator:af62a3a09185251d685c0fc17dca38fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af14da4ee0effb21d55f01e0410b0d1" id="r_a9af14da4ee0effb21d55f01e0410b0d1"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a9af14da4ee0effb21d55f01e0410b0d1">mod_afld::afld_get_radpress</a> (w, x, ixil, ixol, rad_pressure, nth)</td></tr>
+<tr class="memdesc:a9af14da4ee0effb21d55f01e0410b0d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Radiation Pressure Returns Radiation Pressure as tensor.  <br /></td></tr>
+<tr class="separator:a9af14da4ee0effb21d55f01e0410b0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68f419887d90c3edb888b2a75da3e213" id="r_a68f419887d90c3edb888b2a75da3e213"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a68f419887d90c3edb888b2a75da3e213">mod_afld::diffuse_e_rad_mg</a> (dtfactor, qdt, qtc, psa, psb)</td></tr>
 <tr class="memdesc:a68f419887d90c3edb888b2a75da3e213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calling all subroutines to perform the multigrid method Communicates rad_e and diff_coeff to multigrid library.  <br /></td></tr>
 <tr class="separator:a68f419887d90c3edb888b2a75da3e213"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,9 +143,9 @@ Functions/Subroutines</h2></td></tr>
 <tr class="separator:a292222016c4df688c77b80961c9b821b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d5289df9bf8e1e13a2af0815ef926a5" id="r_a9d5289df9bf8e1e13a2af0815ef926a5"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a9d5289df9bf8e1e13a2af0815ef926a5">mod_afld::update_diffcoeff</a> (psa)</td></tr>
 <tr class="separator:a9d5289df9bf8e1e13a2af0815ef926a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05eafba1e90791f9d32bfc9c0e725ebf" id="r_a05eafba1e90791f9d32bfc9c0e725ebf"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a05eafba1e90791f9d32bfc9c0e725ebf">mod_afld::afld_smooth_diffcoef</a> (w, ixil, ixol, idim)</td></tr>
-<tr class="memdesc:a05eafba1e90791f9d32bfc9c0e725ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use running average on Diffusion coefficient.  <br /></td></tr>
-<tr class="separator:a05eafba1e90791f9d32bfc9c0e725ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ce190d6c038097eb591a808d0c4525f" id="r_a0ce190d6c038097eb591a808d0c4525f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a0ce190d6c038097eb591a808d0c4525f">mod_afld::afld_smooth_diffcoef</a> (w, ixil, ixol, idir)</td></tr>
+<tr class="memdesc:a0ce190d6c038097eb591a808d0c4525f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use running average on Diffusion coefficient.  <br /></td></tr>
+<tr class="separator:a0ce190d6c038097eb591a808d0c4525f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a9232590db897662fda786c71365a09" id="r_a9a9232590db897662fda786c71365a09"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a9a9232590db897662fda786c71365a09">mod_afld::energy_interaction</a> (w, wct, x, ixil, ixol)</td></tr>
 <tr class="memdesc:a9a9232590db897662fda786c71365a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine calculates the radiation heating, radiation cooling and photon tiring using an implicit scheme. These sourceterms are applied using the root-finding of a 4th order polynomial This routine loops over every cell in the domain and computes the coefficients of the polynomials in every cell.  <br /></td></tr>
 <tr class="separator:a9a9232590db897662fda786c71365a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,9 +167,6 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a77e713c279492245503edda6384cef4a" id="r_a77e713c279492245503edda6384cef4a"><td class="memItemLeft" align="right" valign="top">double precision function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a77e713c279492245503edda6384cef4a">mod_afld::ddpolynomial_bisection</a> (e_gas, c0, c1)</td></tr>
 <tr class="memdesc:a77e713c279492245503edda6384cef4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate second derivative of polynomial at argument e_gas.  <br /></td></tr>
 <tr class="separator:a77e713c279492245503edda6384cef4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5502c538f267716bede04d6640584f8" id="r_ae5502c538f267716bede04d6640584f8"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#ae5502c538f267716bede04d6640584f8">mod_afld::gradiento</a> (q, x, ixil, ixol, idir, gradq, n)</td></tr>
-<tr class="memdesc:ae5502c538f267716bede04d6640584f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gradient of a scalar q within ixL in direction idir difference with gradient is gradq(ixO^S), NOT gradq(ixI^S)  <br /></td></tr>
-<tr class="separator:ae5502c538f267716bede04d6640584f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -193,9 +190,6 @@ Variables</h2></td></tr>
 <tr class="memitem:ace04332127fd83710700fd46b1cd9a88" id="r_ace04332127fd83710700fd46b1cd9a88"><td class="memItemLeft" align="right" valign="top">double precision, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#ace04332127fd83710700fd46b1cd9a88">mod_afld::diff_crit</a></td></tr>
 <tr class="memdesc:ace04332127fd83710700fd46b1cd9a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number for splitting the diffusion module.  <br /></td></tr>
 <tr class="separator:ace04332127fd83710700fd46b1cd9a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3c3809538ff9290c30042cc2b6319d7" id="r_af3c3809538ff9290c30042cc2b6319d7"><td class="memItemLeft" align="right" valign="top">integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#af3c3809538ff9290c30042cc2b6319d7">mod_afld::i_test</a></td></tr>
-<tr class="memdesc:af3c3809538ff9290c30042cc2b6319d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index for testvariable.  <br /></td></tr>
-<tr class="separator:af3c3809538ff9290c30042cc2b6319d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f033efe15a187dbef91fc708de9c42e" id="r_a8f033efe15a187dbef91fc708de9c42e"><td class="memItemLeft" align="right" valign="top">character(len=8), dimension(:), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a8f033efe15a187dbef91fc708de9c42e">mod_afld::fld_opacity_law</a></td></tr>
 <tr class="memdesc:a8f033efe15a187dbef91fc708de9c42e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use constant Opacity?  <br /></td></tr>
 <tr class="separator:a8f033efe15a187dbef91fc708de9c42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,9 +198,8 @@ Variables</h2></td></tr>
 <tr class="memitem:a61ae06bf2c058e6700a663662495da48" id="r_a61ae06bf2c058e6700a663662495da48"><td class="memItemLeft" align="right" valign="top">character(len=16)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a61ae06bf2c058e6700a663662495da48">mod_afld::fld_fluxlimiter</a> = 'Pomraning'</td></tr>
 <tr class="memdesc:a61ae06bf2c058e6700a663662495da48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diffusion limit lambda = 0.33.  <br /></td></tr>
 <tr class="separator:a61ae06bf2c058e6700a663662495da48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46a6060d02167c73710fb5046ef61277" id="r_a46a6060d02167c73710fb5046ef61277"><td class="memItemLeft" align="right" valign="top">integer, dimension(:), allocatable, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#a46a6060d02167c73710fb5046ef61277">mod_afld::i_diff_mg</a></td></tr>
-<tr class="memdesc:a46a6060d02167c73710fb5046ef61277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index for Diffusion coeficients.  <br /></td></tr>
-<tr class="separator:a46a6060d02167c73710fb5046ef61277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae88338c74496a8ef765f476f93fb0cda" id="r_ae88338c74496a8ef765f476f93fb0cda"><td class="memItemLeft" align="right" valign="top">integer, dimension(:), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#ae88338c74496a8ef765f476f93fb0cda">mod_afld::i_diff_mg</a></td></tr>
+<tr class="separator:ae88338c74496a8ef765f476f93fb0cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab600478175e32e54507930fa5a453c8b" id="r_ab600478175e32e54507930fa5a453c8b"><td class="memItemLeft" align="right" valign="top">character(len=8)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__afld.html#ab600478175e32e54507930fa5a453c8b">mod_afld::afld_diff_scheme</a> = 'mg'</td></tr>
 <tr class="memdesc:ab600478175e32e54507930fa5a453c8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which method to solve diffusion part.  <br /></td></tr>
 <tr class="separator:ab600478175e32e54507930fa5a453c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>

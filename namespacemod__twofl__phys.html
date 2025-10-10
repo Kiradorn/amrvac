@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -119,7 +119,7 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memdesc:ac81a1ee4c7e051b4aab8bcce989bf046"><td class="mdescLeft">&#160;</td><td class="mdescRight">get dimensionless div B = |divB| * volume / area / |B|  <br /></td></tr>
 <tr class="separator:ac81a1ee4c7e051b4aab8bcce989bf046"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9ef22fc270b755c403e24862bfa2975" id="r_ac9ef22fc270b755c403e24862bfa2975"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#ac9ef22fc270b755c403e24862bfa2975">get_current</a> (w, ixil, ixol, idirmin, current)</td></tr>
-<tr class="memdesc:ac9ef22fc270b755c403e24862bfa2975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#af2f7436240818f02fc7b675a70cae4a3">dxlevel(^D)</a> is set correctly.  <br /></td></tr>
+<tr class="memdesc:ac9ef22fc270b755c403e24862bfa2975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#ac487446056522027f949f42ba64b2e11" title="store unstretched cell size of current level">dxlevel(^D)</a> is set correctly.  <br /></td></tr>
 <tr class="separator:ac9ef22fc270b755c403e24862bfa2975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb86ee97eb766b13ae2d0d1d3b55ac59" id="r_abb86ee97eb766b13ae2d0d1d3b55ac59"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#abb86ee97eb766b13ae2d0d1d3b55ac59">twofl_clean_divb_multigrid</a> (qdt, qt, active)</td></tr>
 <tr class="separator:abb86ee97eb766b13ae2d0d1d3b55ac59"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,9 +299,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a4dc46a269bd027e957f6523f96068474" id="r_a4dc46a269bd027e957f6523f96068474"><td class="memItemLeft" align="right" valign="top">character(len=std_len), public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#a4dc46a269bd027e957f6523f96068474">type_ct</a> = 'uct_contact'</td></tr>
 <tr class="memdesc:a4dc46a269bd027e957f6523f96068474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method type of constrained transport.  <br /></td></tr>
 <tr class="separator:a4dc46a269bd027e957f6523f96068474"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac82b357cdb32f39457f8616b25f4f4b9" id="r_ac82b357cdb32f39457f8616b25f4f4b9"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#ac82b357cdb32f39457f8616b25f4f4b9">twofl_divb_4thorder</a> = .false.</td></tr>
-<tr class="memdesc:ac82b357cdb32f39457f8616b25f4f4b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether divB is computed with a fourth order approximation.  <br /></td></tr>
-<tr class="separator:ac82b357cdb32f39457f8616b25f4f4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3a95150d1657aace983c5cd0cb5327a" id="r_ac3a95150d1657aace983c5cd0cb5327a"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#ac3a95150d1657aace983c5cd0cb5327a">twofl_divb_nth</a> = 1</td></tr>
+<tr class="memdesc:ac3a95150d1657aace983c5cd0cb5327a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether divB is computed with a fourth order approximation.  <br /></td></tr>
+<tr class="separator:ac3a95150d1657aace983c5cd0cb5327a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09a4f8abb19c33c312cb76b8a342f5b2" id="r_a09a4f8abb19c33c312cb76b8a342f5b2"><td class="memItemLeft" align="right" valign="top">logical, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__twofl__phys.html#a09a4f8abb19c33c312cb76b8a342f5b2">clean_initial_divb</a> = .false.</td></tr>
 <tr class="memdesc:a09a4f8abb19c33c312cb76b8a342f5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">clean initial divB  <br /></td></tr>
 <tr class="separator:a09a4f8abb19c33c312cb76b8a342f5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -389,7 +389,7 @@ Variables</h2></td></tr>
 
 <p>calculate magnetic field from vector potential </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l06133">6133</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l06179">6179</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -478,7 +478,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l06626">6626</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l06672">6672</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -494,7 +494,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="134,136,210,112,319,92,421,80,421,86,319,97,211,117,135,141"/>
 <area shape="rect" href="namespacemod__twofl__phys.html#a3e1726db79b762016bc67c1cc25d1338" title=" " alt="" coords="440,228,597,268"/>
 <area shape="poly" title=" " alt="" coords="164,166,270,183,387,207,443,222,442,227,386,212,269,189,163,172"/>
-<area shape="rect" href="namespacemod__ghostcells__update.html#abc70508ceb326fb28166d751e5de31fc" title="do update ghost cells of all blocks including physical boundaries" alt="" coords="211,221,387,261"/>
+<area shape="rect" href="namespacemod__ghostcells__update.html#a1b945d19ee179d85b1b4a719a8dfcad6" title="do update ghost cells of all blocks including physical boundaries" alt="" coords="211,221,387,261"/>
 <area shape="poly" title=" " alt="" coords="138,176,234,214,232,219,136,181"/>
 <area shape="rect" href="namespacemod__twofl__phys.html#ae4917977b759297833f576838123050f" title=" " alt="" coords="215,285,383,325"/>
 <area shape="poly" title=" " alt="" coords="105,177,151,224,180,249,212,271,223,277,220,282,209,276,177,253,147,228,101,181"/>
@@ -563,9 +563,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#af2f7436240818f02fc7b675a70cae4a3">dxlevel(^D)</a> is set correctly. </p>
+<p>Calculate idirmin and the idirmin:3 components of the common current array make sure that <a class="el" href="namespacemod__global__parameters.html#ac487446056522027f949f42ba64b2e11" title="store unstretched cell size of current level">dxlevel(^D)</a> is set correctly. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l04341">4341</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l04387">4387</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -677,7 +677,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l06587">6587</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l06633">6633</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -746,7 +746,7 @@ Here is the call graph for this function:</div>
 
 <p>get dimensionless div B = |divB| * volume / area / |B| </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l04307">4307</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l04353">4353</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 
 </div>
 </div>
@@ -806,7 +806,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03620">3620</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03666">3666</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 
 </div>
 </div>
@@ -866,7 +866,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03486">3486</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03532">3532</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 
 </div>
 </div>
@@ -910,7 +910,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l05406">5406</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l05452">5452</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -919,10 +919,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,136,173,176"/>
 <area shape="rect" href="namespacemod__twofl__phys.html#ac9ef22fc270b755c403e24862bfa2975" title="Calculate idirmin and the idirmin:3 components of the common current array make sure that dxlevel(^D)..." alt="" coords="243,29,400,69"/>
 <area shape="poly" title=" " alt="" coords="121,133,167,106,220,79,238,72,240,76,222,84,169,111,123,138"/>
-<area shape="rect" href="namespacemod__geometry.html#a5e16962a2f11058e42599f6c5e21f207" title="Calculate gradient of a scalar q within ixL in direction idir." alt="" coords="230,94,413,119"/>
+<area shape="rect" href="namespacemod__geometry.html#a9be440eb43ae039be6f1e52e5c841f69" title=" " alt="" coords="230,94,413,119"/>
 <area shape="poly" title=" " alt="" coords="173,136,247,120,248,125,174,141"/>
-<area shape="rect" href="namespacemod__geometry.html#afd910ad76494fa3ec94ffaaf2c96995f" title="Calculate gradient of a scalar q in direction idir at cell interfaces." alt="" coords="226,143,417,169"/>
-<area shape="poly" title=" " alt="" coords="173,153,212,153,212,159,173,159"/>
+<area shape="rect" href="namespacemod__geometry.html#aaaab25a5efeab833798f44aee5bae67c" title=" " alt="" coords="228,143,415,169"/>
+<area shape="poly" title=" " alt="" coords="173,153,214,153,214,159,173,159"/>
 <area shape="rect" href="namespacemod__constrained__transport.html#a1f3105779f16bec5e01f243d61fe32f1" title="Reconstruct scalar q within ixO^L to 1/2 dx in direction idir Return both left and right reconstructe..." alt="" coords="221,193,421,233"/>
 <area shape="poly" title=" " alt="" coords="172,173,227,187,226,193,170,179"/>
 <area shape="rect" href="namespacemod__twofl__phys.html#a2024d446983cc4fc94609a7a3d69647a" title="calculate cell&#45;center values from face&#45;center values" alt="" coords="237,257,405,297"/>
@@ -967,7 +967,7 @@ Here is the call graph for this function:</div>
 
 <p>calculate cell-center values from face-center values </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l06073">6073</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l06119">6119</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1027,7 +1027,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03026">3026</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03073">3073</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1036,7 +1036,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,207,243,247"/>
 <area shape="rect" href="namespacemod__global__parameters.html#a1ba907b301287b1559121df9aeb35f03" title="Cross product of two vectors." alt="" coords="291,5,471,45"/>
 <area shape="poly" title=" " alt="" coords="140,204,201,136,243,97,289,62,311,49,314,53,292,66,247,101,205,140,144,208"/>
-<area shape="rect" href="namespacemod__geometry.html#a39518671a1f2871551c3726c91f2ca21" title="Calculate divergence of a vector qvec within ixL." alt="" coords="520,99,709,125"/>
+<area shape="rect" href="namespacemod__geometry.html#a34777249130c0a609ca96597bb403b30" title=" " alt="" coords="520,99,709,125"/>
 <area shape="poly" title=" " alt="" coords="143,205,204,152,245,125,290,105,353,92,418,87,480,89,535,95,534,100,479,94,418,92,354,97,291,111,248,130,207,156,146,209"/>
 <area shape="rect" href="namespacemod__twofl__phys.html#ac9ef22fc270b755c403e24862bfa2975" title="Calculate idirmin and the idirmin:3 components of the common current array make sure that dxlevel(^D)..." alt="" coords="303,323,460,363"/>
 <area shape="poly" title=" " alt="" coords="171,244,324,314,322,319,169,249"/>
@@ -1116,7 +1116,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03633">3633</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03679">3679</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1186,7 +1186,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03499">3499</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03545">3545</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1264,40 +1264,40 @@ Here is the call graph for this function:</div>
 
 <p>Calculate v_c component. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03708">3708</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03754">3754</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacemod__twofl__phys_a07bafe324ea9a79e21a197c75d8c6376_cgraph.png" border="0" usemap="#anamespacemod__twofl__phys_a07bafe324ea9a79e21a197c75d8c6376_cgraph" alt=""/></div>
 <map name="anamespacemod__twofl__phys_a07bafe324ea9a79e21a197c75d8c6376_cgraph" id="anamespacemod__twofl__phys_a07bafe324ea9a79e21a197c75d8c6376_cgraph">
 <area shape="rect" title="Calculate v_c component." alt="" coords="5,252,173,292"/>
-<area shape="poly" title=" " alt="" coords="47,252,44,242,51,233,66,227,89,225,116,228,130,235,128,240,114,233,89,231,68,233,54,237,50,243,52,251"/>
-<area shape="rect" href="namespacemod__global__parameters.html#a1ba907b301287b1559121df9aeb35f03" title="Cross product of two vectors." alt="" coords="226,5,406,45"/>
+<area shape="poly" title=" " alt="" coords="47,252,45,242,52,233,67,227,89,225,115,228,130,235,127,240,114,233,89,231,68,233,55,237,50,243,53,251"/>
+<area shape="rect" href="namespacemod__global__parameters.html#a1ba907b301287b1559121df9aeb35f03" title="Cross product of two vectors." alt="" coords="225,5,405,45"/>
 <area shape="poly" title=" " alt="" coords="96,251,113,212,140,162,175,109,220,62,237,50,240,54,223,66,180,112,144,164,118,214,101,253"/>
-<area shape="rect" href="namespacemod__geometry.html#a9af21193cc064e92debf8e7b96f86a60" title="Calculate curl of a vector qvec within ixL Options to employ standard second order CD evaluations use..." alt="" coords="459,94,652,119"/>
-<area shape="poly" title=" " alt="" coords="97,250,115,216,141,176,176,136,197,119,220,106,254,92,289,83,362,76,431,80,491,89,490,94,431,85,362,82,290,89,255,97,223,110,200,124,180,140,146,179,119,219,102,253"/>
-<area shape="rect" href="namespacemod__twofl__phys.html#ac9ef22fc270b755c403e24862bfa2975" title="Calculate idirmin and the idirmin:3 components of the common current array make sure that dxlevel(^D)..." alt="" coords="237,144,395,184"/>
-<area shape="poly" title=" " alt="" coords="145,250,220,212,275,187,277,192,222,217,148,254"/>
-<area shape="rect" href="namespacemod__twofl__phys.html#addeb124f8b22598bc4f5b29d5481c728" title=" " alt="" coords="477,252,634,292"/>
-<area shape="poly" title=" " alt="" coords="174,269,463,269,463,275,174,275"/>
-<area shape="rect" href="namespacemod__twofl__phys.html#a3e1726db79b762016bc67c1cc25d1338" title=" " alt="" coords="477,167,634,207"/>
-<area shape="poly" title=" " alt="" coords="173,254,463,201,464,206,174,259"/>
-<area shape="rect" href="namespacemod__geometry.html#a5e16962a2f11058e42599f6c5e21f207" title="Calculate gradient of a scalar q within ixL in direction idir." alt="" coords="225,310,407,335"/>
-<area shape="poly" title=" " alt="" coords="174,288,246,304,245,310,173,293"/>
-<area shape="rect" href="namespacemod__geometry.html#a8744a5c0a4182d844e384e4bec8d0ccc" title="Calculate gradient of a scalar q within ixL in direction idir first use limiter to go from cell cente..." alt="" coords="221,359,411,385"/>
-<area shape="poly" title=" " alt="" coords="121,290,168,319,222,346,243,353,241,358,220,350,165,323,119,295"/>
-<area shape="rect" href="namespacemod__small__values.html#a102d6945f93b389506b859f24c5f7a37" title=" " alt="" coords="222,409,410,449"/>
+<area shape="rect" href="namespacemod__geometry.html#a9af21193cc064e92debf8e7b96f86a60" title="Calculate curl of a vector qvec within ixL Options to employ standard second order CD evaluations use..." alt="" coords="457,94,651,119"/>
+<area shape="poly" title=" " alt="" coords="97,250,115,216,141,176,176,136,197,119,220,106,254,92,289,83,361,77,430,80,489,89,488,94,429,85,361,82,290,89,255,97,223,110,200,124,180,140,146,179,119,219,102,253"/>
+<area shape="rect" href="namespacemod__twofl__phys.html#ac9ef22fc270b755c403e24862bfa2975" title="Calculate idirmin and the idirmin:3 components of the common current array make sure that dxlevel(^D)..." alt="" coords="237,144,394,184"/>
+<area shape="poly" title=" " alt="" coords="145,250,220,212,275,188,277,192,222,217,148,254"/>
+<area shape="rect" href="namespacemod__twofl__phys.html#addeb124f8b22598bc4f5b29d5481c728" title=" " alt="" coords="475,252,633,292"/>
+<area shape="poly" title=" " alt="" coords="174,269,462,269,462,275,174,275"/>
+<area shape="rect" href="namespacemod__twofl__phys.html#a3e1726db79b762016bc67c1cc25d1338" title=" " alt="" coords="475,167,633,207"/>
+<area shape="poly" title=" " alt="" coords="173,254,461,201,462,206,174,259"/>
+<area shape="rect" href="namespacemod__geometry.html#a9be440eb43ae039be6f1e52e5c841f69" title=" " alt="" coords="224,310,407,335"/>
+<area shape="poly" title=" " alt="" coords="174,288,245,304,244,309,173,293"/>
+<area shape="rect" href="namespacemod__geometry.html#acd1b9edd7157bf60764c69998f7a8d00" title=" " alt="" coords="222,359,409,385"/>
+<area shape="poly" title=" " alt="" coords="121,290,168,318,222,346,243,353,241,358,220,350,165,323,119,295"/>
+<area shape="rect" href="namespacemod__small__values.html#a102d6945f93b389506b859f24c5f7a37" title=" " alt="" coords="221,409,409,449"/>
 <area shape="poly" title=" " alt="" coords="109,290,157,342,188,370,223,395,234,401,231,406,220,400,185,375,153,346,105,294"/>
-<area shape="rect" href="namespacemod__small__values.html#a71e8c14b4394080d8f59716c4e5a1529" title=" " alt="" coords="222,473,410,513"/>
-<area shape="poly" title=" " alt="" coords="102,291,119,327,146,372,181,419,223,459,230,464,227,469,220,463,177,422,142,375,115,330,97,293"/>
-<area shape="rect" href="namespacemod__twofl__phys.html#a56f47f86014a476093cc20d05d2d2f17" title=" " alt="" coords="232,537,400,577"/>
-<area shape="poly" title=" " alt="" coords="98,292,112,339,137,401,174,467,197,497,223,523,229,528,226,532,220,527,193,500,169,470,132,403,107,341,93,293"/>
-<area shape="poly" title=" " alt="" coords="238,186,223,193,124,247,121,242,220,188,236,181"/>
-<area shape="poly" title=" " alt="" coords="394,143,487,120,489,125,395,148"/>
-<area shape="poly" title=" " alt="" coords="274,144,271,134,278,125,293,119,316,117,342,120,357,127,354,132,341,125,316,123,294,125,281,129,276,135,279,143"/>
-<area shape="poly" title=" " alt="" coords="362,182,499,244,496,249,360,186"/>
-<area shape="poly" title=" " alt="" coords="395,169,463,175,462,181,395,174"/>
-<area shape="poly" title=" " alt="" coords="391,535,409,523,435,499,457,471,495,411,523,352,542,304,547,306,528,354,500,414,462,475,438,503,412,527,394,540"/>
+<area shape="rect" href="namespacemod__small__values.html#a71e8c14b4394080d8f59716c4e5a1529" title=" " alt="" coords="221,473,409,513"/>
+<area shape="poly" title=" " alt="" coords="102,291,120,327,146,372,181,419,223,459,230,464,227,469,220,463,177,422,142,375,115,330,97,293"/>
+<area shape="rect" href="namespacemod__twofl__phys.html#a56f47f86014a476093cc20d05d2d2f17" title=" " alt="" coords="231,537,399,577"/>
+<area shape="poly" title=" " alt="" coords="98,292,112,339,137,401,174,467,197,497,223,523,229,528,225,532,220,527,193,500,169,469,132,403,107,341,93,293"/>
+<area shape="poly" title=" " alt="" coords="238,186,223,193,124,247,121,242,220,188,235,181"/>
+<area shape="poly" title=" " alt="" coords="394,142,487,120,488,125,395,148"/>
+<area shape="poly" title=" " alt="" coords="273,144,271,134,278,125,293,119,315,117,341,120,356,127,353,132,340,125,315,123,294,125,281,129,276,135,279,143"/>
+<area shape="poly" title=" " alt="" coords="362,182,497,244,495,249,359,186"/>
+<area shape="poly" title=" " alt="" coords="395,169,462,175,461,181,394,174"/>
+<area shape="poly" title=" " alt="" coords="390,535,408,523,433,499,456,472,494,412,522,353,540,304,545,306,527,355,499,414,460,475,437,503,411,527,393,539"/>
 </map>
 </div>
 
@@ -1367,7 +1367,7 @@ Here is the call graph for this function:</div>
 
 <p>Calculate v component. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03571">3571</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l03617">3617</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1421,7 +1421,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="92,778,106,729,130,665,167,598,192,567,220,541,247,522,272,510,319,501,369,498,430,489,470,480,471,485,431,495,370,504,320,506,273,515,249,527,223,545,196,571,172,601,135,667,111,731,97,779"/>
 <area shape="rect" href="namespacemod__thermal__emission.html#a8c9910c8edf1623c3705458a5b337b62" title=" " alt="" coords="239,555,413,595"/>
 <area shape="poly" title=" " alt="" coords="96,777,114,740,141,694,176,646,220,605,228,599,231,604,223,609,180,649,145,697,119,743,101,780"/>
-<area shape="rect" href="namespacemod__thermal__conduction.html#a209af8dfb2abc0762cdfa89e6f840c80" title=" " alt="" coords="233,619,419,659"/>
+<area shape="rect" href="namespacemod__thermal__conduction.html#a209af8dfb2abc0762cdfa89e6f840c80" title="Get the explicit timestep for the TC (hd implementation)" alt="" coords="233,619,419,659"/>
 <area shape="poly" title=" " alt="" coords="104,777,152,723,184,694,220,668,232,662,234,667,223,673,188,698,156,727,108,780"/>
 <area shape="rect" href="namespacemod__thermal__conduction.html#a17b4756aab5213e0be7b3525ebcb4785" title="Get the explicut timestep for the TC (mhd implementation)" alt="" coords="233,683,419,723"/>
 <area shape="poly" title=" " alt="" coords="127,776,220,732,241,725,243,730,222,737,129,781"/>
@@ -1441,9 +1441,9 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="94,819,102,885,122,977,139,1027,161,1076,189,1122,223,1162,228,1166,224,1170,219,1166,184,1125,156,1078,134,1029,117,978,97,885,89,819"/>
 <area shape="rect" href="namespacemod__thermal__conduction.html#a591ee12c87621f338cc65935a9c5fa20" title="anisotropic thermal conduction with slope limited symmetric scheme Sharma 2007 Journal of Computation..." alt="" coords="233,1240,419,1280"/>
 <area shape="poly" title=" " alt="" coords="93,819,97,895,104,947,115,1004,131,1064,154,1122,184,1178,223,1226,227,1230,223,1234,219,1230,180,1181,149,1125,126,1065,109,1005,98,947,92,895,88,819"/>
-<area shape="rect" href="namespacemod__thermal__conduction.html#a06712e83dc81e2953a38bee9f3109661" title=" " alt="" coords="233,1304,419,1344"/>
+<area shape="rect" href="namespacemod__thermal__conduction.html#a06712e83dc81e2953a38bee9f3109661" title="Init TC coefficients: HD case." alt="" coords="233,1304,419,1344"/>
 <area shape="poly" title=" " alt="" coords="96,818,111,917,139,1059,157,1132,177,1199,199,1253,223,1290,227,1294,223,1298,219,1294,194,1256,172,1201,151,1134,134,1061,106,918,91,819"/>
-<area shape="rect" href="namespacemod__thermal__conduction.html#a8c9c30e2196550623da28cc61d017793" title="Init TC coeffiecients: MHD case." alt="" coords="233,1368,419,1408"/>
+<area shape="rect" href="namespacemod__thermal__conduction.html#a8c9c30e2196550623da28cc61d017793" title="Init TC coefficients: MHD case." alt="" coords="233,1368,419,1408"/>
 <area shape="poly" title=" " alt="" coords="95,818,109,929,135,1090,152,1173,173,1250,197,1312,223,1354,227,1358,223,1362,219,1358,192,1314,168,1251,147,1175,130,1091,104,930,90,819"/>
 <area shape="rect" href="namespacemod__thermal__conduction.html#a398ab45440778263e648a5ad8787a4dc" title=" " alt="" coords="233,1432,419,1472"/>
 <area shape="poly" title=" " alt="" coords="95,819,107,941,131,1121,148,1214,169,1300,195,1371,208,1398,223,1418,227,1422,223,1426,219,1422,204,1401,190,1373,164,1302,143,1216,126,1122,101,941,90,819"/>
@@ -1457,7 +1457,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="89,778,96,711,116,617,133,566,155,515,184,468,219,426,228,419,231,423,223,430,188,471,160,518,138,568,122,618,102,712,94,779"/>
 <area shape="rect" href="namespacemod__twofl__phys.html#a885d22a7a156977f18c9a2858e0e64ae" title="Transform conservative variables into primitive ones." alt="" coords="242,440,410,480"/>
 <area shape="poly" title=" " alt="" coords="91,778,103,723,127,648,144,607,165,568,190,530,220,497,235,485,239,489,223,501,194,533,169,570,149,610,132,650,108,724,96,779"/>
-<area shape="rect" href="namespacemod__viscosity.html#a694614da2f2a26938cfaca941a18963a" title="Initialize the module." alt="" coords="221,1611,431,1637"/>
+<area shape="rect" href="namespacemod__viscosity.html#a924ee8e80bc5ea1666abe401ec332723" title="Initialize the module." alt="" coords="221,1611,431,1637"/>
 <area shape="poly" title=" " alt="" coords="94,819,100,971,119,1206,135,1329,158,1442,187,1535,204,1570,223,1597,228,1602,225,1605,219,1600,200,1573,182,1537,153,1443,130,1330,113,1207,94,972,88,819"/>
 <area shape="poly" title=" " alt="" coords="410,1554,464,1547,465,1552,411,1559"/>
 <area shape="poly" title=" " alt="" coords="411,341,471,349,470,354,410,346"/>
@@ -1522,7 +1522,7 @@ Here is the call graph for this function:</div>
 
 <p>Transform primitive variables into conservative ones. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l01464">1464</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l01502">1502</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1590,43 +1590,27 @@ Here is the call graph for this function:</div>
 
 <p>Transform conservative variables into primitive ones. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l01508">1508</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__twofl__phys_8t_source.html#l01546">1546</a> of file <a class="el" href="mod__twofl__phys_8t_source.html">mod_twofl_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacemod__twofl__phys_a885d22a7a156977f18c9a2858e0e64ae_cgraph.png" border="0" usemap="#anamespacemod__twofl__phys_a885d22a7a156977f18c9a2858e0e64ae_cgraph" alt=""/></div>
 <map name="anamespacemod__twofl__phys_a885d22a7a156977f18c9a2858e0e64ae_cgraph" id="anamespacemod__twofl__phys_a885d22a7a156977f18c9a2858e0e64ae_cgraph">
-<area shape="rect" title="Transform conservative variables into primitive ones." alt="" coords="5,220,173,260"/>
-<area shape="rect" href="namespacemod__twofl__phys.html#addeb124f8b22598bc4f5b29d5481c728" title=" " alt="" coords="522,103,679,143"/>
-<area shape="poly" title=" " alt="" coords="94,218,109,177,134,125,171,74,194,51,220,34,253,18,283,8,310,3,337,3,392,14,459,33,489,44,518,59,567,92,564,96,515,64,487,49,458,38,391,19,336,9,311,9,284,13,255,23,223,38,197,55,175,77,139,128,114,179,99,220"/>
-<area shape="rect" href="namespacemod__twofl__phys.html#a3e1726db79b762016bc67c1cc25d1338" title=" " alt="" coords="522,167,679,207"/>
-<area shape="poly" title=" " alt="" coords="173,235,307,227,458,212,508,204,509,209,459,217,308,232,174,240"/>
-<area shape="rect" href="namespacemod__geometry.html#a5e16962a2f11058e42599f6c5e21f207" title="Calculate gradient of a scalar q within ixL in direction idir." alt="" coords="509,301,692,326"/>
-<area shape="poly" title=" " alt="" coords="174,249,498,296,497,301,173,254"/>
-<area shape="rect" href="namespacemod__small__values.html#a102d6945f93b389506b859f24c5f7a37" title=" " alt="" coords="507,373,695,413"/>
-<area shape="poly" title=" " alt="" coords="102,259,119,293,146,333,180,372,200,388,223,401,258,416,296,425,374,431,450,426,517,414,518,419,451,431,374,436,295,430,257,421,220,406,197,393,176,376,141,336,115,295,97,262"/>
-<area shape="rect" href="namespacemod__small__values.html#a71e8c14b4394080d8f59716c4e5a1529" title=" " alt="" coords="507,448,695,488"/>
-<area shape="poly" title=" " alt="" coords="100,259,115,299,141,348,176,397,198,419,223,436,254,452,288,464,358,479,428,483,493,481,493,486,428,489,357,484,286,469,252,457,220,441,195,423,172,401,136,351,110,301,95,261"/>
-<area shape="rect" href="namespacemod__twofl__phys.html#a0b6ea9b7bc1afe2bc532ffa11e1ae6dc" title=" " alt="" coords="221,48,459,88"/>
-<area shape="poly" title=" " alt="" coords="102,218,149,158,182,125,220,98,232,91,234,96,223,102,186,129,153,162,106,221"/>
-<area shape="rect" href="mod__twofl__phys_8t.html#a4ff591fb241c947380bbbd05252ab324" title=" " alt="" coords="235,113,445,138"/>
-<area shape="poly" title=" " alt="" coords="112,218,160,182,220,148,245,139,247,144,222,153,163,186,116,222"/>
-<area shape="rect" href="namespacemod__twofl__phys.html#a07bafe324ea9a79e21a197c75d8c6376" title="Calculate v_c component." alt="" coords="256,352,424,392"/>
-<area shape="poly" title=" " alt="" coords="130,258,290,343,288,348,127,262"/>
-<area shape="rect" href="namespacemod__twofl__phys.html#a6ab52dd841368191fb8dc3386a201ac2" title="Calculate v component." alt="" coords="256,163,424,203"/>
-<area shape="poly" title=" " alt="" coords="173,218,242,202,243,207,174,223"/>
-<area shape="poly" title=" " alt="" coords="436,85,509,101,508,106,435,91"/>
-<area shape="poly" title=" " alt="" coords="436,86,460,98,476,111,485,125,494,139,508,152,518,158,515,163,505,157,490,142,481,128,472,115,457,102,434,90"/>
-<area shape="poly" title=" " alt="" coords="445,121,508,121,508,126,445,127"/>
-<area shape="poly" title=" " alt="" coords="403,135,459,148,510,160,509,166,458,153,402,140"/>
-<area shape="poly" title=" " alt="" coords="354,350,505,153,514,147,517,151,508,156,358,353"/>
-<area shape="poly" title=" " alt="" coords="368,349,558,213,562,217,371,354"/>
-<area shape="poly" title=" " alt="" coords="423,350,530,326,531,331,425,356"/>
-<area shape="poly" title=" " alt="" coords="424,376,493,382,493,387,424,381"/>
-<area shape="poly" title=" " alt="" coords="396,389,533,440,532,445,394,394"/>
-<area shape="poly" title=" " alt="" coords="293,352,291,342,298,333,315,327,340,325,369,328,385,335,383,340,368,333,340,331,316,332,301,337,296,343,298,351"/>
-<area shape="poly" title=" " alt="" coords="423,161,508,141,509,146,425,166"/>
-<area shape="poly" title=" " alt="" coords="424,181,508,182,508,188,424,186"/>
+<area shape="rect" title="Transform conservative variables into primitive ones." alt="" coords="5,111,173,151"/>
+<area shape="rect" href="namespacemod__twofl__phys.html#addeb124f8b22598bc4f5b29d5481c728" title=" " alt="" coords="479,7,636,47"/>
+<area shape="poly" title=" " alt="" coords="106,110,153,64,185,42,220,25,283,10,347,3,409,4,465,9,465,14,409,9,347,9,283,15,222,30,188,46,157,68,109,113"/>
+<area shape="rect" href="namespacemod__twofl__phys.html#a3e1726db79b762016bc67c1cc25d1338" title=" " alt="" coords="479,153,636,193"/>
+<area shape="poly" title=" " alt="" coords="106,150,153,205,185,232,222,253,279,271,325,276,372,269,430,253,480,230,522,200,525,204,482,234,432,258,373,274,325,281,277,276,220,258,182,237,149,209,102,154"/>
+<area shape="rect" href="namespacemod__geometry.html#a9be440eb43ae039be6f1e52e5c841f69" title=" " alt="" coords="235,89,417,115"/>
+<area shape="poly" title=" " alt="" coords="173,118,221,112,222,118,174,124"/>
+<area shape="rect" href="namespacemod__small__values.html#a102d6945f93b389506b859f24c5f7a37" title=" " alt="" coords="232,139,420,179"/>
+<area shape="poly" title=" " alt="" coords="174,139,219,144,218,149,174,144"/>
+<area shape="rect" href="namespacemod__small__values.html#a71e8c14b4394080d8f59716c4e5a1529" title=" " alt="" coords="232,203,420,243"/>
+<area shape="poly" title=" " alt="" coords="132,149,222,189,243,197,242,202,220,194,130,154"/>
+<area shape="rect" href="mod__twofl__phys_8t.html#a4ff591fb241c947380bbbd05252ab324" title=" " alt="" coords="221,40,431,65"/>
+<area shape="poly" title=" " alt="" coords="133,109,220,74,248,66,249,72,222,79,135,114"/>
+<area shape="poly" title=" " alt="" coords="431,39,465,35,465,40,431,44"/>
+<area shape="poly" title=" " alt="" coords="401,63,432,74,484,106,527,141,524,145,481,111,430,79,399,68"/>
 </map>
 </div>
 
@@ -2373,14 +2357,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ac82b357cdb32f39457f8616b25f4f4b9" name="ac82b357cdb32f39457f8616b25f4f4b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac82b357cdb32f39457f8616b25f4f4b9">&#9670;&#160;</a></span>twofl_divb_4thorder</h2>
+<a id="ac3a95150d1657aace983c5cd0cb5327a" name="ac3a95150d1657aace983c5cd0cb5327a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3a95150d1657aace983c5cd0cb5327a">&#9670;&#160;</a></span>twofl_divb_nth</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">logical, public, protected mod_twofl_phys::twofl_divb_4thorder = .false.</td>
+          <td class="memname">integer, public, protected mod_twofl_phys::twofl_divb_nth = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">

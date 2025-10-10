@@ -1,7 +1,5 @@
 <map id="mod_mhd_roe::mhd_roe_init" name="mod_mhd_roe::mhd_roe_init">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,213,60"/>
-<area shape="rect" id="Node000002" href="$namespacemod__tvd.html#ae8748c5ff719141fefc2ac786f5b4acd" title=" " alt="" coords="280,5,433,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,32,266,26,266,31,214,38"/>
-<area shape="rect" id="Node000004" href="$namespacemod__mhd__phys.html#a40519f8a53b76e1255e440b4a4b3f36c" title="Calculate the square of the thermal sound speed csound2 within ixO^L. csound2=gamma*p/rho." alt="" coords="261,55,452,95"/>
-<area shape="poly" id="edge2_Node000001_Node000004" title=" " alt="" coords="214,56,248,60,247,66,213,62"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,213,31"/>
+<area shape="rect" id="Node000002" href="$namespacemod__tvd.html#ae8748c5ff719141fefc2ac786f5b4acd" title=" " alt="" coords="261,5,415,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,15,247,15,247,21,214,21"/>
 </map>

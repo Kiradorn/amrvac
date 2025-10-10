@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -101,21 +101,14 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a4596b35fd730bf1920e42a2edcbd7897" id="r_a4596b35fd730bf1920e42a2edcbd7897"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a4596b35fd730bf1920e42a2edcbd7897">get_surface_area</a> (s, ixgl)</td></tr>
 <tr class="memdesc:a4596b35fd730bf1920e42a2edcbd7897"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate area of surfaces of cells  <br /></td></tr>
 <tr class="separator:a4596b35fd730bf1920e42a2edcbd7897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e16962a2f11058e42599f6c5e21f207" id="r_a5e16962a2f11058e42599f6c5e21f207"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a5e16962a2f11058e42599f6c5e21f207">gradient</a> (q, ixil, ixol, idir, gradq)</td></tr>
-<tr class="memdesc:a5e16962a2f11058e42599f6c5e21f207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gradient of a scalar q within ixL in direction idir.  <br /></td></tr>
-<tr class="separator:a5e16962a2f11058e42599f6c5e21f207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd910ad76494fa3ec94ffaaf2c96995f" id="r_afd910ad76494fa3ec94ffaaf2c96995f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#afd910ad76494fa3ec94ffaaf2c96995f">gradientx</a> (q, x, ixil, ixol, idir, gradq, fourth_order)</td></tr>
-<tr class="memdesc:afd910ad76494fa3ec94ffaaf2c96995f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gradient of a scalar q in direction idir at cell interfaces.  <br /></td></tr>
-<tr class="separator:afd910ad76494fa3ec94ffaaf2c96995f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a102fd6ee008663488fad3f3b9e449d97" id="r_a102fd6ee008663488fad3f3b9e449d97"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a102fd6ee008663488fad3f3b9e449d97">gradientq</a> (q, x, ixil, ixol, idir, gradq)</td></tr>
-<tr class="memdesc:a102fd6ee008663488fad3f3b9e449d97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gradient of a scalar q in direction idir at cell interfaces.  <br /></td></tr>
-<tr class="separator:a102fd6ee008663488fad3f3b9e449d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8744a5c0a4182d844e384e4bec8d0ccc" id="r_a8744a5c0a4182d844e384e4bec8d0ccc"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a8744a5c0a4182d844e384e4bec8d0ccc">gradients</a> (q, ixil, ixol, idir, gradq)</td></tr>
-<tr class="memdesc:a8744a5c0a4182d844e384e4bec8d0ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gradient of a scalar q within ixL in direction idir first use limiter to go from cell center to edge.  <br /></td></tr>
-<tr class="separator:a8744a5c0a4182d844e384e4bec8d0ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39518671a1f2871551c3726c91f2ca21" id="r_a39518671a1f2871551c3726c91f2ca21"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a39518671a1f2871551c3726c91f2ca21">divvector</a> (qvec, ixil, ixol, divq, fourthorder, sixthorder)</td></tr>
-<tr class="memdesc:a39518671a1f2871551c3726c91f2ca21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate divergence of a vector qvec within ixL.  <br /></td></tr>
-<tr class="separator:a39518671a1f2871551c3726c91f2ca21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be440eb43ae039be6f1e52e5c841f69" id="r_a9be440eb43ae039be6f1e52e5c841f69"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a9be440eb43ae039be6f1e52e5c841f69">gradient</a> (q, ixil, ixol, idir, gradq, nth_in)</td></tr>
+<tr class="separator:a9be440eb43ae039be6f1e52e5c841f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd1b9edd7157bf60764c69998f7a8d00" id="r_acd1b9edd7157bf60764c69998f7a8d00"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#acd1b9edd7157bf60764c69998f7a8d00">gradientl</a> (q, ixil, ixol, idir, gradq)</td></tr>
+<tr class="separator:acd1b9edd7157bf60764c69998f7a8d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaab25a5efeab833798f44aee5bae67c" id="r_aaaab25a5efeab833798f44aee5bae67c"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#aaaab25a5efeab833798f44aee5bae67c">gradientf</a> (q, x, ixil, ixol, idir, gradq, nth_in, pm_in)</td></tr>
+<tr class="separator:aaaab25a5efeab833798f44aee5bae67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34777249130c0a609ca96597bb403b30" id="r_a34777249130c0a609ca96597bb403b30"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a34777249130c0a609ca96597bb403b30">divvector</a> (qvec, ixil, ixol, divq, nth_in)</td></tr>
+<tr class="separator:a34777249130c0a609ca96597bb403b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa38fdb510ba28c2d2152f575d1ccf20f" id="r_aa38fdb510ba28c2d2152f575d1ccf20f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#aa38fdb510ba28c2d2152f575d1ccf20f">divvectors</a> (qvec, ixil, ixol, divq)</td></tr>
 <tr class="memdesc:aa38fdb510ba28c2d2152f575d1ccf20f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate divergence of a vector qvec within ixL using limited extrapolation to cell edges.  <br /></td></tr>
 <tr class="separator:aa38fdb510ba28c2d2152f575d1ccf20f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,7 +227,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00662">662</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00708">708</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
 
 </div>
 </div>
@@ -320,12 +313,12 @@ Variables</h2></td></tr>
 
 <p>Calculate idim transverse components of curl of a vector qvec within ixL Options to employ standard second order CD evaluations use Gauss theorem for non-Cartesian grids use Stokes theorem for non-Cartesian grids. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l01131">1131</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l01177">1177</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
 
 </div>
 </div>
-<a id="a39518671a1f2871551c3726c91f2ca21" name="a39518671a1f2871551c3726c91f2ca21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39518671a1f2871551c3726c91f2ca21">&#9670;&#160;</a></span>divvector()</h2>
+<a id="a34777249130c0a609ca96597bb403b30" name="a34777249130c0a609ca96597bb403b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34777249130c0a609ca96597bb403b30">&#9670;&#160;</a></span>divvector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,14 +362,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">logical, intent(in), optional&#160;</td>
-          <td class="paramname"><em>fourthorder</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">logical, intent(in), optional&#160;</td>
-          <td class="paramname"><em>sixthorder</em>&#160;</td>
+          <td class="paramtype">integer, intent(in), optional&#160;</td>
+          <td class="paramname"><em>nth_in</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -386,16 +373,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate divergence of a vector qvec within ixL. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">fourthorder</td><td>Default: false </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sixthorder</td><td>Default: false </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00515">515</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00582">582</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
 
 </div>
 </div>
@@ -451,7 +429,7 @@ Variables</h2></td></tr>
 
 <p>Calculate divergence of a vector qvec within ixL using limited extrapolation to cell edges. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00607">607</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00655">655</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -505,8 +483,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a5e16962a2f11058e42599f6c5e21f207" name="a5e16962a2f11058e42599f6c5e21f207"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e16962a2f11058e42599f6c5e21f207">&#9670;&#160;</a></span>gradient()</h2>
+<a id="a9be440eb43ae039be6f1e52e5c841f69" name="a9be440eb43ae039be6f1e52e5c841f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be440eb43ae039be6f1e52e5c841f69">&#9670;&#160;</a></span>gradient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -551,7 +529,13 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double precision, dimension(ixi^s), intent(inout)&#160;</td>
-          <td class="paramname"><em>gradq</em>&#160;</td>
+          <td class="paramname"><em>gradq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in), optional&#160;</td>
+          <td class="paramname"><em>nth_in</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -561,162 +545,18 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate gradient of a scalar q within ixL in direction idir. </p>
-
-<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00320">320</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00329">329</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
 
 </div>
 </div>
-<a id="a102fd6ee008663488fad3f3b9e449d97" name="a102fd6ee008663488fad3f3b9e449d97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a102fd6ee008663488fad3f3b9e449d97">&#9670;&#160;</a></span>gradientq()</h2>
+<a id="aaaab25a5efeab833798f44aee5bae67c" name="aaaab25a5efeab833798f44aee5bae67c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaab25a5efeab833798f44aee5bae67c">&#9670;&#160;</a></span>gradientf()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">subroutine mod_geometry::gradientq </td>
-          <td>(</td>
-          <td class="paramtype">double precision, dimension(ixi^s), intent(in)&#160;</td>
-          <td class="paramname"><em>q</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double precision, dimension(ixi^s,1:ndim), intent(in)&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ixi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ixo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>idir</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double precision, dimension(ixi^s), intent(inout)&#160;</td>
-          <td class="paramname"><em>gradq</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculate gradient of a scalar q in direction idir at cell interfaces. </p>
-
-<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00415">415</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
-
-</div>
-</div>
-<a id="a8744a5c0a4182d844e384e4bec8d0ccc" name="a8744a5c0a4182d844e384e4bec8d0ccc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8744a5c0a4182d844e384e4bec8d0ccc">&#9670;&#160;</a></span>gradients()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">subroutine mod_geometry::gradients </td>
-          <td>(</td>
-          <td class="paramtype">double precision, dimension(ixi^s), intent(in)&#160;</td>
-          <td class="paramname"><em>q</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ixi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ixo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>idir</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double precision, dimension(ixi^s), intent(inout)&#160;</td>
-          <td class="paramname"><em>gradq</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculate gradient of a scalar q within ixL in direction idir first use limiter to go from cell center to edge. </p>
-
-<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00457">457</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacemod__geometry_a8744a5c0a4182d844e384e4bec8d0ccc_cgraph.png" border="0" usemap="#anamespacemod__geometry_a8744a5c0a4182d844e384e4bec8d0ccc_cgraph" alt=""/></div>
-<map name="anamespacemod__geometry_a8744a5c0a4182d844e384e4bec8d0ccc_cgraph" id="anamespacemod__geometry_a8744a5c0a4182d844e384e4bec8d0ccc_cgraph">
-<area shape="rect" title="Calculate gradient of a scalar q within ixL in direction idir first use limiter to go from cell cente..." alt="" coords="5,31,195,56"/>
-<area shape="rect" href="namespacemod__limiter.html#ad477e395652065ecae809c863f1c3cbd" title="Limit the centered dwC differences within ixC for iw in direction idim. The limiter is chosen accordi..." alt="" coords="247,5,426,31"/>
-<area shape="poly" title=" " alt="" coords="195,31,234,26,234,32,195,36"/>
-<area shape="rect" href="namespacemod__ppm.html#a37143b5a3fe36507d31095df4acecbd6" title=" " alt="" coords="243,55,431,80"/>
-<area shape="poly" title=" " alt="" coords="195,50,229,54,229,59,195,56"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="afd910ad76494fa3ec94ffaaf2c96995f" name="afd910ad76494fa3ec94ffaaf2c96995f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd910ad76494fa3ec94ffaaf2c96995f">&#9670;&#160;</a></span>gradientx()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">subroutine mod_geometry::gradientx </td>
+          <td class="memname">subroutine mod_geometry::gradientf </td>
           <td>(</td>
           <td class="paramtype">double precision, dimension(ixi^s), intent(in)&#160;</td>
           <td class="paramname"><em>q</em>, </td>
@@ -766,8 +606,14 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">logical, intent(in)&#160;</td>
-          <td class="paramname"><em>fourth_order</em>&#160;</td>
+          <td class="paramtype">integer, intent(in), optional&#160;</td>
+          <td class="paramname"><em>nth_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">logical, intent(in), optional&#160;</td>
+          <td class="paramname"><em>pm_in</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -777,9 +623,79 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate gradient of a scalar q in direction idir at cell interfaces. </p>
+<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00476">476</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00362">362</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
+</div>
+</div>
+<a id="acd1b9edd7157bf60764c69998f7a8d00" name="acd1b9edd7157bf60764c69998f7a8d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd1b9edd7157bf60764c69998f7a8d00">&#9670;&#160;</a></span>gradientl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine mod_geometry::gradientl </td>
+          <td>(</td>
+          <td class="paramtype">double precision, dimension(ixi^s), intent(in)&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>ixi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>ixo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>idir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double precision, dimension(ixi^s), intent(inout)&#160;</td>
+          <td class="paramname"><em>gradq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mod__geometry_8t_source.html#l00405">405</a> of file <a class="el" href="mod__geometry_8t_source.html">mod_geometry.t</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacemod__geometry_acd1b9edd7157bf60764c69998f7a8d00_cgraph.png" border="0" usemap="#anamespacemod__geometry_acd1b9edd7157bf60764c69998f7a8d00_cgraph" alt=""/></div>
+<map name="anamespacemod__geometry_acd1b9edd7157bf60764c69998f7a8d00_cgraph" id="anamespacemod__geometry_acd1b9edd7157bf60764c69998f7a8d00_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,192,56"/>
+<area shape="rect" href="namespacemod__limiter.html#ad477e395652065ecae809c863f1c3cbd" title="Limit the centered dwC differences within ixC for iw in direction idim. The limiter is chosen accordi..." alt="" coords="245,5,423,31"/>
+<area shape="poly" title=" " alt="" coords="192,31,231,26,232,32,193,36"/>
+<area shape="rect" href="namespacemod__ppm.html#a37143b5a3fe36507d31095df4acecbd6" title=" " alt="" coords="240,55,428,80"/>
+<area shape="poly" title=" " alt="" coords="193,50,227,54,226,59,192,56"/>
+</map>
+</div>
 
 </div>
 </div>

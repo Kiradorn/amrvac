@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -172,9 +172,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a7448918ca747aeff44aa6a86978d4226" id="r_a7448918ca747aeff44aa6a86978d4226"><td class="memItemLeft" align="right" valign="top">double precision, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__srhd__phys.html#a7448918ca747aeff44aa6a86978d4226">small_xi</a></td></tr>
 <tr class="memdesc:a7448918ca747aeff44aa6a86978d4226"><td class="mdescLeft">&#160;</td><td class="mdescRight">The smallest allowed inertia.  <br /></td></tr>
 <tr class="separator:a7448918ca747aeff44aa6a86978d4226"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09f71d3d5afb0e2228c59cde4f6bd05e" id="r_a09f71d3d5afb0e2228c59cde4f6bd05e"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__srhd__phys.html#a09f71d3d5afb0e2228c59cde4f6bd05e">srhd_force_diagonal</a> = .false.</td></tr>
-<tr class="memdesc:a09f71d3d5afb0e2228c59cde4f6bd05e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows overruling default corner filling (for debug mode, otherwise corner primitives fail)  <br /></td></tr>
-<tr class="separator:a09f71d3d5afb0e2228c59cde4f6bd05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d9de63277dddc92bf5a5ca25d8d0593" id="r_a6d9de63277dddc92bf5a5ca25d8d0593"><td class="memItemLeft" align="right" valign="top">double precision, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__srhd__phys.html#a6d9de63277dddc92bf5a5ca25d8d0593">he_abundance</a> =0.0d0</td></tr>
 <tr class="memdesc:a6d9de63277dddc92bf5a5ca25d8d0593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helium abundance over Hydrogen.  <br /></td></tr>
 <tr class="separator:a6d9de63277dddc92bf5a5ca25d8d0593"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,7 +210,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00222">222</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00209">209</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -275,7 +272,7 @@ Variables</h2></td></tr>
 
 <p>Returns logical argument flag T where values are not ok. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00276">276</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00263">263</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -331,7 +328,7 @@ Variables</h2></td></tr>
 
 <p>Compute auxiliary variables lfac and xi from a conservative state using srhd_con2prim to calculate enthalpy and lorentz factor. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00343">343</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00330">330</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -381,7 +378,7 @@ Variables</h2></td></tr>
 
 <p>Set auxiliary variables lfac and xi from a primitive state only used when handle_small_values average on primitives. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00321">321</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00308">308</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -453,7 +450,7 @@ Here is the call graph for this function:</div>
 
 <p>Calculate the square of the thermal sound speed csound2 within ixO^L. here computed from conservative set and uses con2prim!!! public version! </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00534">534</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00521">521</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -513,7 +510,7 @@ Here is the call graph for this function:</div>
 
 <p>Compute the enthalpy rho*h from rho and pressure p. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l01043">1043</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l01028">1028</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -575,7 +572,7 @@ Here is the call graph for this function:</div>
 
 <p>calculate effective gamma </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00974">974</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00959">959</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -637,24 +634,26 @@ Here is the call graph for this function:</div>
 
 <p>Calculate thermal pressure p within ixO^L must follow after update conservative with auxiliaries. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00554">554</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00541">541</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacemod__srhd__phys_a8c61845d46c32e8220ed957961930dff_cgraph.png" border="0" usemap="#anamespacemod__srhd__phys_a8c61845d46c32e8220ed957961930dff_cgraph" alt=""/></div>
 <map name="anamespacemod__srhd__phys_a8c61845d46c32e8220ed957961930dff_cgraph" id="anamespacemod__srhd__phys_a8c61845d46c32e8220ed957961930dff_cgraph">
-<area shape="rect" title="Calculate thermal pressure p within ixO^L must follow after update conservative with auxiliaries." alt="" coords="5,133,165,173"/>
-<area shape="poly" title=" " alt="" coords="44,134,41,124,48,114,63,109,85,107,111,110,125,117,123,122,110,115,85,112,64,114,51,119,47,125,49,132"/>
+<area shape="rect" title="Calculate thermal pressure p within ixO^L must follow after update conservative with auxiliaries." alt="" coords="5,165,165,205"/>
+<area shape="poly" title=" " alt="" coords="44,166,41,156,48,146,63,141,85,139,111,142,125,149,123,154,110,147,85,144,64,146,51,151,47,157,49,164"/>
 <area shape="rect" href="namespacemod__small__values.html#a102d6945f93b389506b859f24c5f7a37" title=" " alt="" coords="213,5,401,45"/>
-<area shape="poly" title=" " alt="" coords="107,131,153,93,212,55,226,48,228,53,215,60,157,97,110,135"/>
+<area shape="poly" title=" " alt="" coords="100,163,146,110,177,81,212,55,223,49,226,53,215,60,181,85,150,114,104,167"/>
 <area shape="rect" href="namespacemod__small__values.html#a71e8c14b4394080d8f59716c4e5a1529" title=" " alt="" coords="213,69,401,109"/>
-<area shape="poly" title=" " alt="" coords="155,131,224,111,225,116,156,136"/>
+<area shape="poly" title=" " alt="" coords="122,163,212,119,231,112,233,117,214,124,124,168"/>
 <area shape="rect" href="namespacemod__srhd__phys.html#ab642c4bb46b9d1c7d5c0ae49d69651c6" title="Returns logical argument flag T where values are not ok." alt="" coords="227,133,387,173"/>
-<area shape="poly" title=" " alt="" coords="166,151,214,151,214,156,166,156"/>
+<area shape="poly" title=" " alt="" coords="165,171,214,164,214,169,166,176"/>
 <area shape="rect" href="namespacemod__srhd__phys.html#a0ada2775055a65b30f294a1bef0b3d82" title="Compute auxiliary variables lfac and xi from a conservative state using srhd_con2prim to calculate en..." alt="" coords="227,197,387,237"/>
-<area shape="poly" title=" " alt="" coords="156,171,225,191,224,196,155,176"/>
+<area shape="poly" title=" " alt="" coords="166,194,214,201,214,207,165,200"/>
 <area shape="rect" href="namespacemod__srhd__phys.html#a45e88450183b8144ba700c90fcd3a2cf" title="Set auxiliary variables lfac and xi from a primitive state only used when handle_small_values average..." alt="" coords="227,261,387,301"/>
-<area shape="poly" title=" " alt="" coords="110,171,157,209,215,247,228,254,226,258,212,252,153,213,107,175"/>
+<area shape="poly" title=" " alt="" coords="124,203,214,247,233,254,231,259,212,252,122,208"/>
+<area shape="rect" href="namespacemod__srhd__phys.html#ab7a910e681e796ff6c65503c064e8a14" title="Transform primitive variables into conservative ones." alt="" coords="227,325,387,365"/>
+<area shape="poly" title=" " alt="" coords="104,204,150,257,181,286,215,311,226,317,223,322,212,316,177,290,146,261,100,207"/>
 </map>
 </div>
 
@@ -674,34 +673,35 @@ Here is the call graph for this function:</div>
 
 <p>Initialize the module. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00114">114</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00111">111</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacemod__srhd__phys_a67e4ed5472a202c9308dc1c7ca62da90_cgraph.png" border="0" usemap="#anamespacemod__srhd__phys_a67e4ed5472a202c9308dc1c7ca62da90_cgraph" alt=""/></div>
 <map name="anamespacemod__srhd__phys_a67e4ed5472a202c9308dc1c7ca62da90_cgraph" id="anamespacemod__srhd__phys_a67e4ed5472a202c9308dc1c7ca62da90_cgraph">
-<area shape="rect" title="Initialize the module." alt="" coords="5,223,165,263"/>
+<area shape="rect" title="Initialize the module." alt="" coords="5,193,165,233"/>
 <area shape="rect" href="namespacemod__particles.html#a7a89b126b34bb788a3911955880ddd8f" title="Initialize particle data and parameters." alt="" coords="213,5,420,31"/>
-<area shape="poly" title=" " alt="" coords="91,222,107,184,132,134,167,84,188,61,212,41,223,34,226,39,215,45,192,65,171,87,137,137,112,186,96,224"/>
+<area shape="poly" title=" " alt="" coords="94,191,111,158,137,117,171,76,212,41,225,34,228,38,215,46,175,80,142,120,116,161,98,194"/>
 <area shape="rect" href="namespacemod__srhd__phys.html#abb45942fb4cd6be73df6678919690885" title=" " alt="" coords="237,55,397,95"/>
-<area shape="poly" title=" " alt="" coords="100,221,146,168,177,138,212,112,236,98,239,103,215,116,181,142,150,171,104,225"/>
-<area shape="rect" href="namespacemod__srhd__phys.html#ab642c4bb46b9d1c7d5c0ae49d69651c6" title="Returns logical argument flag T where values are not ok." alt="" coords="468,150,628,190"/>
-<area shape="poly" title=" " alt="" coords="106,221,152,185,181,168,213,155,274,143,338,139,399,141,455,148,454,153,399,147,338,144,275,148,214,161,184,173,155,190,110,225"/>
-<area shape="rect" href="namespacemod__srhd__phys.html#a0ada2775055a65b30f294a1bef0b3d82" title="Compute auxiliary variables lfac and xi from a conservative state using srhd_con2prim to calculate en..." alt="" coords="468,251,628,291"/>
-<area shape="poly" title=" " alt="" coords="166,245,454,263,454,268,166,251"/>
-<area shape="rect" href="namespacemod__srhd__phys.html#a45e88450183b8144ba700c90fcd3a2cf" title="Set auxiliary variables lfac and xi from a primitive state only used when handle_small_values average..." alt="" coords="468,341,628,381"/>
-<area shape="poly" title=" " alt="" coords="103,262,148,313,179,339,214,358,274,375,337,382,398,381,454,376,455,381,399,386,337,387,273,380,212,363,176,343,144,317,99,265"/>
-<area shape="rect" href="namespacemod__srhd__phys.html#a8c61845d46c32e8220ed957961930dff" title="Calculate thermal pressure p within ixO^L must follow after update conservative with auxiliaries." alt="" coords="237,194,397,234"/>
-<area shape="poly" title=" " alt="" coords="165,231,222,223,223,229,166,236"/>
-<area shape="rect" href="namespacemod__srhd__phys.html#ab7a910e681e796ff6c65503c064e8a14" title="Transform primitive variables into conservative ones." alt="" coords="237,423,397,463"/>
-<area shape="poly" title=" " alt="" coords="100,262,145,330,177,369,215,403,236,415,233,420,212,407,173,373,140,334,95,265"/>
-<area shape="rect" href="namespacemod__srhd__phys.html#ac5728fd59fb81c1680edf8e2bf3456d6" title="Transform conservative variables into primitive ones." alt="" coords="237,309,397,349"/>
-<area shape="poly" title=" " alt="" coords="141,261,250,301,248,306,139,266"/>
-<area shape="poly" title=" " alt="" coords="396,196,454,185,455,190,397,201"/>
-<area shape="poly" title=" " alt="" coords="397,231,455,246,454,251,396,236"/>
-<area shape="poly" title=" " alt="" coords="351,232,505,331,503,336,348,236"/>
-<area shape="poly" title=" " alt="" coords="274,194,271,184,278,175,293,169,317,167,343,170,358,177,356,182,342,175,317,173,295,175,281,179,276,185,279,193"/>
-<area shape="poly" title=" " alt="" coords="396,306,454,292,455,297,397,312"/>
+<area shape="poly" title=" " alt="" coords="107,190,153,151,212,112,240,98,242,103,215,116,157,156,110,194"/>
+<area shape="rect" href="namespacemod__srhd__phys.html#ab642c4bb46b9d1c7d5c0ae49d69651c6" title="Returns logical argument flag T where values are not ok." alt="" coords="468,135,628,175"/>
+<area shape="poly" title=" " alt="" coords="165,193,213,185,339,169,454,159,455,164,339,175,214,190,166,198"/>
+<area shape="rect" href="namespacemod__srhd__phys.html#a0ada2775055a65b30f294a1bef0b3d82" title="Compute auxiliary variables lfac and xi from a conservative state using srhd_con2prim to calculate en..." alt="" coords="468,221,628,261"/>
+<area shape="poly" title=" " alt="" coords="165,203,286,199,353,200,420,206,467,215,466,220,420,211,353,206,286,204,166,208"/>
+<area shape="rect" href="namespacemod__srhd__phys.html#a45e88450183b8144ba700c90fcd3a2cf" title="Set auxiliary variables lfac and xi from a primitive state only used when handle_small_values average..." alt="" coords="468,330,628,370"/>
+<area shape="poly" title=" " alt="" coords="99,231,116,262,142,298,175,332,215,358,245,370,276,377,341,383,405,379,462,370,463,375,405,385,341,388,275,382,243,375,212,363,172,336,138,301,112,265,94,234"/>
+<area shape="rect" href="namespacemod__srhd__phys.html#a8c61845d46c32e8220ed957961930dff" title="Calculate thermal pressure p within ixO^L must follow after update conservative with auxiliaries." alt="" coords="237,309,397,349"/>
+<area shape="poly" title=" " alt="" coords="128,230,264,300,262,305,125,235"/>
+<area shape="rect" href="namespacemod__srhd__phys.html#ab7a910e681e796ff6c65503c064e8a14" title="Transform primitive variables into conservative ones." alt="" coords="468,405,628,445"/>
+<area shape="poly" title=" " alt="" coords="97,232,113,268,138,311,172,355,192,373,215,389,273,414,335,428,398,433,455,433,455,438,397,439,335,433,271,419,212,394,189,378,168,358,134,314,108,270,92,234"/>
+<area shape="rect" href="namespacemod__srhd__phys.html#ac5728fd59fb81c1680edf8e2bf3456d6" title="Transform conservative variables into primitive ones." alt="" coords="237,221,397,261"/>
+<area shape="poly" title=" " alt="" coords="166,220,223,227,222,232,165,225"/>
+<area shape="poly" title=" " alt="" coords="363,306,391,290,418,271,433,255,442,240,451,224,466,207,499,181,502,185,470,211,456,227,447,242,437,258,422,275,394,295,366,311"/>
+<area shape="poly" title=" " alt="" coords="370,306,481,263,483,268,371,311"/>
+<area shape="poly" title=" " alt="" coords="397,333,454,339,454,344,396,339"/>
+<area shape="poly" title=" " alt="" coords="274,309,271,299,278,290,293,284,317,282,343,285,358,292,356,297,342,290,317,287,295,289,281,294,276,300,279,308"/>
+<area shape="poly" title=" " alt="" coords="367,346,487,397,485,402,365,351"/>
+<area shape="poly" title=" " alt="" coords="397,238,454,238,454,243,397,243"/>
 </map>
 </div>
 
@@ -759,7 +759,7 @@ Here is the call graph for this function:</div>
 
 <p>Transform primitive variables into conservative ones. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00422">422</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00409">409</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -825,7 +825,7 @@ Here is the call graph for this function:</div>
 
 <p>Transform conservative variables into primitive ones. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00463">463</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00450">450</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -852,7 +852,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00056">56</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00053">53</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -884,7 +884,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00058">58</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00055">55</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -952,7 +952,7 @@ Here is the call graph for this function:</div>
 
 <p>Helium abundance over Hydrogen. </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00052">52</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00049">49</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1002,7 +1002,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00059">59</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00056">56</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1020,7 +1020,7 @@ Here is the call graph for this function:</div>
 
 <p>parameters for NR in con2prim </p>
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00055">55</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00052">52</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1036,7 +1036,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00060">60</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00057">57</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1052,7 +1052,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00060">60</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00057">57</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1158,7 +1158,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00060">60</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00057">57</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1174,7 +1174,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00060">60</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00057">57</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1193,24 +1193,6 @@ Here is the call graph for this function:</div>
 <p>Whether synge eos is used. </p>
 
 <p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00037">37</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
-
-</div>
-</div>
-<a id="a09f71d3d5afb0e2228c59cde4f6bd05e" name="a09f71d3d5afb0e2228c59cde4f6bd05e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09f71d3d5afb0e2228c59cde4f6bd05e">&#9670;&#160;</a></span>srhd_force_diagonal</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">logical, public, protected mod_srhd_phys::srhd_force_diagonal = .false.</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Allows overruling default corner filling (for debug mode, otherwise corner primitives fail) </p>
-
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00049">49</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>
@@ -1280,7 +1262,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00057">57</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mod__srhd__phys_8t_source.html#l00054">54</a> of file <a class="el" href="mod__srhd__phys_8t_source.html">mod_srhd_phys.t</a>.</p>
 
 </div>
 </div>

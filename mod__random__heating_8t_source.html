@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -98,7 +98,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  !&gt; Li et al. (2022,ApJ,926,216). </span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  !&gt; Users can define the parameters &quot;trelax,vtim,vlim,periods,variation,num,mnx&quot; in the mod_usr.t file.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  !&gt; Example for using this module please see tests/mhd/coronal_rain_2.5D</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="comment">!trelax is the relaxization time for the simulation, if the relaxization is done seperately, then trelax=0.d0</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="comment">!trelax is the relaxation time for the simulation, if the relaxation is done seperately, then trelax=0.d0</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="comment">!periods=300,variation=75  !The time durations of each heating episode is typically 300s +/- 75s</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="comment">!vtim = 100                !100 heating episodes, e.g., 500 min. Enough for the simulation</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="comment">!num = 1000                !1000 waves for each episode</span></div>
@@ -243,8 +243,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span>          :: vtim,vlim,mnx,num</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(in)</span> :: periods,variation,si</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordtype">integer</span>                      :: i,vx,j</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">character(len=100)</span>           :: filename</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">logical</span>                      :: alive</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">logical</span>                      :: alive</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">character(len=100)</span>           :: filename</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="comment">! generate random T, typically 300s +/- 75s   </span></div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
@@ -339,8 +339,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(in)</span>    :: periods,variation</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keywordtype">double precision</span>, <span class="keywordtype">intent(inout)</span> :: tb(:)</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordtype">character(len=100)</span>, <span class="keywordtype">intent(in)</span>  :: filename</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordtype">integer</span>                         :: i</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordtype">double precision</span>                :: tt1,tt,mm</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordtype">double precision</span>                :: tt1,tt,mm</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordtype">integer</span>                         :: i</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="comment">! generate random T, typically 300s +/- 75s    </span></div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
@@ -400,11 +400,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <span class="keyword">open</span>(unit=22,file=filename,form=<span class="stringliteral">&#39;formatted&#39;</span>,status=<span class="stringliteral">&#39;new&#39;</span>)</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keyword">write</span>(22,<span class="stringliteral">&#39;(es12.4)&#39;</span>) va</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keyword">close</span>(22)</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
-</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  <span class="keyword">end subroutine </span><a class="code hl_function" href="namespacemod__random__heating.html#ae81a31f9937d0dafe61c8149838fc36f">randomv</a></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keyword">deallocate</span>(vm)</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keyword">deallocate</span>(vn)</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="keyword">end module </span><a class="code hl_namespace" href="namespacemod__random__heating.html">mod_random_heating</a></div>
+</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="keyword">end subroutine </span><a class="code hl_function" href="namespacemod__random__heating.html#ae81a31f9937d0dafe61c8149838fc36f">randomv</a></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="keyword">end module </span><a class="code hl_namespace" href="namespacemod__random__heating.html">mod_random_heating</a></div>
 <div class="ttc" id="anamespacemod__comm__lib_html"><div class="ttname"><a href="namespacemod__comm__lib.html">mod_comm_lib</a></div><div class="ttdef"><b>Definition</b> <a href="mod__comm__lib_8t_source.html#l00001">mod_comm_lib.t:1</a></div></div>
 <div class="ttc" id="anamespacemod__comm__lib_html_a9b6f1a8fd13bc5670e3b426151c34048"><div class="ttname"><a href="namespacemod__comm__lib.html#a9b6f1a8fd13bc5670e3b426151c34048">mod_comm_lib::mpistop</a></div><div class="ttdeci">subroutine, public mpistop(message)</div><div class="ttdoc">Exit MPI-AMRVAC with an error message.</div><div class="ttdef"><b>Definition</b> <a href="mod__comm__lib_8t_source.html#l00207">mod_comm_lib.t:208</a></div></div>
 <div class="ttc" id="anamespacemod__global__parameters_html"><div class="ttname"><a href="namespacemod__global__parameters.html">mod_global_parameters</a></div><div class="ttdoc">This module contains definitions of global parameters and variables and some generic functions/subrou...</div><div class="ttdef"><b>Definition</b> <a href="mod__global__parameters_8t_source.html#l00004">mod_global_parameters.t:4</a></div></div>

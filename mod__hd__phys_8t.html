@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -170,6 +170,13 @@ Variables</h2></td></tr>
 <tr class="memitem:a6114a4fe01119b313ef898d00e1559e9" id="r_a6114a4fe01119b313ef898d00e1559e9"><td class="memItemLeft" align="right" valign="top">integer, dimension(:), allocatable, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__hd__phys.html#a6114a4fe01119b313ef898d00e1559e9">mod_hd_phys::mom</a></td></tr>
 <tr class="memdesc:a6114a4fe01119b313ef898d00e1559e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the momentum density.  <br /></td></tr>
 <tr class="separator:a6114a4fe01119b313ef898d00e1559e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a942cfbc9d06a4e6ad112ca95c75f0a" id="r_a3a942cfbc9d06a4e6ad112ca95c75f0a"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__hd__phys.html#a3a942cfbc9d06a4e6ad112ca95c75f0a">mod_hd_phys::c</a></td></tr>
+<tr class="memdesc:a3a942cfbc9d06a4e6ad112ca95c75f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the momentum density for the form of better vectorization.  <br /></td></tr>
+<tr class="separator:a3a942cfbc9d06a4e6ad112ca95c75f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a012dfa579bff2692031c53e48374a75c" id="r_a012dfa579bff2692031c53e48374a75c"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__hd__phys.html#a012dfa579bff2692031c53e48374a75c">mod_hd_phys::m</a></td></tr>
+<tr class="separator:a012dfa579bff2692031c53e48374a75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada607ff211e793e77d46bd447cd841c4" id="r_ada607ff211e793e77d46bd447cd841c4"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__hd__phys.html#ada607ff211e793e77d46bd447cd841c4">mod_hd_phys::c_</a></td></tr>
+<tr class="separator:ada607ff211e793e77d46bd447cd841c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a882a365b61e3d64842c7251a056f07c4" id="r_a882a365b61e3d64842c7251a056f07c4"><td class="memItemLeft" align="right" valign="top">integer, dimension(:), allocatable, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__hd__phys.html#a882a365b61e3d64842c7251a056f07c4">mod_hd_phys::tracer</a></td></tr>
 <tr class="memdesc:a882a365b61e3d64842c7251a056f07c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the tracers.  <br /></td></tr>
 <tr class="separator:a882a365b61e3d64842c7251a056f07c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,9 +203,6 @@ Variables</h2></td></tr>
 <tr class="separator:add6f7f0a2bbaf92bedef1f42ad7c5c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a250e450d81227ed346080fee72723943" id="r_a250e450d81227ed346080fee72723943"><td class="memItemLeft" align="right" valign="top">integer, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__hd__phys.html#a250e450d81227ed346080fee72723943">mod_hd_phys::hd_trac_type</a> = 1</td></tr>
 <tr class="separator:a250e450d81227ed346080fee72723943"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa42ab3678f47a85077fbf37fc7e755ec" id="r_aa42ab3678f47a85077fbf37fc7e755ec"><td class="memItemLeft" align="right" valign="top">logical, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__hd__phys.html#aa42ab3678f47a85077fbf37fc7e755ec">mod_hd_phys::hd_force_diagonal</a> = .false.</td></tr>
-<tr class="memdesc:aa42ab3678f47a85077fbf37fc7e755ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows overruling default corner filling (for debug mode, since otherwise corner primitives fail)  <br /></td></tr>
-<tr class="separator:aa42ab3678f47a85077fbf37fc7e755ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca71164e35d0e3e9ea5751f46ba544df" id="r_aca71164e35d0e3e9ea5751f46ba544df"><td class="memItemLeft" align="right" valign="top">double precision, public, protected&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__hd__phys.html#aca71164e35d0e3e9ea5751f46ba544df">mod_hd_phys::he_abundance</a> =0.1d0</td></tr>
 <tr class="memdesc:aca71164e35d0e3e9ea5751f46ba544df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helium abundance over Hydrogen.  <br /></td></tr>
 <tr class="separator:aca71164e35d0e3e9ea5751f46ba544df"><td class="memSeparator" colspan="2">&#160;</td></tr>

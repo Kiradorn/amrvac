@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -111,21 +111,14 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a4596b35fd730bf1920e42a2edcbd7897" id="r_a4596b35fd730bf1920e42a2edcbd7897"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a4596b35fd730bf1920e42a2edcbd7897">mod_geometry::get_surface_area</a> (s, ixgl)</td></tr>
 <tr class="memdesc:a4596b35fd730bf1920e42a2edcbd7897"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate area of surfaces of cells  <br /></td></tr>
 <tr class="separator:a4596b35fd730bf1920e42a2edcbd7897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e16962a2f11058e42599f6c5e21f207" id="r_a5e16962a2f11058e42599f6c5e21f207"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a5e16962a2f11058e42599f6c5e21f207">mod_geometry::gradient</a> (q, ixil, ixol, idir, gradq)</td></tr>
-<tr class="memdesc:a5e16962a2f11058e42599f6c5e21f207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gradient of a scalar q within ixL in direction idir.  <br /></td></tr>
-<tr class="separator:a5e16962a2f11058e42599f6c5e21f207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd910ad76494fa3ec94ffaaf2c96995f" id="r_afd910ad76494fa3ec94ffaaf2c96995f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#afd910ad76494fa3ec94ffaaf2c96995f">mod_geometry::gradientx</a> (q, x, ixil, ixol, idir, gradq, fourth_order)</td></tr>
-<tr class="memdesc:afd910ad76494fa3ec94ffaaf2c96995f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gradient of a scalar q in direction idir at cell interfaces.  <br /></td></tr>
-<tr class="separator:afd910ad76494fa3ec94ffaaf2c96995f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a102fd6ee008663488fad3f3b9e449d97" id="r_a102fd6ee008663488fad3f3b9e449d97"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a102fd6ee008663488fad3f3b9e449d97">mod_geometry::gradientq</a> (q, x, ixil, ixol, idir, gradq)</td></tr>
-<tr class="memdesc:a102fd6ee008663488fad3f3b9e449d97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gradient of a scalar q in direction idir at cell interfaces.  <br /></td></tr>
-<tr class="separator:a102fd6ee008663488fad3f3b9e449d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8744a5c0a4182d844e384e4bec8d0ccc" id="r_a8744a5c0a4182d844e384e4bec8d0ccc"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a8744a5c0a4182d844e384e4bec8d0ccc">mod_geometry::gradients</a> (q, ixil, ixol, idir, gradq)</td></tr>
-<tr class="memdesc:a8744a5c0a4182d844e384e4bec8d0ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate gradient of a scalar q within ixL in direction idir first use limiter to go from cell center to edge.  <br /></td></tr>
-<tr class="separator:a8744a5c0a4182d844e384e4bec8d0ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39518671a1f2871551c3726c91f2ca21" id="r_a39518671a1f2871551c3726c91f2ca21"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a39518671a1f2871551c3726c91f2ca21">mod_geometry::divvector</a> (qvec, ixil, ixol, divq, fourthorder, sixthorder)</td></tr>
-<tr class="memdesc:a39518671a1f2871551c3726c91f2ca21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate divergence of a vector qvec within ixL.  <br /></td></tr>
-<tr class="separator:a39518671a1f2871551c3726c91f2ca21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be440eb43ae039be6f1e52e5c841f69" id="r_a9be440eb43ae039be6f1e52e5c841f69"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a9be440eb43ae039be6f1e52e5c841f69">mod_geometry::gradient</a> (q, ixil, ixol, idir, gradq, nth_in)</td></tr>
+<tr class="separator:a9be440eb43ae039be6f1e52e5c841f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd1b9edd7157bf60764c69998f7a8d00" id="r_acd1b9edd7157bf60764c69998f7a8d00"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#acd1b9edd7157bf60764c69998f7a8d00">mod_geometry::gradientl</a> (q, ixil, ixol, idir, gradq)</td></tr>
+<tr class="separator:acd1b9edd7157bf60764c69998f7a8d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaab25a5efeab833798f44aee5bae67c" id="r_aaaab25a5efeab833798f44aee5bae67c"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#aaaab25a5efeab833798f44aee5bae67c">mod_geometry::gradientf</a> (q, x, ixil, ixol, idir, gradq, nth_in, pm_in)</td></tr>
+<tr class="separator:aaaab25a5efeab833798f44aee5bae67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34777249130c0a609ca96597bb403b30" id="r_a34777249130c0a609ca96597bb403b30"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#a34777249130c0a609ca96597bb403b30">mod_geometry::divvector</a> (qvec, ixil, ixol, divq, nth_in)</td></tr>
+<tr class="separator:a34777249130c0a609ca96597bb403b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa38fdb510ba28c2d2152f575d1ccf20f" id="r_aa38fdb510ba28c2d2152f575d1ccf20f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__geometry.html#aa38fdb510ba28c2d2152f575d1ccf20f">mod_geometry::divvectors</a> (qvec, ixil, ixol, divq)</td></tr>
 <tr class="memdesc:aa38fdb510ba28c2d2152f575d1ccf20f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate divergence of a vector qvec within ixL using limited extrapolation to cell edges.  <br /></td></tr>
 <tr class="separator:aa38fdb510ba28c2d2152f575d1ccf20f"><td class="memSeparator" colspan="2">&#160;</td></tr>

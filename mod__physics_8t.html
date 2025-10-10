@@ -29,7 +29,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.1</span>
+   <div id="projectname">MPI-AMRVAC<span id="projectnumber">&#160;3.2</span>
    </div>
    <div id="projectbrief">The MPI - Adaptive Mesh Refinement - Versatile Advection Code</div>
   </td>
@@ -115,6 +115,8 @@ Data Types</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemod__physics_1_1sub__get__v.html">mod_physics::sub_get_v</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemod__physics_1_1sub__get__rho.html">mod_physics::sub_get_rho</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemod__physics_1_1sub__get__h__speed.html">mod_physics::sub_get_h_speed</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemod__physics_1_1sub__get__cbounds.html">mod_physics::sub_get_cbounds</a></td></tr>
@@ -190,8 +192,8 @@ Functions/Subroutines</h2></td></tr>
 <tr class="separator:a86a7b7145a138780ab7317d9616b4f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40c50419208b88add96e72857016e934" id="r_a40c50419208b88add96e72857016e934"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a40c50419208b88add96e72857016e934">mod_physics::dummy_get_a2max</a> (w, x, ixil, ixol, a2max)</td></tr>
 <tr class="separator:a40c50419208b88add96e72857016e934"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51dc06f50b02fbeef42fadaccc509f54" id="r_a51dc06f50b02fbeef42fadaccc509f54"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a51dc06f50b02fbeef42fadaccc509f54">mod_physics::dummy_add_source_geom</a> (qdt, dtfactor, ixil, ixol, wct, w, x)</td></tr>
-<tr class="separator:a51dc06f50b02fbeef42fadaccc509f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919517a0375ba9aec07fdbaec8d45026" id="r_a919517a0375ba9aec07fdbaec8d45026"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a919517a0375ba9aec07fdbaec8d45026">mod_physics::dummy_add_source_geom</a> (qdt, dtfactor, ixil, ixol, wct, wprim, w, x)</td></tr>
+<tr class="separator:a919517a0375ba9aec07fdbaec8d45026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb93a2cb9f96ea748b9260649f74f7a9" id="r_acb93a2cb9f96ea748b9260649f74f7a9"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#acb93a2cb9f96ea748b9260649f74f7a9">mod_physics::dummy_add_source</a> (qdt, dtfactor, ixil, ixol, wct, wctprim, w, x, qsourcesplit, active)</td></tr>
 <tr class="separator:acb93a2cb9f96ea748b9260649f74f7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3dffdc49477a3ae74efe8e5f5af9007" id="r_ae3dffdc49477a3ae74efe8e5f5af9007"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#ae3dffdc49477a3ae74efe8e5f5af9007">mod_physics::dummy_check_w</a> (primitive, ixil, ixol, w, w_flag)</td></tr>
@@ -223,30 +225,9 @@ Functions/Subroutines</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:acd5c12827a0427c2b14e969cdebff01a" id="r_acd5c12827a0427c2b14e969cdebff01a"><td class="memItemLeft" align="right" valign="top">double precision&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#acd5c12827a0427c2b14e969cdebff01a">mod_physics::phys_gamma</a> =5.d0/3.d0</td></tr>
 <tr class="separator:acd5c12827a0427c2b14e969cdebff01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c0b8a2dc10a59ca87e89eaa056929ad" id="r_a9c0b8a2dc10a59ca87e89eaa056929ad"><td class="memItemLeft" align="right" valign="top">character(len=name_len)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a9c0b8a2dc10a59ca87e89eaa056929ad">mod_physics::physics_type</a> = &quot;&quot;</td></tr>
-<tr class="memdesc:a9c0b8a2dc10a59ca87e89eaa056929ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">String describing the physics type of the simulation.  <br /></td></tr>
-<tr class="separator:a9c0b8a2dc10a59ca87e89eaa056929ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95ed0d73188b963f6d662c2e6626fb1c" id="r_a95ed0d73188b963f6d662c2e6626fb1c"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a95ed0d73188b963f6d662c2e6626fb1c">mod_physics::phys_wider_stencil</a> = 0</td></tr>
 <tr class="memdesc:a95ed0d73188b963f6d662c2e6626fb1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">To use wider stencils in flux calculations. A value of 1 will extend it by one cell in both directions, in any dimension.  <br /></td></tr>
 <tr class="separator:a95ed0d73188b963f6d662c2e6626fb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b574f164bdb18cad0d1e95962df62a4" id="r_a3b574f164bdb18cad0d1e95962df62a4"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a3b574f164bdb18cad0d1e95962df62a4">mod_physics::phys_req_diagonal</a> = .true.</td></tr>
-<tr class="memdesc:a3b574f164bdb18cad0d1e95962df62a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the physics routines require diagonal ghost cells, for example for computing a curl.  <br /></td></tr>
-<tr class="separator:a3b574f164bdb18cad0d1e95962df62a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af51a72a2fd88d69c5745864770c06f93" id="r_af51a72a2fd88d69c5745864770c06f93"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#af51a72a2fd88d69c5745864770c06f93">mod_physics::phys_energy</a> =.false.</td></tr>
-<tr class="memdesc:af51a72a2fd88d69c5745864770c06f93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve energy equation or not.  <br /></td></tr>
-<tr class="separator:af51a72a2fd88d69c5745864770c06f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b6685b7b87dbdf0c128274c2fdb6fe8" id="r_a5b6685b7b87dbdf0c128274c2fdb6fe8"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a5b6685b7b87dbdf0c128274c2fdb6fe8">mod_physics::phys_total_energy</a> =.false.</td></tr>
-<tr class="memdesc:a5b6685b7b87dbdf0c128274c2fdb6fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve total energy equation or not.  <br /></td></tr>
-<tr class="separator:a5b6685b7b87dbdf0c128274c2fdb6fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc593c33eda4c0fb560d4fc167e2e5f6" id="r_adc593c33eda4c0fb560d4fc167e2e5f6"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#adc593c33eda4c0fb560d4fc167e2e5f6">mod_physics::phys_internal_e</a> =.false.</td></tr>
-<tr class="memdesc:adc593c33eda4c0fb560d4fc167e2e5f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve internal energy instead of total energy.  <br /></td></tr>
-<tr class="separator:adc593c33eda4c0fb560d4fc167e2e5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b3ad5fce8064d09f9f7608cb83a2d5d" id="r_a5b3ad5fce8064d09f9f7608cb83a2d5d"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a5b3ad5fce8064d09f9f7608cb83a2d5d">mod_physics::phys_partial_ionization</a> =.false.</td></tr>
-<tr class="memdesc:a5b3ad5fce8064d09f9f7608cb83a2d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve partially ionized one-fluid plasma.  <br /></td></tr>
-<tr class="separator:a5b3ad5fce8064d09f9f7608cb83a2d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab01e4b6aad73357775df534191d7e3ae" id="r_ab01e4b6aad73357775df534191d7e3ae"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#ab01e4b6aad73357775df534191d7e3ae">mod_physics::phys_equi_pe</a> =.false.</td></tr>
-<tr class="memdesc:ab01e4b6aad73357775df534191d7e3ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">if equilibrium pressure is splitted  <br /></td></tr>
-<tr class="separator:ab01e4b6aad73357775df534191d7e3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94801b6f3634c5ba37080e3920d6f7ee" id="r_a94801b6f3634c5ba37080e3920d6f7ee"><td class="memItemLeft" align="right" valign="top">integer, dimension(:, :), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a94801b6f3634c5ba37080e3920d6f7ee">mod_physics::flux_type</a></td></tr>
 <tr class="memdesc:a94801b6f3634c5ba37080e3920d6f7ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array per direction per variable, which can be used to specify that certain fluxes have to be treated differently.  <br /></td></tr>
 <tr class="separator:a94801b6f3634c5ba37080e3920d6f7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -265,6 +246,24 @@ Variables</h2></td></tr>
 <tr class="memitem:a5bba08d4a84e70b3d3a5aa9b97b8423b" id="r_a5bba08d4a84e70b3d3a5aa9b97b8423b"><td class="memItemLeft" align="right" valign="top">integer, parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a5bba08d4a84e70b3d3a5aa9b97b8423b">mod_physics::flux_hll</a> = 4</td></tr>
 <tr class="memdesc:a5bba08d4a84e70b3d3a5aa9b97b8423b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the flux should be treated with hll.  <br /></td></tr>
 <tr class="separator:a5bba08d4a84e70b3d3a5aa9b97b8423b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51a72a2fd88d69c5745864770c06f93" id="r_af51a72a2fd88d69c5745864770c06f93"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#af51a72a2fd88d69c5745864770c06f93">mod_physics::phys_energy</a> =.false.</td></tr>
+<tr class="memdesc:af51a72a2fd88d69c5745864770c06f93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve energy equation or not.  <br /></td></tr>
+<tr class="separator:af51a72a2fd88d69c5745864770c06f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b6685b7b87dbdf0c128274c2fdb6fe8" id="r_a5b6685b7b87dbdf0c128274c2fdb6fe8"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a5b6685b7b87dbdf0c128274c2fdb6fe8">mod_physics::phys_total_energy</a> =.false.</td></tr>
+<tr class="memdesc:a5b6685b7b87dbdf0c128274c2fdb6fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve total energy equation or not.  <br /></td></tr>
+<tr class="separator:a5b6685b7b87dbdf0c128274c2fdb6fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc593c33eda4c0fb560d4fc167e2e5f6" id="r_adc593c33eda4c0fb560d4fc167e2e5f6"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#adc593c33eda4c0fb560d4fc167e2e5f6">mod_physics::phys_internal_e</a> =.false.</td></tr>
+<tr class="memdesc:adc593c33eda4c0fb560d4fc167e2e5f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve internal energy instead of total energy.  <br /></td></tr>
+<tr class="separator:adc593c33eda4c0fb560d4fc167e2e5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b3ad5fce8064d09f9f7608cb83a2d5d" id="r_a5b3ad5fce8064d09f9f7608cb83a2d5d"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a5b3ad5fce8064d09f9f7608cb83a2d5d">mod_physics::phys_partial_ionization</a> =.false.</td></tr>
+<tr class="memdesc:a5b3ad5fce8064d09f9f7608cb83a2d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve partially ionized one-fluid plasma.  <br /></td></tr>
+<tr class="separator:a5b3ad5fce8064d09f9f7608cb83a2d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab01e4b6aad73357775df534191d7e3ae" id="r_ab01e4b6aad73357775df534191d7e3ae"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#ab01e4b6aad73357775df534191d7e3ae">mod_physics::phys_equi_pe</a> =.false.</td></tr>
+<tr class="memdesc:ab01e4b6aad73357775df534191d7e3ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">if equilibrium pressure is splitted  <br /></td></tr>
+<tr class="separator:ab01e4b6aad73357775df534191d7e3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0b8a2dc10a59ca87e89eaa056929ad" id="r_a9c0b8a2dc10a59ca87e89eaa056929ad"><td class="memItemLeft" align="right" valign="top">character(len=name_len)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a9c0b8a2dc10a59ca87e89eaa056929ad">mod_physics::physics_type</a> = &quot;&quot;</td></tr>
+<tr class="memdesc:a9c0b8a2dc10a59ca87e89eaa056929ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">String describing the physics type of the simulation.  <br /></td></tr>
+<tr class="separator:a9c0b8a2dc10a59ca87e89eaa056929ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e35d8fe7e9cfd2e0d5c7f986db91848" id="r_a6e35d8fe7e9cfd2e0d5c7f986db91848"><td class="memItemLeft" align="right" valign="top">procedure(<a class="el" href="interfacemod__physics_1_1sub__check__params.html">sub_check_params</a>), pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a6e35d8fe7e9cfd2e0d5c7f986db91848">mod_physics::phys_check_params</a> =&gt; null()</td></tr>
 <tr class="separator:a6e35d8fe7e9cfd2e0d5c7f986db91848"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa85c921eee9edba9e64d48917df2b914" id="r_aa85c921eee9edba9e64d48917df2b914"><td class="memItemLeft" align="right" valign="top">procedure(<a class="el" href="interfacemod__physics_1_1sub__set__mg__bounds.html">sub_set_mg_bounds</a>), pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#aa85c921eee9edba9e64d48917df2b914">mod_physics::phys_set_mg_bounds</a> =&gt; null()</td></tr>
@@ -291,6 +290,8 @@ Variables</h2></td></tr>
 <tr class="separator:a2d5e65cc41b36dea6b49f714a983d14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae19630150a3f06bcc5efe6b2bfe0987e" id="r_ae19630150a3f06bcc5efe6b2bfe0987e"><td class="memItemLeft" align="right" valign="top">procedure(<a class="el" href="interfacemod__physics_1_1sub__get__v.html">sub_get_v</a>), pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#ae19630150a3f06bcc5efe6b2bfe0987e">mod_physics::phys_get_v</a> =&gt; null()</td></tr>
 <tr class="separator:ae19630150a3f06bcc5efe6b2bfe0987e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6c2058c4d06500c090adadc428d9a5" id="r_ade6c2058c4d06500c090adadc428d9a5"><td class="memItemLeft" align="right" valign="top">procedure(<a class="el" href="interfacemod__physics_1_1sub__get__rho.html">sub_get_rho</a>), pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#ade6c2058c4d06500c090adadc428d9a5">mod_physics::phys_get_rho</a> =&gt; null()</td></tr>
+<tr class="separator:ade6c2058c4d06500c090adadc428d9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5813eee20a2d7e3892b1c280c2d1c18e" id="r_a5813eee20a2d7e3892b1c280c2d1c18e"><td class="memItemLeft" align="right" valign="top">procedure(<a class="el" href="interfacemod__physics_1_1sub__get__dt.html">sub_get_dt</a>), pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a5813eee20a2d7e3892b1c280c2d1c18e">mod_physics::phys_get_dt</a> =&gt; null()</td></tr>
 <tr class="separator:a5813eee20a2d7e3892b1c280c2d1c18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69a351b0e023d06873d3d4e3a57362b5" id="r_a69a351b0e023d06873d3d4e3a57362b5"><td class="memItemLeft" align="right" valign="top">procedure(<a class="el" href="interfacemod__physics_1_1sub__add__source__geom.html">sub_add_source_geom</a>), pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemod__physics.html#a69a351b0e023d06873d3d4e3a57362b5">mod_physics::phys_add_source_geom</a> =&gt; null()</td></tr>
