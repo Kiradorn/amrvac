@@ -34,7 +34,6 @@ contains
   !> Read the command line arguments passed to amrvac
   subroutine read_arguments()
     use mod_global_parameters
-    use mod_slice, only: slicenext
 
     integer                          :: len, stat, n, i, ipars
     integer, parameter               :: max_files = 20 ! Maximum number of par files
@@ -1346,45 +1345,65 @@ contains
     do idim=1,ndim
       if(any(typeboundary(:,2*idim-1)==12)) then
         if(any(typeboundary(:,2*idim-1)/=12)) typeboundary(:,2*idim-1)=12
-        if(phys_energy) then
-          windex=2
-        else
-          windex=1
-        end if
-        typeboundary(:,2*idim-1)=bc_symm
-        if(physics_type/='rho') then
-          select case(coordinate)
-          case(cylindrical)
+        select case(physics_type)
+        case ('rho','ard','rd','nonlinear','ffhd')
+           ! all symmetric at pole
+           typeboundary(:,2*idim-1)=bc_symm
+           if(mype==0) print *,'symmetric minimal pole'
+        case ('hd','rhd','srhd','mhd','rmhd')
+           typeboundary(:,2*idim-1)=bc_symm
+           ! here we assume the ordering of variables is fixed to rho-mom-[e]-B
+           if(phys_energy) then
+            windex=2
+           else
+            windex=1
+           end if
+           select case(coordinate)
+           case(cylindrical)
             typeboundary(phi_+1,2*idim-1)=bc_asymm
-            if(physics_type=='mhd') typeboundary(ndir+windex+phi_,2*idim-1)=bc_asymm
-          case(spherical)
+            if(physics_type=='mhd'.or.physics_type=='rmhd') typeboundary(ndir+windex+phi_,2*idim-1)=bc_asymm
+           case(spherical)
             typeboundary(3:ndir+1,2*idim-1)=bc_asymm
-            if(physics_type=='mhd') typeboundary(ndir+windex+2:ndir+windex+ndir,2*idim-1)=bc_asymm
-          case default
+            if(physics_type=='mhd'.or.physics_type=='rmhd') typeboundary(ndir+windex+2:ndir+windex+ndir,2*idim-1)=bc_asymm
+           case default
             call mpistop('Pole is in cylindrical, polar, spherical coordinates!')
-          end select
-        end if
+           end select
+        case ('twofl','mf')
+           call mpistop('Pole treatment for twofl or mf not implemented yet')
+        case default
+           call mpistop('unknown physics type for setting minimal pole boundary treatment')
+        end select
       end if
       if(any(typeboundary(:,2*idim)==12)) then
         if(any(typeboundary(:,2*idim)/=12)) typeboundary(:,2*idim)=12
-        if(phys_energy) then
-          windex=2
-        else
-          windex=1
-        end if
-        typeboundary(:,2*idim)=bc_symm
-        if(physics_type/='rho') then
-        select case(coordinate)
-        case(cylindrical)
-          typeboundary(phi_+1,2*idim)=bc_asymm
-          if(physics_type=='mhd') typeboundary(ndir+windex+phi_,2*idim)=bc_asymm
-        case(spherical)
-          typeboundary(3:ndir+1,2*idim)=bc_asymm
-          if(physics_type=='mhd') typeboundary(ndir+windex+2:ndir+windex+ndir,2*idim)=bc_asymm
+        select case(physics_type)
+        case ('rho','ard','rd','nonlinear','ffhd')
+           ! all symmetric at pole
+           typeboundary(:,2*idim)=bc_symm
+           if(mype==0) print *,'symmetric maximal pole'
+        case ('hd','rhd','srhd','mhd','rmhd')
+           typeboundary(:,2*idim)=bc_symm
+           ! here we assume the ordering of variables is fixed to rho-mom-[e]-B
+           if(phys_energy) then
+            windex=2
+           else
+            windex=1
+           end if
+           select case(coordinate)
+           case(cylindrical)
+            typeboundary(phi_+1,2*idim)=bc_asymm
+            if(physics_type=='mhd'.or.physics_type=='rmhd') typeboundary(ndir+windex+phi_,2*idim)=bc_asymm
+           case(spherical)
+            typeboundary(3:ndir+1,2*idim)=bc_asymm
+            if(physics_type=='mhd'.or.physics_type=='rmhd') typeboundary(ndir+windex+2:ndir+windex+ndir,2*idim)=bc_asymm
+           case default
+            call mpistop('Pole is in cylindrical, polar, spherical coordinates!')
+           end select
+        case ('twofl','mf')
+           call mpistop('Pole treatment for twofl or mf not implemented yet')
         case default
-          call mpistop('Pole is in cylindrical, polar, spherical coordinates!')
+           call mpistop('unknown physics type for setting maximal pole boundary treatment')
         end select
-        end if
       end if
     end do
     }
@@ -1618,7 +1637,7 @@ contains
     case('cmaxleftright')
       boundspeed=3
     case default
-      call mpistop("set typeboundspeed='Einfieldt' or 'cmaxmean' or 'cmaxleftright'")
+      call mpistop("set typeboundspeed='Einfeldt' or 'cmaxmean' or 'cmaxleftright'")
     end select
 
     if (mype==0) write(unitterm, '(A30)', advance='no') 'Refine estimation: '
@@ -1800,7 +1819,6 @@ contains
     use mod_forest
     use mod_physics
     use mod_global_parameters
-    use mod_slice, only: slicenext
     use mod_input_output_helper, only: snapshot_write_header1
     integer, intent(in)                       :: fh           !< File handle
     integer(kind=MPI_OFFSET_KIND), intent(in) :: offset_tree  !< Offset of tree info
@@ -1816,7 +1834,6 @@ contains
     use mod_forest
     use mod_global_parameters
     use mod_physics, only: physics_type
-    use mod_slice, only: slicenext
     integer, intent(in)                   :: fh           !< File handle
     integer(MPI_OFFSET_KIND), intent(out) :: offset_tree  !< Offset of tree info
     integer(MPI_OFFSET_KIND), intent(out) :: offset_block !< Offset of block data
@@ -2161,7 +2178,6 @@ contains
     use mod_input_output_helper, only: count_ix
     use mod_forest
     use mod_global_parameters
-    use mod_slice, only: slicenext
     use mod_amr_solution_node, only: alloc_node
     use mod_functions_forest, only: read_forest
 

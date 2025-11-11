@@ -105,6 +105,7 @@ mod_bc_data.o: mod_global_parameters.mod
 mod_bc_data.o: mod_lookup_table.mod
 mod_bc_data.o: mod_physics.mod
 mod_boundary_conditions.o: mod_bc_data.mod
+mod_boundary_conditions.o: mod_comm_lib.mod
 mod_boundary_conditions.o: mod_functions_bfield.mod
 mod_boundary_conditions.o: mod_global_parameters.mod
 mod_boundary_conditions.o: mod_physics.mod
@@ -160,6 +161,7 @@ mod_convert.o: mod_functions_forest.mod
 mod_convert.o: mod_global_parameters.mod
 mod_convert.o: mod_input_output_helper.mod
 mod_convert.o: mod_variables.mod
+mod_convert_files.o: mod_amr_solution_node.mod
 mod_convert_files.o: mod_calculate_xw.mod
 mod_convert_files.o: mod_comm_lib.mod
 mod_convert_files.o: mod_convert.mod
@@ -264,6 +266,7 @@ mod_global_parameters.o: mod_constants.mod
 mod_global_parameters.o: mod_physicaldata.mod
 mod_global_parameters.o: mod_variables.mod
 mod_gravity.o: mod_comm_lib.mod
+mod_gravity.o: mod_geometry.mod
 mod_gravity.o: mod_global_parameters.mod
 mod_gravity.o: mod_usr_methods.mod
 mod_hd.o: mod_amrvac.mod
@@ -346,10 +349,10 @@ mod_input_output_helper.o: mod_comm_lib.mod
 mod_input_output_helper.o: mod_forest.mod
 mod_input_output_helper.o: mod_global_parameters.mod
 mod_input_output_helper.o: mod_physics.mod
-mod_input_output_helper.o: mod_slice.mod
 mod_interpolation.o: mod_comm_lib.mod
 mod_interpolation.o: mod_global_parameters.mod
 mod_ionization_degree.o: mod_global_parameters.mod
+mod_kdv.o: mod_comm_lib.mod
 mod_kdv.o: mod_global_parameters.mod
 mod_kdv.o: mod_usr_methods.mod
 mod_lfff.o: mod_comm_lib.mod
@@ -439,6 +442,7 @@ mod_multigrid_coupling.o: mod_global_parameters.mod
 mod_nonlinear.o: mod_amrvac.mod
 mod_nonlinear.o: mod_nonlinear_phys.mod
 mod_nonlinear.o: mod_nonlinear_roe.mod
+mod_nonlinear_phys.o: mod_comm_lib.mod
 mod_nonlinear_phys.o: mod_global_parameters.mod
 mod_nonlinear_phys.o: mod_kdv.mod
 mod_nonlinear_phys.o: mod_particles.mod
@@ -478,6 +482,7 @@ mod_particle_sample.o: mod_geometry.mod
 mod_particle_sample.o: mod_global_parameters.mod
 mod_particle_sample.o: mod_particle_base.mod
 mod_particle_sample.o: mod_usr_methods.mod
+mod_particles.o: mod_comm_lib.mod
 mod_particles.o: mod_global_parameters.mod
 mod_particles.o: mod_particle_advect.mod
 mod_particles.o: mod_particle_base.mod
@@ -506,6 +511,9 @@ mod_radiative_cooling.o: mod_global_parameters.mod
 mod_radiative_cooling.o: mod_physics.mod
 mod_random_heating.o: mod_comm_lib.mod
 mod_random_heating.o: mod_global_parameters.mod
+mod_random_heating_3D.o: mod_comm_lib.mod
+mod_random_heating_3D.o: mod_geometry.mod
+mod_random_heating_3D.o: mod_global_parameters.mod
 mod_rbsl.o: mod_geometry.mod
 mod_rbsl.o: mod_global_parameters.mod
 mod_rd.o: mod_amrvac.mod
@@ -607,6 +615,9 @@ mod_slice.o: mod_calculate_xw.mod
 mod_slice.o: mod_comm_lib.mod
 mod_slice.o: mod_forest.mod
 mod_slice.o: mod_global_parameters.mod
+mod_slice.o: mod_input_output_helper.mod
+mod_slice.o: mod_physics.mod
+mod_small_values.o: mod_geometry.mod
 mod_small_values.o: mod_global_parameters.mod
 mod_solar_atmosphere.o: mod_comm_lib.mod
 mod_solar_atmosphere.o: mod_global_parameters.mod
@@ -635,6 +646,7 @@ mod_srhd_phys.o: mod_small_values.mod
 mod_srhd_phys.o: mod_usr_methods.mod
 mod_srhd_phys.o: mod_variables.mod
 mod_supertimestepping.o: mod_amr_solution_node.mod
+mod_supertimestepping.o: mod_comm_lib.mod
 mod_supertimestepping.o: mod_constants.mod
 mod_supertimestepping.o: mod_fix_conserve.mod
 mod_supertimestepping.o: mod_geometry.mod
@@ -652,6 +664,7 @@ mod_thermal_emission.o: mod_constants.mod
 mod_thermal_emission.o: mod_geometry.mod
 mod_thermal_emission.o: mod_global_parameters.mod
 mod_thermal_emission.o: mod_physics.mod
+mod_trac.o: mod_comm_lib.mod
 mod_trac.o: mod_global_parameters.mod
 mod_trac.o: mod_physics.mod
 mod_trac.o: mod_trace_field.mod

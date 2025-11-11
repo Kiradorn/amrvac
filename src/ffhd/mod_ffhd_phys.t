@@ -106,7 +106,7 @@ module mod_ffhd_phys
   !> gamma minus one and its inverse
   double precision :: gamma_1, inv_gamma_1
 
-  !define the subroutine interface for the ambipolar mask
+  !define the function interface for the kinetic energy
   abstract interface
 
     function fun_kin_en(w, ixI^L, ixO^L, inv_rho) result(ke)
@@ -149,7 +149,7 @@ contains
     character(len=*), intent(in) :: files(:)
     integer                      :: n
 
-    namelist /ffhd_list/ ffhd_energy, ffhd_gamma, ffhd_adiab,&
+    namelist /ffhd_list/ ffhd_energy, ffhd_gamma, ffhd_adiab, &
       ffhd_thermal_conduction, ffhd_hyperbolic_thermal_conduction, ffhd_radiative_cooling, ffhd_gravity,&
       ffhd_viscosity, He_abundance, H_ion_fr, He_ion_fr, He_ion_fr2, eq_state_units, SI_unit,&
       B0field, Busr, ffhd_partial_ionization, ffhd_trac, ffhd_trac_type, ffhd_trac_mask, ffhd_trac_finegrid
@@ -251,7 +251,6 @@ contains
     phys_trac_mask=ffhd_trac_mask
 
     allocate(start_indices(number_species),stop_indices(number_species))
-    ! set the index of the first flux variable for species 1
     start_indices(1)=1
     ! Determine flux variables
     rho_ = var_set_rho()
@@ -326,8 +325,7 @@ contains
     ffhd_get_v               => ffhd_get_v_origin
     phys_get_rho             => ffhd_get_rho
     ffhd_kin_en              => ffhd_kin_en_origin
-    !> need to check source geom here
-    !phys_add_source_geom     => ffhd_add_source_geom
+    phys_add_source_geom     => ffhd_add_source_geom
     phys_add_source          => ffhd_add_source
     phys_check_params        => ffhd_check_params
     phys_write_info          => ffhd_write_info
@@ -623,7 +621,7 @@ contains
       end if
       if(unit_temperature/=1.d0) then
         unit_pressure=b*unit_numberdensity*kB*unit_temperature
-        unit_velocity=sqrt(unit_pressure/unit_density)
+        unit_velocity=dsqrt(unit_pressure/unit_density)
         if(unit_length/=1.d0) then
           unit_time=unit_length/unit_velocity
         else if(unit_time/=1.d0) then
@@ -631,7 +629,7 @@ contains
         end if
       else if(unit_pressure/=1.d0) then
         unit_temperature=unit_pressure/(b*unit_numberdensity*kB)
-        unit_velocity=sqrt(unit_pressure/unit_density)
+        unit_velocity=dsqrt(unit_pressure/unit_density)
         if(unit_length/=1.d0) then
           unit_time=unit_length/unit_velocity
         else if(unit_time/=1.d0) then
@@ -655,7 +653,7 @@ contains
       if(unit_pressure/=1.d0) then
         unit_numberdensity=unit_pressure/(b*unit_temperature*kB)
         unit_density=a*mp*unit_numberdensity
-        unit_velocity=sqrt(unit_pressure/unit_density)
+        unit_velocity=dsqrt(unit_pressure/unit_density)
         if(unit_length/=1.d0) then
           unit_time=unit_length/unit_velocity
         else if(unit_time/=1.d0) then
@@ -708,8 +706,6 @@ contains
     integer, intent(in)             :: ixI^L, ixO^L
     double precision, intent(inout) :: w(ixI^S, nw)
     double precision, intent(in)    :: x(ixI^S, 1:ndim)
-    double precision :: inv_gamma2(ixO^S)
-    integer                         :: idir
 
     if(ffhd_energy) then
       w(ixO^S,e_)=w(ixO^S,p_)*inv_gamma_1+half*w(ixO^S,mom(1))**2*w(ixO^S,rho_)
@@ -722,10 +718,8 @@ contains
     integer, intent(in)             :: ixI^L, ixO^L
     double precision, intent(inout) :: w(ixI^S, nw)
     double precision, intent(in)    :: x(ixI^S, 1:ndim)
-    double precision                :: inv_rho(ixO^S), gamma2(ixO^S)
 
     if(fix_small_values) then
-      !> fix small values preventing NaN numbers in the following converting
       call ffhd_handle_small_values(.false., w, x, ixI^L, ixO^L, 'ffhd_to_primitive_origin')
     end if
 
@@ -835,19 +829,19 @@ contains
     v(ixO^S) = (w(ixO^S, mom(1))*block%B0(ixO^S,idim,0)) / rho(ixO^S)
   end subroutine ffhd_get_v_idim
 
-  subroutine ffhd_get_cmax_origin(w,x,ixI^L,ixO^L,idim,cmax)
+  subroutine ffhd_get_cmax_origin(wprim,x,ixI^L,ixO^L,idim,cmax)
     use mod_global_parameters
     integer, intent(in)          :: ixI^L, ixO^L, idim
     ! w in primitive form
-    double precision, intent(in) :: w(ixI^S, nw), x(ixI^S,1:ndim)
+    double precision, intent(in) :: wprim(ixI^S, nw), x(ixI^S,1:ndim)
     double precision, intent(inout) :: cmax(ixI^S)
 
     if(ffhd_energy) then
-      cmax(ixO^S)=sqrt(ffhd_gamma*w(ixO^S,p_)/w(ixO^S,rho_))*abs(block%B0(ixO^S,idim,idim))
+      cmax(ixO^S)=dsqrt(ffhd_gamma*wprim(ixO^S,p_)/wprim(ixO^S,rho_)) 
     else
-      cmax(ixO^S)=sqrt(ffhd_gamma*ffhd_adiab*w(ixO^S,rho_)**gamma_1)*abs(block%B0(ixO^S,idim,idim))
+      cmax(ixO^S)=dsqrt(ffhd_gamma*ffhd_adiab*wprim(ixO^S,rho_)**gamma_1) 
     end if
-    cmax(ixO^S)=abs(w(ixO^S,mom(1))*block%B0(ixO^S,idim,0))+cmax(ixO^S)
+    cmax(ixO^S)=dabs(wprim(ixO^S,mom(1))*block%B0(ixO^S,idim,0))+cmax(ixO^S)
 
   end subroutine ffhd_get_cmax_origin
 
@@ -864,12 +858,16 @@ contains
 
   subroutine ffhd_get_a2max(w,x,ixI^L,ixO^L,a2max)
     use mod_global_parameters
+    use mod_geometry
     integer, intent(in)          :: ixI^L, ixO^L
     double precision, intent(in) :: w(ixI^S, nw), x(ixI^S,1:ndim)
     double precision, intent(inout) :: a2max(ndim)
     double precision :: a2(ixI^S,ndim,nw)
     integer :: gxO^L,hxO^L,jxO^L,kxO^L,i,j
 
+    if(.not.slab_uniform)then
+       call mpistop("subroutine get_a2max in mod_ffhd_phys adopts cartesian setting")
+    endif
     a2=zero
     do i = 1,ndim
       !> 4th order
@@ -877,7 +875,7 @@ contains
       gxO^L=hxO^L-kr(i,^D);
       jxO^L=ixO^L+kr(i,^D);
       kxO^L=jxO^L+kr(i,^D);
-      a2(ixO^S,i,1:nw)=abs(-w(kxO^S,1:nw)+16.d0*w(jxO^S,1:nw)&
+      a2(ixO^S,i,1:nw)=dabs(-w(kxO^S,1:nw)+16.d0*w(jxO^S,1:nw)&
          -30.d0*w(ixO^S,1:nw)+16.d0*w(hxO^S,1:nw)-w(gxO^S,1:nw))
       a2max(i)=maxval(a2(ixO^S,i,1:nw))/12.d0/dxlevel(i)**2
     end do
@@ -912,7 +910,7 @@ contains
     case(1)
       hxO^L=ixO^L-1;
       jxO^L=ixO^L+1;
-      lts(ixO^S)=0.5d0*abs(Te(jxO^S)-Te(hxO^S))/Te(ixO^S)
+      lts(ixO^S)=0.5d0*dabs(Te(jxO^S)-Te(hxO^S))/Te(ixO^S)
       lrlt=.false.
       where(lts(ixO^S) > trac_delta)
         lrlt(ixO^S)=.true.
@@ -929,7 +927,7 @@ contains
       jxO^L=ixO^L+1;
       hxP^L=ixP^L-1;
       jxP^L=ixP^L+1;
-      lts(ixP^S)=0.5d0*abs(Te(jxP^S)-Te(hxP^S))/Te(ixP^S)
+      lts(ixP^S)=0.5d0*dabs(Te(jxP^S)-Te(hxP^S))/Te(ixP^S)
       lts(ixP^S)=max(one, (exp(lts(ixP^S))/ltrc)**ltrp)
       lts(ixO^S)=0.25d0*(lts(jxO^S)+two*lts(ixO^S)+lts(hxO^S))
       block%wextra(ixO^S,Tcoff_)=Te(ixO^S)*lts(ixO^S)**0.4d0
@@ -976,7 +974,7 @@ contains
         bunitvec(ixO^S,idims)=bunitvec(ixO^S,idims)*tmp1(ixO^S)
       end do
       ! temperature length scale inversed
-      lts(ixO^S)=abs(sum(gradT(ixO^S,1:ndim)*bunitvec(ixO^S,1:ndim),dim=ndim+1))/Te(ixO^S)
+      lts(ixO^S)=dabs(sum(gradT(ixO^S,1:ndim)*bunitvec(ixO^S,1:ndim),dim=ndim+1))/Te(ixO^S)
       ! fraction of cells size to temperature length scale
       if(slab_uniform) then
         lts(ixO^S)=minval(dxlevel)*lts(ixO^S)
@@ -1015,7 +1013,7 @@ contains
         call gradientF(Te,x,ixI^L,jxP^L,idims,gradT(ixI^S,idims),nghostcells,.false.)
       end do
       bunitvec(ixP^S,:)=block%B0(ixP^S,:,0)
-      lts(ixP^S)=abs(sum(gradT(ixP^S,1:ndim)*bunitvec(ixP^S,1:ndim),dim=ndim+1))/Te(ixP^S)
+      lts(ixP^S)=dabs(sum(gradT(ixP^S,1:ndim)*bunitvec(ixP^S,1:ndim),dim=ndim+1))/Te(ixP^S)
       if(slab_uniform) then
         lts(ixP^S)=minval(dxlevel)*lts(ixP^S)
       else
@@ -1050,44 +1048,45 @@ contains
     double precision, intent(in)    :: Hspeed(ixI^S,1:number_species)
     double precision :: wmean(ixI^S,nw)
     double precision, dimension(ixI^S) :: umean, dmean, csoundL, csoundR, tmp1,tmp2,tmp3
-    integer :: ix^D
 
     select case (boundspeed)
     case (1)
       ! This implements formula (10.52) from "Riemann Solvers and Numerical
       ! Methods for Fluid Dynamics" by Toro.
-      tmp1(ixO^S)=sqrt(wLp(ixO^S,rho_))
-      tmp2(ixO^S)=sqrt(wRp(ixO^S,rho_))
+      tmp1(ixO^S)=dsqrt(wLp(ixO^S,rho_))
+      tmp2(ixO^S)=dsqrt(wRp(ixO^S,rho_))
       tmp3(ixO^S)=1.d0/(tmp1(ixO^S)+tmp2(ixO^S))
-      umean(ixO^S)=(wLp(ixO^S,mom(1))*block%B0(ixO^S,idim,idim)*tmp1(ixO^S)&
-                   +wRp(ixO^S,mom(1))*block%B0(ixO^S,idim,idim)*tmp2(ixO^S))*tmp3(ixO^S)
-      call ffhd_get_csound_prim(wLp,x,ixI^L,ixO^L,idim,csoundL)
-      call ffhd_get_csound_prim(wRp,x,ixI^L,ixO^L,idim,csoundR)
+      umean(ixO^S)=(wLp(ixO^S,mom(1))*tmp1(ixO^S)&
+                   +wRp(ixO^S,mom(1))*tmp2(ixO^S))*tmp3(ixO^S)
+      umean(ixO^S)=umean(ixO^S)*block%B0(ixO^S,idim,idim)
+      call ffhd_get_csound2(wLC,x,ixI^L,ixO^L,csoundL)
+      call ffhd_get_csound2(wRC,x,ixI^L,ixO^L,csoundR)
       dmean(ixO^S)=(tmp1(ixO^S)*csoundL(ixO^S)+tmp2(ixO^S)*csoundR(ixO^S)) * &
            tmp3(ixO^S) + 0.5d0*tmp1(ixO^S)*tmp2(ixO^S)*tmp3(ixO^S)**2 * &
-           (wRp(ixO^S,mom(1))*block%B0(ixO^S,idim,idim)-wLp(ixO^S,mom(1))*block%B0(ixO^S,idim,idim))**2
+                             ((wRp(ixO^S,mom(1))-wLp(ixO^S,mom(1)))*block%B0(ixO^S,idim,idim))**2
       dmean(ixO^S)=dsqrt(dmean(ixO^S))
       if(present(cmin)) then
         cmin(ixO^S,1)=umean(ixO^S)-dmean(ixO^S)
         cmax(ixO^S,1)=umean(ixO^S)+dmean(ixO^S)
       else
-        cmax(ixO^S,1)=abs(umean(ixO^S))+dmean(ixO^S)
+        cmax(ixO^S,1)=dabs(umean(ixO^S))+dmean(ixO^S)
       end if
     case (2)
       wmean(ixO^S,1:nwflux)=0.5d0*(wLC(ixO^S,1:nwflux)+wRC(ixO^S,1:nwflux))
       tmp1(ixO^S)=wmean(ixO^S,mom(1))*block%B0(ixO^S,idim,idim)/wmean(ixO^S,rho_)
-      call ffhd_get_csound(wmean,x,ixI^L,ixO^L,idim,csoundR)
+      call ffhd_get_csound2(wmean,x,ixI^L,ixO^L,csoundR)
+      csoundR(ixO^S) = dsqrt(csoundR(ixO^S)) 
       if(present(cmin)) then
         cmax(ixO^S,1)=max(tmp1(ixO^S)+csoundR(ixO^S),zero)
         cmin(ixO^S,1)=min(tmp1(ixO^S)-csoundR(ixO^S),zero)
       else
-        cmax(ixO^S,1)=abs(tmp1(ixO^S))+csoundR(ixO^S)
+        cmax(ixO^S,1)=dabs(tmp1(ixO^S))+csoundR(ixO^S)
       end if
     case (3)
       ! Miyoshi 2005 JCP 208, 315 equation (67)
-      call ffhd_get_csound_prim(wLp,x,ixI^L,ixO^L,idim,csoundL)
-      call ffhd_get_csound_prim(wRp,x,ixI^L,ixO^L,idim,csoundR)
-      csoundL(ixO^S)=max(csoundL(ixO^S),csoundR(ixO^S))
+      call ffhd_get_csound2(wLC,x,ixI^L,ixO^L,csoundL)
+      call ffhd_get_csound2(wRC,x,ixI^L,ixO^L,csoundR)
+      csoundL(ixO^S)=max(dsqrt(csoundL(ixO^S)),dsqrt(csoundR(ixO^S)))
       if(present(cmin)) then
         cmin(ixO^S,1)=min(wLp(ixO^S,mom(1))*block%B0(ixO^S,idim,idim),&
                           wRp(ixO^S,mom(1))*block%B0(ixO^S,idim,idim))-csoundL(ixO^S)
@@ -1099,32 +1098,6 @@ contains
       end if
     end select
   end subroutine ffhd_get_cbounds
-
-  subroutine ffhd_get_csound(w,x,ixI^L,ixO^L,idim,csound)
-    use mod_global_parameters
-    integer, intent(in)          :: ixI^L, ixO^L, idim
-    double precision, intent(in) :: w(ixI^S, nw), x(ixI^S,1:ndim)
-    double precision, intent(out):: csound(ixI^S)
-
-    call ffhd_get_csound2(w,x,ixI^L,ixO^L,csound)
-    csound(ixO^S) = dsqrt(csound(ixO^S))*abs(block%B0(ixO^S,idim,idim))
-  end subroutine ffhd_get_csound
-
-  !> Calculate fast magnetosonic wave speed
-  subroutine ffhd_get_csound_prim(w,x,ixI^L,ixO^L,idim,csound)
-    use mod_global_parameters
-
-    integer, intent(in)          :: ixI^L, ixO^L, idim
-    double precision, intent(in) :: w(ixI^S, nw), x(ixI^S,1:ndim)
-    double precision, intent(out):: csound(ixI^S)
-
-    if(ffhd_energy) then
-      csound(ixO^S)=ffhd_gamma*w(ixO^S,e_)/w(ixO^S,rho_)
-    else
-      csound(ixO^S)=ffhd_gamma*ffhd_adiab*w(ixO^S,rho_)**gamma_1
-    end if
-    csound(ixO^S) = dsqrt(csound(ixO^S))
-  end subroutine ffhd_get_csound_prim
 
   subroutine ffhd_get_pthermal_iso(w,x,ixI^L,ixO^L,pth)
     use mod_global_parameters
@@ -1166,7 +1139,7 @@ contains
              write(*,*) trim(cons_wnames(iw)),": ",w(ix^D,iw)
            end do
            ! use erroneous arithmetic operation to crash the run
-           if(trace_small_values) write(*,*) sqrt(pth(ix^D)-bigdouble)
+           if(trace_small_values) write(*,*) dsqrt(pth(ix^D)-bigdouble)
            write(*,*) "Saving status at the previous time step"
            crash=.true.
          end if
@@ -1238,9 +1211,6 @@ contains
     double precision, intent(in) :: x(ixI^S,1:ndim)
     double precision,intent(out) :: f(ixI^S,nwflux)
     double precision             :: ptotal(ixO^S)
-    double precision             :: tmp(ixI^S)
-    integer                      :: idirmin, iw, idir, jdir, kdir
-    double precision, dimension(ixI^S) :: Te,tau,sigT
 
     f(ixO^S,rho_)=w(ixO^S,mom(1))*w(ixO^S,rho_)*block%B0(ixO^S,idim,idim)
 
@@ -1318,6 +1288,7 @@ contains
 
     integer                         :: idims,hxO^L
     double precision                :: divb(ixI^S)
+    double precision                :: rhovpar(ixI^S),gradrhov(ixI^S)
 
     divb=zero
     if(slab_uniform) then
@@ -1393,9 +1364,6 @@ contains
     double precision, intent(in)    :: dx^D
     double precision, intent(in)    :: w(ixI^S,1:nw)
     double precision, intent(in)    :: x(ixI^S,1:ndim)
-    integer                       :: idirmin,idim
-    double precision              :: dxarr(ndim)
-    double precision              :: current(ixI^S,7-2*ndir:3),eta(ixI^S)
 
     dtnew = bigdouble
 
@@ -1412,117 +1380,14 @@ contains
     end if
   end subroutine ffhd_get_dt
 
-!  subroutine ffhd_add_source_geom(qdt,dtfactor,ixI^L,ixO^L,wCT,w,x)
-!    use mod_global_parameters
-!    use mod_geometry
-!
-!    integer, intent(in)             :: ixI^L, ixO^L
-!    double precision, intent(in)    :: qdt, dtfactor,x(ixI^S,1:ndim)
-!    double precision, intent(inout) :: wCT(ixI^S,1:nw), w(ixI^S,1:nw)
-!
-!    integer          :: iw,idir, h1x^L{^NOONED, h2x^L}
-!    double precision :: tmp(ixI^S),tmp1(ixI^S),tmp2(ixI^S),invrho(ixO^S),invr(ixO^S)
-!
-!    integer :: mr_,mphi_ ! Polar var. names
-!    integer :: br_,bphi_
-!
-!    mr_=mom(1); mphi_=mom(1)-1+phi_  ! Polar var. names
-!    br_=mag(1); bphi_=mag(1)-1+phi_
-!
-!    ! 1/rho
-!    invrho(ixO^S)=1.d0/wCT(ixO^S,rho_)
-!    ! include dt in invr, invr is always used with qdt
-!    if(local_timestep) then
-!      invr(ixO^S) = block%dt(ixO^S) * dtfactor/x(ixO^S,1)
-!    else
-!      invr(ixO^S) = qdt/x(ixO^S,1)
-!    end if  
-!
-!
-!    select case (coordinate)
-!    case (cylindrical)
-!      call ffhd_get_p_total(wCT,x,ixI^L,ixO^L,tmp)
-!      if(phi_>0) then
-!        w(ixO^S,mr_)=w(ixO^S,mr_)+invr(ixO^S)*(tmp(ixO^S)-&
-!                  wCT(ixO^S,bphi_)**2+wCT(ixO^S,mphi_)**2*invrho(ixO^S))
-!        w(ixO^S,mphi_)=w(ixO^S,mphi_)+invr(ixO^S)*(&
-!                 -wCT(ixO^S,mphi_)*wCT(ixO^S,mr_)*invrho(ixO^S) &
-!                 +wCT(ixO^S,bphi_)*wCT(ixO^S,br_))
-!        if(.not.stagger_grid) then
-!          w(ixO^S,bphi_)=w(ixO^S,bphi_)+invr(ixO^S)*&
-!                   (wCT(ixO^S,bphi_)*wCT(ixO^S,mr_) &
-!                   -wCT(ixO^S,br_)*wCT(ixO^S,mphi_)) &
-!                   *invrho(ixO^S)
-!        end if
-!      else
-!        w(ixO^S,mr_)=w(ixO^S,mr_)+invr(ixO^S)*tmp(ixO^S)
-!      end if
-!      if(ffhd_glm) w(ixO^S,br_)=w(ixO^S,br_)+wCT(ixO^S,psi_)*invr(ixO^S)
-!    case (spherical)
-!       h1x^L=ixO^L-kr(1,^D); {^NOONED h2x^L=ixO^L-kr(2,^D);}
-!       call ffhd_get_p_total(wCT,x,ixI^L,ixO^L,tmp1)
-!       ! m1
-!       tmp(ixO^S)=tmp1(ixO^S)*x(ixO^S,1) &
-!                  *(block%surfaceC(ixO^S,1)-block%surfaceC(h1x^S,1))/block%dvolume(ixO^S)
-!       do idir=2,ndir
-!         tmp(ixO^S)=tmp(ixO^S)+wCT(ixO^S,mom(idir))**2*invrho(ixO^S)-wCT(ixO^S,mag(idir))**2
-!       end do
-!       w(ixO^S,mom(1))=w(ixO^S,mom(1))+tmp(ixO^S)*invr(ixO^S)
-!       ! b1
-!       if(ffhd_glm) then
-!         w(ixO^S,mag(1))=w(ixO^S,mag(1))+invr(ixO^S)*2.0d0*wCT(ixO^S,psi_)
-!       end if
-!
-!       {^NOONED
-!       ! m2
-!       ! This will make hydrostatic p=const an exact solution
-!       if(local_timestep) then
-!          tmp(ixO^S) = block%dt(ixO^S) * tmp1(ixO^S)
-!       else
-!          tmp(ixO^S) = qdt * tmp1(ixO^S)
-!       end if  
-!       w(ixO^S,mom(2))=w(ixO^S,mom(2))+tmp(ixO^S) &
-!            *(block%surfaceC(ixO^S,2)-block%surfaceC(h2x^S,2)) &
-!            /block%dvolume(ixO^S)
-!       tmp(ixO^S)=-(wCT(ixO^S,mom(1))*wCT(ixO^S,mom(2))*invrho(ixO^S) &
-!            -wCT(ixO^S,mag(1))*wCT(ixO^S,mag(2)))
-!       if(ndir==3) then
-!         tmp(ixO^S)=tmp(ixO^S)+(wCT(ixO^S,mom(3))**2*invrho(ixO^S) &
-!              -wCT(ixO^S,mag(3))**2)*dcos(x(ixO^S,2))/dsin(x(ixO^S,2))
-!       end if
-!       w(ixO^S,mom(2))=w(ixO^S,mom(2))+tmp(ixO^S)*invr(ixO^S)
-!       ! b2
-!       if(.not.stagger_grid) then
-!         tmp(ixO^S)=(wCT(ixO^S,mom(1))*wCT(ixO^S,mag(2)) &
-!              -wCT(ixO^S,mom(2))*wCT(ixO^S,mag(1)))*invrho(ixO^S)
-!         if(ffhd_glm) then
-!           tmp(ixO^S)=tmp(ixO^S) &
-!                + dcos(x(ixO^S,2))/dsin(x(ixO^S,2))*wCT(ixO^S,psi_)
-!         end if
-!         w(ixO^S,mag(2))=w(ixO^S,mag(2))+tmp(ixO^S)*invr(ixO^S)
-!       end if
-!       }
-!
-!       if(ndir==3) then
-!         ! m3
-!         tmp(ixO^S)=-(wCT(ixO^S,mom(3))*wCT(ixO^S,mom(1))*invrho(ixO^S) &
-!              -wCT(ixO^S,mag(3))*wCT(ixO^S,mag(1))) {^NOONED &
-!              -(wCT(ixO^S,mom(2))*wCT(ixO^S,mom(3))*invrho(ixO^S) &
-!              -wCT(ixO^S,mag(2))*wCT(ixO^S,mag(3))) &
-!              *dcos(x(ixO^S,2))/dsin(x(ixO^S,2)) }
-!         w(ixO^S,mom(3))=w(ixO^S,mom(3))+tmp(ixO^S)*invr(ixO^S)
-!         ! b3
-!         if(.not.stagger_grid) then
-!           tmp(ixO^S)=(wCT(ixO^S,mom(1))*wCT(ixO^S,mag(3)) &
-!                -wCT(ixO^S,mom(3))*wCT(ixO^S,mag(1)))*invrho(ixO^S) {^NOONED &
-!                -(wCT(ixO^S,mom(3))*wCT(ixO^S,mag(2)) &
-!                -wCT(ixO^S,mom(2))*wCT(ixO^S,mag(3)))*dcos(x(ixO^S,2)) &
-!                /(wCT(ixO^S,rho_)*dsin(x(ixO^S,2))) }
-!           w(ixO^S,mag(3))=w(ixO^S,mag(3))+tmp(ixO^S)*invr(ixO^S)
-!         end if
-!       end if
-!    end select
-!  end subroutine ffhd_add_source_geom
+  subroutine ffhd_add_source_geom(qdt,dtfactor,ixI^L,ixO^L,wCT,wprim,w,x)
+    use mod_global_parameters
+    integer, intent(in)             :: ixI^L, ixO^L
+    double precision, intent(in)    :: qdt, dtfactor,x(ixI^S,1:ndim)
+    double precision, intent(inout) :: wCT(ixI^S,1:nw), wprim(ixI^S,1:nw),w(ixI^S,1:nw)
+
+    ! no geometric source terms needed for ffhd, no divergences of tensors
+  end subroutine ffhd_add_source_geom
 
   function ffhd_kin_en_origin(w, ixI^L, ixO^L, inv_rho) result(ke)
     use mod_global_parameters, only: nw, ndim,block
@@ -1567,30 +1432,30 @@ contains
     double precision, dimension(ixI^S,1:nw), intent(in) :: w
     double precision, dimension(ixI^S), intent(in) :: Te
     double precision, dimension(ixI^S), intent(out) :: tau,sigT5
-    integer :: ix^D
-    double precision :: dxmin,taumin
+    double precision :: taumin
     double precision, dimension(ixI^S) :: sigT7,eint
 
     taumin=4.d0
     !> w supposed to be wCTprim here
     if(ffhd_trac) then
       where(Te(ixO^S) .lt. block%wextra(ixO^S,Tcoff_))
-        sigT5(ixO^S)=hypertc_kappa*sqrt(block%wextra(ixO^S,Tcoff_)**5)
+        sigT5(ixO^S)=hypertc_kappa*dsqrt(block%wextra(ixO^S,Tcoff_)**5)
         sigT7(ixO^S)=sigT5(ixO^S)*block%wextra(ixO^S,Tcoff_)
       else where
-        sigT5(ixO^S)=hypertc_kappa*sqrt(Te(ixO^S)**5)
+        sigT5(ixO^S)=hypertc_kappa*dsqrt(Te(ixO^S)**5)
         sigT7(ixO^S)=sigT5(ixO^S)*Te(ixO^S)
       end where
     else
-      sigT5(ixO^S)=hypertc_kappa*sqrt(Te(ixO^S)**5)
+      sigT5(ixO^S)=hypertc_kappa*dsqrt(Te(ixO^S)**5)
       sigT7(ixO^S)=sigT5(ixO^S)*Te(ixO^S)
     end if
-    eint(ixO^S)=w(ixO^S,p_)/(ffhd_gamma-one)
+    eint(ixO^S)=w(ixO^S,p_)*inv_gamma_1
     tau(ixO^S)=max(taumin*dt,sigT7(ixO^S)/eint(ixO^S)/cs2max_global)
   end subroutine get_tau
 
   subroutine add_hypertc_source(qdt,ixI^L,ixO^L,wCT,w,x,wCTprim)
     use mod_global_parameters
+    use mod_geometry
     integer, intent(in) :: ixI^L,ixO^L
     double precision, intent(in) :: qdt
     double precision, dimension(ixI^S,1:ndim), intent(in) :: x
@@ -1599,24 +1464,36 @@ contains
     integer :: idims
     integer :: hxC^L,hxO^L,ixC^L,jxC^L,jxO^L,kxC^L
     double precision :: invdx
-    double precision, dimension(ixI^S) :: Te,tau,sigT,htc_qsrc,Tface
-    double precision, dimension(ixI^S) :: htc_esrc
+    double precision, dimension(ixI^S) :: Te,tau,sigT,htc_qsrc,Tface,gradT
 
     Te(ixI^S)=wCTprim(ixI^S,p_)/wCT(ixI^S,rho_)
     call get_tau(ixI^L,ixO^L,wCTprim,Te,tau,sigT)
     htc_qsrc=zero
-    do idims=1,ndim
-      invdx=1.d0/dxlevel(idims)
-      ixC^L=ixO^L;
-      ixCmin^D=ixOmin^D-kr(idims,^D);ixCmax^D=ixOmax^D;
-      jxC^L=ixC^L+kr(idims,^D);
-      kxC^L=jxC^L+kr(idims,^D);
-      hxC^L=ixC^L-kr(idims,^D);
-      hxO^L=ixO^L-kr(idims,^D);
-      Tface(ixC^S)=(7.d0*(Te(ixC^S)+Te(jxC^S))-(Te(hxC^S)+Te(kxC^S)))/12.d0
-      htc_qsrc(ixO^S)=htc_qsrc(ixO^S)+sigT(ixO^S)*block%B0(ixO^S,idims,0)*(Tface(ixO^S)-Tface(hxO^S))*invdx
-    end do
+    select case (coordinate)
+    case (Cartesian)
+      do idims=1,ndim
+        invdx=1.d0/dxlevel(idims)
+        ixC^L=ixO^L;
+        ixCmin^D=ixOmin^D-kr(idims,^D);ixCmax^D=ixOmax^D;
+        jxC^L=ixC^L+kr(idims,^D);
+        kxC^L=jxC^L+kr(idims,^D);
+        hxC^L=ixC^L-kr(idims,^D);
+        hxO^L=ixO^L-kr(idims,^D);
+        ! T_(i+1/2)=[7(T_i+T_i+1)-(T_i-1+T_i+2)]/12 or a 4-point weighted face-averaged value
+        Tface(ixC^S)=(7.d0*(Te(ixC^S)+Te(jxC^S))-(Te(hxC^S)+Te(kxC^S)))/12.d0
+        htc_qsrc(ixO^S)=htc_qsrc(ixO^S)+sigT(ixO^S)*block%B0(ixO^S,idims,0)*(Tface(ixO^S)-Tface(hxO^S))*invdx
+      end do
+    case (cylindrical,spherical)
+      do idims=1,ndim
+        call gradient(Te,ixI^L,ixO^L,idims,gradT)
+        htc_qsrc(ixO^S)=htc_qsrc(ixO^S)+sigT(ixO^S)*block%B0(ixO^S,idims,0)*gradT(ixO^S)
+      end do
+    case default
+      ! Cartesian_stretched and Cartesian_expansion not dealt with here
+      call mpistop("unknown geometry in add_hypertc_source")
+    end select
     htc_qsrc(ixO^S)=(htc_qsrc(ixO^S)+wCT(ixO^S,q_))/tau(ixO^S)
     w(ixO^S,q_)=w(ixO^S,q_)-qdt*htc_qsrc(ixO^S)
   end subroutine add_hypertc_source
+
 end module mod_ffhd_phys
