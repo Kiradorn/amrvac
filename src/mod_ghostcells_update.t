@@ -350,6 +350,7 @@ contains
   subroutine getbc(time,qdt,psb,nwstart,nwbc)
     use mod_global_parameters
     use mod_physics
+    use mod_usr_methods, only: usr_prepare_boundary
     use mod_coarsen, only: coarsen_grid
     use mod_boundary_conditions, only: getintbc, bc_phys
     use mod_comm_lib, only: mpistop
@@ -545,6 +546,9 @@ contains
     ! fill physical boundary ghost cells after internal ghost-cell values exchange
     if(bcphys) then
       !$OMP PARALLEL DO SCHEDULE(dynamic) PRIVATE(igrid)
+      if(associated(usr_prepare_boundary)) then
+        call usr_prepare_boundary(time, qdt)
+      endif
       do iigrid=1,igridstail; igrid=igrids(iigrid);
         if(.not.phyboundblock(igrid)) cycle
         call fill_boundary_after_gc(igrid)

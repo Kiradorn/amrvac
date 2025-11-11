@@ -226,7 +226,7 @@ contains
     if (mype==0) then
       write(*, '(A,ES9.2,A)') ' Start integrating, print status every ', &
            time_between_print, ' seconds'
-      write(*, '(A4,A10,A12,A12,A12)') '  #', 'it', 'time', 'dt', 'wc-time(s)'
+      write(*, '(A4,A10,A12,A12,A12,A14)') '  #', 'it', 'time', 'dt', 'wc-time(s)', 'active_grids'
     end if
 
     timeloop0=MPI_WTIME()
@@ -261,8 +261,8 @@ contains
        if (timeio0 - time_last_print > time_between_print) then
          time_last_print = timeio0
          if (mype == 0) then
-           write(*, '(A4,I10,ES12.4,ES12.4,ES12.4)') " #", &
-                it, global_time, dt, timeio0 - time_in
+           write(*, '(A4,I10,ES12.4,ES12.4,ES12.4,I14)') " #", &
+                it, global_time, dt, timeio0 - time_in, nleafs_active
          end if
        end if
 

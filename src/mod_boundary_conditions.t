@@ -244,7 +244,7 @@ contains
     if (any(typeboundary(1:nwflux+nwaux,iB)==bc_special)) then
        if (.not. associated(usr_special_bc)) &
             call mpistop("usr_special_bc not defined")
-       call usr_special_bc(time,ixG^L,ixO^L,iB,w,x)
+       call usr_special_bc(qdt,time,ixG^L,ixO^L,iB,w,x)
     end if
 
     ! fill boundary conditions from external data vtk files
@@ -257,7 +257,7 @@ contains
        call bc_data_set(time,ixG^L,ixO^L,iB,w,x)
        if (.not. associated(usr_special_bc)) &
             call mpistop("usr_special_bc not defined")
-       call usr_special_bc(time,ixG^L,ixO^L,iB,w,x)
+       call usr_special_bc(qdt,time,ixG^L,ixO^L,iB,w,x)
     end if
 
     end associate

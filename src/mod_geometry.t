@@ -355,7 +355,7 @@ contains
         hxO^L=ixO^L-2*kr(idir,^D);
         jxO^L=ixO^L+2*kr(idir,^D);
         gradq(ixO^S)=gradq(ixO^S)-(q(jxO^S)-q(hxO^S))/12.d0
-      case(3)
+      case(3:)
         gradq(ixO^S)=(q(jxO^S)-q(hxO^S))*3.d0/4.d0
         hxO^L=ixO^L-2*kr(idir,^D);
         jxO^L=ixO^L+2*kr(idir,^D);
@@ -519,7 +519,7 @@ contains
           jxO^L=ixO^L+kr(idir,^D);
         endif
         gradq(ixO^S)=gradq(ixO^S)-(q(jxO^S)-q(hxO^S))/24.d0
-      case(3)
+      case(3:)
         gradq(ixO^S)=(q(jxO^S)-q(hxO^S))*225.d0/192.d0
         if(pm) then
           hxO^L=ixO^L-kr(idir,^D);
